@@ -11,6 +11,7 @@ namespace SpazioDati.Dandelion.Models
         image,
         lod, 
         alternate_labels,
+        score_details 
     }
 
     [Flags]
@@ -22,7 +23,7 @@ namespace SpazioDati.Dandelion.Models
 
 
     [Flags]
-    public enum Language
+    public enum LanguageOption
     {
         de, 
         en, 
@@ -35,7 +36,7 @@ namespace SpazioDati.Dandelion.Models
     }
 
     [Flags]
-    public enum Country
+    public enum CountryOption
     {
         AD, 
         AE, 
@@ -72,4 +73,19 @@ namespace SpazioDati.Dandelion.Models
         ZW
     }
 
+    [Flags]
+    public enum BowOption
+    {
+        never,
+        always,
+        one_empty,
+        both_empty
+    }
+
+    [Flags]
+    public enum QueryOption
+    {
+        full,
+        prefix
+    }
 }
