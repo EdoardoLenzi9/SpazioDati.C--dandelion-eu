@@ -1,22 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
+using SpazioDati.Dandelion.Models;
+using SpazioDati.Dandelion.Services;
 
 namespace SpazioDati.Dandelion
 {
-    class Program
+    class Dandelion
     {
-        public static string BaseUrl = "https://api.dandelion.eu";
-        public static string DataTxt = "datatxt";
-        public static string EntityExtraction = "nex/v1";
-        public static string TextSimilarity = "sim/v1";
-        public static string TextClassification = "cl/v1";
-        public static string LanguageDetection = "li/v1";
-        public static string SentimentAnalysis = "sent/v1";
-        public static string WikiSearch = "wikisearch/v1";
-        public static string Datagraph = "datagraph";
-        public static string Token = "41d8b2b068754a9287cc3aeab1d4f079";
-        public static string Url = "https://dandelion.eu/docs/api/datatxt/sim/v1/";
+
 
         static void Main(string[] args)
         {
@@ -26,11 +20,12 @@ namespace SpazioDati.Dandelion
 
         public static async void MainAsync()
         {
-            var client = new HttpClient();
-            var result = await client.GetStringAsync($"{BaseUrl}/{DataTxt}/{LanguageDetection}?token={Token}&url={Url}");
-            var resultJson = JsonConvert.DeserializeObject<ResponseDto>(result);
-            Console.WriteLine(result);
+            Console.WriteLine(JsonConvert.SerializeObject(await GetEntitiesAsync(new EntityExtractionParameters{Text = "hello world"})));
         }
-        
+
+        public static Task<EntitiesDto> GetEntitiesAsync (EntityExtractionParameters parameters)
+        {
+            return EntityExtractionService.GetEntitiesAsync(parameters);
+        }
     }
 }

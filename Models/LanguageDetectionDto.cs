@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace SpazioDati.Dandelion
+namespace SpazioDati.Dandelion.Models
 {
-    class LanguageDetectionDto
+    
+    public class LanguageDetectionDto
     {
         public int Time;
         public List<DetectedLangsDto> DetectedLangs;
@@ -12,7 +13,7 @@ namespace SpazioDati.Dandelion
         public DateTime Timestamp;
     }
 
-    class DetectedLangsDto
+    public class DetectedLangsDto
     {
         public string Lang;
         public float Confidence;
