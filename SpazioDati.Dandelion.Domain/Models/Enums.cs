@@ -1,6 +1,6 @@
 using System;
 
-namespace SpazioDati.Dandelion.Models
+namespace SpazioDati.Dandelion.Domain.Models
 {
     [Flags]
     public enum IncludeOption

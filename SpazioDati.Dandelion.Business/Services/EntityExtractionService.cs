@@ -1,16 +1,22 @@
-using SpazioDati.Dandelion.Models;
+using SpazioDati.Dandelion.Domain.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using SpazioDati.Dandelion.Clients;
+using SpazioDati.Dandelion.Business.Clients;
 using SpazioDati.Dandelion.Extensions;
 
-namespace SpazioDati.Dandelion.Services
+namespace SpazioDati.Dandelion.Business.Services
 {
     public class EntityExtractionService
     {
+        private ApiClient _apiClient;
 
-        public static Task<EntityExtractionDto> CallEntityExtractionAsync (EntityExtractionParameters parameters)
+        public EntityExtractionService(ApiClient apiClient)
+        {
+            _apiClient = apiClient;
+        }
+
+        public Task<EntityExtractionDto> CallEntityExtractionAsync (EntityExtractionParameters parameters)
         {  
             if(parameters.Epsilon < 0.0 || parameters.Epsilon > 0.5){
                 throw new ArgumentException("Epsilon must be between 0.0 and 0.5", "Epsilon");
@@ -44,9 +50,7 @@ namespace SpazioDati.Dandelion.Services
             }
 
             var source = SourceValidation.verifySingleSource(parameters);
-            return ApiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUrlBuilder(source, parameters));
+            return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUrlBuilder(source, parameters));
         }
-
-        
     }
 }

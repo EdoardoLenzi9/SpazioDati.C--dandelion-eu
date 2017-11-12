@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SpazioDati.Dandelion.Extensions
+namespace SpazioDati.Dandelion.Business.Extensions
 {
     public static class RedundancyList
     {

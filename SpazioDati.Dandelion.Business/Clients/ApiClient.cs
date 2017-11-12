@@ -1,13 +1,18 @@
-using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SpazioDati.Dandelion.Models;
+using SpazioDati.Dandelion.Domain.Models;
 
-namespace SpazioDati.Dandelion.Clients
+namespace SpazioDati.Dandelion.Business.Clients
 {
     public class ApiClient
     {
+
+        public static void Init()
+        {
+            var container =  new SimpleInjector.Container();
+            container.Register<ApiClient>(SimpleInjector.Lifestyle.Singleton);
+        }
       
         public static string EntityExtractionUrlBuilder(string source, EntityExtractionParameters parameters){
             var url = $"{Localizations.BaseUrl}/{Localizations.DataTxt}/{Localizations.EntityExtractionUri}?token={Localizations.Token}&{source}";
@@ -119,7 +124,7 @@ namespace SpazioDati.Dandelion.Clients
             return url;
         }
 
-        public static Task<T> CallApiAsync<T>(string Url){
+        public Task<T> CallApiAsync<T>(string Url){
             return Task.Run( async () =>  
             {
                 var client = new HttpClient();

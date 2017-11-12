@@ -1,17 +1,23 @@
 using System.Collections.Generic;
-using SpazioDati.Dandelion.Models;
+using SpazioDati.Dandelion.Domain.Models;
 using System;
 using SpazioDati.Dandelion.Extensions;
 using System.Linq;
 using System.Threading.Tasks;
-using SpazioDati.Dandelion.Clients;
+using SpazioDati.Dandelion.Business.Clients;
 
-namespace SpazioDati.Dandelion.Services
+namespace SpazioDati.Dandelion.Business.Services
 {
     public class SentimentAnalysisService
     {
+        private ApiClient _apiClient;
 
-        public static Task<SentimentAnalysisDto> CallSentimentAnalysisAsync (SentimentAnalysisParameters parameters)
+        public SentimentAnalysisService(ApiClient apiClient)
+        {
+            _apiClient = apiClient;
+        }
+
+        public Task<SentimentAnalysisDto> CallSentimentAnalysisAsync (SentimentAnalysisParameters parameters)
         {            
             if(parameters.Lang != LanguageOption.en && parameters.Lang != LanguageOption.it && parameters.Lang != LanguageOption.auto)
             {

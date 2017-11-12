@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SpazioDati.Dandelion.Models
+namespace SpazioDati.Dandelion.Domain.Models
 {
     public class ResponseDto
     {

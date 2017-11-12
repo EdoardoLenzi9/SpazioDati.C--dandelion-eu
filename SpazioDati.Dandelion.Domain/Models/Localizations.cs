@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SpazioDati.Dandelion.Models
+namespace SpazioDati.Dandelion.Domain.Models
 {
     public class Localizations
     {
@@ -11,7 +11,6 @@ namespace SpazioDati.Dandelion.Models
         public static string TextClassification = "cl/v1";
         public static string LanguageDetection = "li/v1";
         public static string SentimentAnalysis = "sent/v1";
-        
         public static string WikiSearch = "wikisearch/v1";
         public static string Datagraph = "datagraph";
         public static string Token = "41d8b2b068754a9287cc3aeab1d4f079"; //TODO get set token

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace SpazioDati.Dandelion.Models
+namespace SpazioDati.Dandelion.Domain.Models
 {
     public class SourceParameters{
         public string Text;

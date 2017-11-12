@@ -1,7 +1,7 @@
 using System;
-using SpazioDati.Dandelion.Models;
+using SpazioDati.Dandelion.Domain.Models;
 
-namespace SpazioDati.Dandelion.Services
+namespace SpazioDati.Dandelion.Business.Services
 {
     public class SourceValidation
     {

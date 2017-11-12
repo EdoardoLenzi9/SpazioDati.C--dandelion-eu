@@ -1,15 +1,21 @@
 using System;
 using System.Linq;
-using SpazioDati.Dandelion.Extensions;
-using SpazioDati.Dandelion.Models;
-using SpazioDati.Dandelion.Clients;
+using SpazioDati.Dandelion.Domain.Models;
+using SpazioDati.Dandelion.Business.Clients;
 using System.Threading.Tasks;
 
-namespace SpazioDati.Dandelion.Services
+namespace SpazioDati.Dandelion.Business.Services
 {
     public class TextClassificationService
     {
-        public static Task<TextClassificationDto> CallTextClassificationAsync (TextClassificationParameters parameters) 
+        private ApiClient _apiClient;
+
+        public TextClassificationService(ApiClient apiClient)
+        {
+            _apiClient = apiClient;
+        }
+
+        public Task<TextClassificationDto> CallTextClassificationAsync (TextClassificationParameters parameters) 
         {            
             //TODO controllo models https://dandelion.eu/docs/api/datatxt/cl/models/v1/
             if(parameters.MinScore < 0.0 || parameters.MinScore > 1.0)
@@ -28,7 +34,7 @@ namespace SpazioDati.Dandelion.Services
                 }       
             }
             var source = SourceValidation.verifySingleSource(parameters);
-            return ApiClient.CallApiAsync<TextClassificationDto>(ApiClient.TextClassificationUrlBuilder(source, parameters));
+            return _apiClient.CallApiAsync<TextClassificationDto>(ApiClient.TextClassificationUrlBuilder(source, parameters));
         }
     }
 }

@@ -1,15 +1,21 @@
-using SpazioDati.Dandelion.Models;
+using SpazioDati.Dandelion.Domain.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using SpazioDati.Dandelion.Clients;
+using SpazioDati.Dandelion.Business.Clients;
 
-namespace SpazioDati.Dandelion.Services
+namespace SpazioDati.Dandelion.Business.Services
 {
     public class WikisearchService
     {
+        private ApiClient _apiClient;
 
-        public static Task<WikisearchDto> CallWikisearchAsync (WikisearchParameters parameters)
+        public WikisearchService(ApiClient apiClient)
+        {
+            _apiClient = apiClient;
+        }
+
+        public Task<WikisearchDto> CallWikisearchAsync (WikisearchParameters parameters)
         {    
             if(parameters.Include != null)
             {
