@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpazioDati.Dandelion.Test", "SpazioDati.Dandelion.Test\SpazioDati.Dandelion.Test.csproj", "{CD981B25-3647-4DA3-9260-D74EB26DD7BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpazioDati.Dandelion.Business", "SpazioDati.Dandelion.Business\SpazioDati.Dandelion.Business.csproj", "{1497E0A6-888C-4AAF-AC37-B143B5E10880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD981B25-3647-4DA3-9260-D74EB26DD7BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD981B25-3647-4DA3-9260-D74EB26DD7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD981B25-3647-4DA3-9260-D74EB26DD7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD981B25-3647-4DA3-9260-D74EB26DD7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1497E0A6-888C-4AAF-AC37-B143B5E10880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1497E0A6-888C-4AAF-AC37-B143B5E10880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1497E0A6-888C-4AAF-AC37-B143B5E10880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1497E0A6-888C-4AAF-AC37-B143B5E10880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70943F9A-647D-4CD4-8C24-F44EF1750FFC}
+	EndGlobalSection
+EndGlobal
