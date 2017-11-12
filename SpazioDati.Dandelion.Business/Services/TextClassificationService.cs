@@ -20,17 +20,17 @@ namespace SpazioDati.Dandelion.Business.Services
             //TODO controllo models https://dandelion.eu/docs/api/datatxt/cl/models/v1/
             if(parameters.MinScore < 0.0 || parameters.MinScore > 1.0)
             {
-                throw new ArgumentException("MinScore must be between 0.0 and 1.0", "MinScore");
+                throw new ArgumentException(ErrorMessages.WrongMinScore, ErrorMessages.MinScore);
             }
             if(parameters.MaxAnnotations < 1) 
             {
-                throw new ArgumentException("MaxAnnotations must be greater than 0", "MaxAnnotations");
+                throw new ArgumentException(ErrorMessages.WrongMaxAnnotations, ErrorMessages.MaxAnnotations);
             }
             if(parameters.Include != null)
             {
                 if(parameters.Include.FindAll(x => x != IncludeOption.score_details).ToList().Count > 0)
                 {
-                    throw new ArgumentException("Include can assume only score_details value", "Include");
+                    throw new ArgumentException(ErrorMessages.WrongInclude2, ErrorMessages.Include);
                 }       
             }
             var source = SourceValidation.verifySingleSource(parameters);

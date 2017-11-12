@@ -36,7 +36,7 @@ namespace SpazioDati.Dandelion
         { //need more security, dependency injection
             if(String.IsNullOrEmpty(token) && String.IsNullOrEmpty(Localizations.Token))         //cambiare metodi statici
             {
-                throw new ArgumentException("Invalid token", "token");
+                throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
             }
             if(!String.IsNullOrEmpty(token))
             {

@@ -10,8 +10,4 @@
 	<ProjectReference Include="..\SpazioDati.Dandelion.Domain\SpazioDati.Dandelion.Domain.csproj" />   
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ValidationTests\" />
-  </ItemGroup>
-
 </Project>

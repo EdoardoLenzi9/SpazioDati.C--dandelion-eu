@@ -2,16 +2,18 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using SpazioDati.Dandelion.Domain.Models;
+using SpazioDati.Dandelion.Business.Extensions;
 
 namespace SpazioDati.Dandelion.Business.Clients
 {
     public class ApiClient
     {
+        private static SimpleInjector.Container _container;
 
         public static void Init()
         {
-            var container =  new SimpleInjector.Container();
-            container.Register<ApiClient>(SimpleInjector.Lifestyle.Singleton);
+            _container = _container.GetInstance();
+            _container.Register<ApiClient>(SimpleInjector.Lifestyle.Singleton);
         }
       
         public static string EntityExtractionUrlBuilder(string source, EntityExtractionParameters parameters){

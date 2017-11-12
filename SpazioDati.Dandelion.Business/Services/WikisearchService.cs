@@ -21,20 +21,20 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(parameters.Include.FindAll(x => x == IncludeOption.score_details).ToList().Count > 0)
                 {
-                    throw new ArgumentException("Include cannot assume score_details value", "Include");
+                    throw new ArgumentException(ErrorMessages.WrongInclude1, ErrorMessages.Include);
                 }       
             }
             if(parameters.Lang == LanguageOption.auto)
             {
-                throw new ArgumentException("Lang cannot assume value auto", "Lang");
+                throw new ArgumentException(ErrorMessages.WrongLang2, ErrorMessages.Lang);
             }
             if(String.IsNullOrEmpty(parameters.Text))
             {
-                throw new ArgumentException("Text must be set", "Text");
+                throw new ArgumentException(ErrorMessages.WrongText, ErrorMessages.Text);
             }
             if(parameters.Limit < 1 || parameters.Limit > 50 )
             {
-                throw new ArgumentException("Limit must be between 1 and 50", "Limit");
+                throw new ArgumentException(ErrorMessages.WrongLimit, ErrorMessages.Limit);
             }
 
             var source = $"&text={parameters.Text}";

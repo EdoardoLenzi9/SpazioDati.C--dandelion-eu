@@ -15,7 +15,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(!Uri.IsWellFormedUriString(parameters.Url, UriKind.RelativeOrAbsolute))
                 {
-                    throw new ArgumentException("Not well formed Url", "Url"); //TODO use inner exception
+                    throw new ArgumentException(ErrorMessages.WrongUrl, ErrorMessages.Url); //TODO use inner exception
                 } 
                 else 
                 {
@@ -32,7 +32,7 @@ namespace SpazioDati.Dandelion.Business.Services
             }
             if(String.IsNullOrEmpty(source))
             {            
-                throw new ArgumentException("At least one filed between Text, Url, Html and HtmlFragment must be set"); 
+                throw new ArgumentException(ErrorMessages.WrongSource); 
             }
             return source;
         }
@@ -40,8 +40,6 @@ namespace SpazioDati.Dandelion.Business.Services
          public static string verifyMultipleSources(TextSimilarityParameters parameters){
             var source1 = "";
             var source2 = "";
-            var errorMessage1 = "Only one parameter between Text1, Url1, Html1 and HtmlFragment1 must be set";
-            var errorMessage2 = "Only one parameter between Text2, Url2, Html2 and HtmlFragment2 must be set";
 
             if(!String.IsNullOrEmpty(parameters.Text1))
             {
@@ -51,7 +49,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(!String.IsNullOrEmpty(source1))
                 {
-                    throw new ArgumentException(errorMessage1, "Url1");
+                    throw new ArgumentException(ErrorMessages.WrongSource1, ErrorMessages.Url1);
                 }
                 source1 = $"url1={parameters.Url1}";
             }
@@ -59,7 +57,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(!String.IsNullOrEmpty(source1))
                 {
-                    throw new ArgumentException(errorMessage1, "Html1");
+                    throw new ArgumentException(ErrorMessages.WrongSource1, ErrorMessages.Html1);
                 }
                 source1 = $"html1={parameters.Html1}";
             }
@@ -67,7 +65,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(!String.IsNullOrEmpty(source1))
                 {
-                    throw new ArgumentException(errorMessage1, "HtmlFragment1");
+                    throw new ArgumentException(ErrorMessages.WrongSource1, ErrorMessages.HtmlFragment1);
                 }
                 source1 = $"html_fragment1={parameters.HtmlFragment1}";
             }
@@ -80,7 +78,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(!String.IsNullOrEmpty(source2))
                 {
-                    throw new ArgumentException(errorMessage2, "Url2");
+                    throw new ArgumentException(ErrorMessages.WrongSource2, ErrorMessages.Url2);
                 }
                 source2 = $"url2={parameters.Url2}";
             }
@@ -88,7 +86,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(!String.IsNullOrEmpty(source2))
                 {
-                    throw new ArgumentException(errorMessage2, "Html2");
+                    throw new ArgumentException(ErrorMessages.WrongSource2, ErrorMessages.Html2);
                 }
                 source2 = $"html2={parameters.Html2}";
             }
@@ -96,14 +94,14 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 if(!String.IsNullOrEmpty(source2))
                 {
-                    throw new ArgumentException(errorMessage2, "HtmlFragment2");
+                    throw new ArgumentException(ErrorMessages.WrongSource2, ErrorMessages.HtmlFragment2);
                 }
                 source2 = $"html_fragment2={parameters.HtmlFragment2}";
             }
 
             if(String.IsNullOrEmpty(source1) || String.IsNullOrEmpty(source2) )
             {
-                throw new ArgumentException("Two text sources are needed"); 
+                throw new ArgumentException(ErrorMessages.WrongSources); 
             }
             return $"{source1}&{source2}";
          }

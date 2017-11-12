@@ -19,25 +19,25 @@ namespace SpazioDati.Dandelion.Business.Services
         public Task<EntityExtractionDto> CallEntityExtractionAsync (EntityExtractionParameters parameters)
         {  
             if(parameters.Epsilon < 0.0 || parameters.Epsilon > 0.5){
-                throw new ArgumentException("Epsilon must be between 0.0 and 0.5", "Epsilon");
+                throw new ArgumentException(ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon);
             }          
             if(parameters.TopEntities < 0)
             {
-                throw new ArgumentException("TopEntities cannot be negative", "TopEntities");
+                throw new ArgumentException(ErrorMessages.WrongTopEntities, ErrorMessages.TopEntities);
             }
             if(parameters.MinConfidence < 0.0 || parameters.MinConfidence > 1.0)
             {
-                throw new ArgumentException("MinConfidence must be between 0.0 and 1.0", "MinConfidence");
+                throw new ArgumentException(ErrorMessages.WrongMinConfidence, ErrorMessages.MinConfidence);
             }
             if(parameters.MinLength<2)
             {
-                throw new ArgumentException("MinLength must be greater then 1", "MinLength");
+                throw new ArgumentException(ErrorMessages.WrongMinLength, ErrorMessages.MinLength);
             }
             if(parameters.Include != null)
             {
                 if(parameters.Include.FindAll(x => x == IncludeOption.score_details).ToList().Count > 0)
                 {
-                    throw new ArgumentException("Include cannot assume score_details value", "Include");
+                    throw new ArgumentException(ErrorMessages.WrongInclude1, ErrorMessages.Include);
                 }       
             }
             if(parameters.Include.hasDuplicates<IncludeOption>())

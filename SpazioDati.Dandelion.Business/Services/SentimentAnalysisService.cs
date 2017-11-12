@@ -18,7 +18,7 @@ namespace SpazioDati.Dandelion.Business.Services
         {            
             if(parameters.Lang != LanguageOption.en && parameters.Lang != LanguageOption.it && parameters.Lang != LanguageOption.auto)
             {
-                throw new ArgumentException("Lang can assume only en | it | auto values", "Lang");
+                throw new ArgumentException(ErrorMessages.WrongLang1, ErrorMessages.Lang);
             }
             var source = SourceValidation.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<SentimentAnalysisDto>(ApiClient.SentimentAnalysisUrlBuilder(source, parameters));
