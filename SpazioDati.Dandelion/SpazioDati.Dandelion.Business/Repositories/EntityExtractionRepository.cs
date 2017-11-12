@@ -10,7 +10,7 @@ namespace SpazioDati.Dandelion.Repositories
     {
 
         private static EntityExtractionParameters _defaultValues = new EntityExtractionParameters{
-                                                                                            Lang = Language.auto, 
+                                                                                            Lang = LanguageOption.auto, 
                                                                                             TopEntities = 0, 
                                                                                             MinConfidence = 0.6F,
                                                                                             MinLength = 2, 
@@ -22,29 +22,29 @@ namespace SpazioDati.Dandelion.Repositories
                                                                                             CustomSpots = ""
                                                                                         };  
 
-        public static Task<EntitiesDto> GetEntitiesByTextAsync (EntityExtractionParameters parameters)
+        public static Task<EntityExtractionDto> GetEntitiesByTextAsync (EntityExtractionParameters parameters)
         {
-            return CallApiAsync<EntitiesDto>(UrlBuilder($"text={parameters.Text}", parameters));
+            return CallApiAsync<EntityExtractionDto>(UrlBuilder($"text={parameters.Text}", parameters));
         }
 
-        public static Task<EntitiesDto> GetEntitiesByUrlAsync (EntityExtractionParameters parameters)
+        public static Task<EntityExtractionDto> GetEntitiesByUrlAsync (EntityExtractionParameters parameters)
         {
-            return CallApiAsync<EntitiesDto>(UrlBuilder($"url={parameters.Url}", parameters));
+            return CallApiAsync<EntityExtractionDto>(UrlBuilder($"url={parameters.Url}", parameters));
         }
 
-        public static Task<EntitiesDto> GetEntitiesByHtmlAsync (EntityExtractionParameters parameters)
+        public static Task<EntityExtractionDto> GetEntitiesByHtmlAsync (EntityExtractionParameters parameters)
         {
-            return CallApiAsync<EntitiesDto>(UrlBuilder($"html={parameters.Html}", parameters));
+            return CallApiAsync<EntityExtractionDto>(UrlBuilder($"html={parameters.Html}", parameters));
         }
 
-        public static Task<EntitiesDto> GetEntitiesByHtmlFragmentAsync (EntityExtractionParameters parameters)
+        public static Task<EntityExtractionDto> GetEntitiesByHtmlFragmentAsync (EntityExtractionParameters parameters)
         {
-            return CallApiAsync<EntitiesDto>(UrlBuilder($"html_fragment={parameters.HtmlFragment}", parameters));
+            return CallApiAsync<EntityExtractionDto>(UrlBuilder($"html_fragment={parameters.HtmlFragment}", parameters));
         }
         
         private static string UrlBuilder(string source, EntityExtractionParameters parameters){
             var url = $"{Localizations.BaseUrl}/{Localizations.DataTxt}/{Localizations.EntityExtractionUri}?token={Localizations.Token}&{source}";
-            if(parameters.Lang != Language.auto)
+            if(parameters.Lang != LanguageOption.auto)
             {
                 url = $"{url}&lang={parameters.Lang}";
             }

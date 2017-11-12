@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using SpazioDati.Dandelion.Models;
 using System;
-using SpazioDati.Dandelion.Extensions;
 using System.Linq;
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Clients;
