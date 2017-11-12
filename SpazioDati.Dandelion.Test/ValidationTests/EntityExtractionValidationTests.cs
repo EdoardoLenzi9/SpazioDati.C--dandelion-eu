@@ -29,7 +29,7 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
             }
             else
             {
-                Assert.Equal($"{message}\r\nParameter name: {wrongParameter}", ex.Message);
+                Assert.Equal($"{message}{Environment.NewLine}Parameter name: {wrongParameter}", ex.Message);
             }
         }
 
