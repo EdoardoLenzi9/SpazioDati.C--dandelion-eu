@@ -1,0 +1,6 @@
+C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Business\bin\Debug\netcoreapp1.1\SpazioDati.Dandelion.Business.deps.json
+C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Business\bin\Debug\netcoreapp1.1\SpazioDati.Dandelion.Business.runtimeconfig.json
+C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Business\bin\Debug\netcoreapp1.1\SpazioDati.Dandelion.Business.runtimeconfig.dev.json
+C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Business\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Business.csprojResolveAssemblyReference.cache
+C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Business\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Business.csproj.CoreCompileInputs.cache
+C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Business\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Business.AssemblyInfo.cs
