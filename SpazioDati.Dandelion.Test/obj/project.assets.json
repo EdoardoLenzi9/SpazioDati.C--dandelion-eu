@@ -8710,11 +8710,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Code\\SpazioDati.C--dandelion-eu\\ClassLibrary1\\ClassLibrary1.csproj",
-      "projectName": "ClassLibrary1",
-      "projectPath": "C:\\Code\\SpazioDati.C--dandelion-eu\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectUniqueName": "C:\\Code\\SpazioDati.C--dandelion-eu\\SpazioDati.Dandelion.Test\\SpazioDati.Dandelion.Test.csproj",
+      "projectName": "SpazioDati.Dandelion.Test",
+      "projectPath": "C:\\Code\\SpazioDati.C--dandelion-eu\\SpazioDati.Dandelion.Test\\SpazioDati.Dandelion.Test.csproj",
       "packagesPath": "C:\\Users\\Edoardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\SpazioDati.C--dandelion-eu\\ClassLibrary1\\obj\\",
+      "outputPath": "C:\\Code\\SpazioDati.C--dandelion-eu\\SpazioDati.Dandelion.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Edoardo\\AppData\\Roaming\\NuGet\\NuGet.Config",

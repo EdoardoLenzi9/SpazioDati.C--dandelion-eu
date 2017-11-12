@@ -1,0 +1,13 @@
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\xunit.runner.utility.netcoreapp10.dll
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\ClassLibrary1.deps.json
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\ClassLibrary1.runtimeconfig.json
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\ClassLibrary1.runtimeconfig.dev.json
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\ClassLibrary1.dll
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\bin\Debug\netcoreapp1.1\ClassLibrary1.pdb
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\obj\Debug\netcoreapp1.1\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\obj\Debug\netcoreapp1.1\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\obj\Debug\netcoreapp1.1\ClassLibrary1.AssemblyInfo.cs
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\obj\Debug\netcoreapp1.1\ClassLibrary1.dll
+C:\Code\SpazioDati.C--dandelion-eu\ClassLibrary1\obj\Debug\netcoreapp1.1\ClassLibrary1.pdb
