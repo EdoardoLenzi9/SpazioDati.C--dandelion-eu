@@ -19,7 +19,6 @@ C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\bin\Debug\netcoreap
 C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\bin\Debug\netcoreapp1.1\SpazioDati.Dandelion.Test.dll
 C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\bin\Debug\netcoreapp1.1\SpazioDati.Dandelion.Test.pdb
 C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Test.csprojResolveAssemblyReference.cache
-C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Test.csproj.CoreCompileInputs.cache
 C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Test.AssemblyInfo.cs
 C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Test.dll
 C:\Code\SpazioDati.C--dandelion-eu\SpazioDati.Dandelion.Test\obj\Debug\netcoreapp1.1\SpazioDati.Dandelion.Test.pdb
