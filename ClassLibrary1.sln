@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpazioDati.Dandelion.Test", "SpazioDati.Dandelion.Test\SpazioDati.Dandelion.Test.csproj", "{23D8C3EE-4F8F-4FC8-9960-6ADD626EAC54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{72EDD1CE-4E77-4351-88EC-66930A5AABBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{23D8C3EE-4F8F-4FC8-9960-6ADD626EAC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23D8C3EE-4F8F-4FC8-9960-6ADD626EAC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23D8C3EE-4F8F-4FC8-9960-6ADD626EAC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23D8C3EE-4F8F-4FC8-9960-6ADD626EAC54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72EDD1CE-4E77-4351-88EC-66930A5AABBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72EDD1CE-4E77-4351-88EC-66930A5AABBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72EDD1CE-4E77-4351-88EC-66930A5AABBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72EDD1CE-4E77-4351-88EC-66930A5AABBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {70943F9A-647D-4CD4-8C24-F44EF1750FFC}
+		SolutionGuid = {FD88C4D0-6305-4C4C-9B3E-96EA2786E280}
 	EndGlobalSection
 EndGlobal
