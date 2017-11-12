@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Business.Clients;
-using SpazioDati.Dandelion.Extensions;
+using SpazioDati.Dandelion.Business.Extensions;
 
 namespace SpazioDati.Dandelion.Business.Services
 {

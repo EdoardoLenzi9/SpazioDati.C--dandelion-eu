@@ -1,8 +1,5 @@
-using System.Collections.Generic;
 using SpazioDati.Dandelion.Domain.Models;
 using System;
-using SpazioDati.Dandelion.Extensions;
-using System.Linq;
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Business.Clients;
 
@@ -24,7 +21,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 throw new ArgumentException("Lang can assume only en | it | auto values", "Lang");
             }
             var source = SourceValidation.verifySingleSource(parameters);
-            return ApiClient.CallApiAsync<SentimentAnalysisDto>(ApiClient.SentimentAnalysisUrlBuilder(source, parameters));
+            return _apiClient.CallApiAsync<SentimentAnalysisDto>(ApiClient.SentimentAnalysisUrlBuilder(source, parameters));
         }
         
     }
