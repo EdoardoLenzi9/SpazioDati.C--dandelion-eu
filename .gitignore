@@ -3,3 +3,5 @@ obj/
 .vscode/
 packages/
 .vs/
+Properties/
+AssemblyInfo.cs
