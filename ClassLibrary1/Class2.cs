@@ -2,7 +2,7 @@
 
 namespace MyFirstUnitTests
 {
-    public class Class1
+    public class Class2    
     {
         [Fact]
         public void PassingTest()
