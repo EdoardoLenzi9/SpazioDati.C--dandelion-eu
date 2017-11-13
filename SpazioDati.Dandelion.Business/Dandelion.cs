@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Domain.Models;
 using SpazioDati.Dandelion.Business.Services;
+using SimpleInjector;
 
 namespace SpazioDati.Dandelion
 {
@@ -13,11 +14,11 @@ namespace SpazioDati.Dandelion
         private static TextClassificationService _textClassificationService;
         private static TextSimilarityService _textSimilarityService;
         private static WikisearchService _wikisearchService;
-        private static SimpleInjector.Container _container;
+        private static Container _container;
 
         public static void Resolve()
         {
-            _container = new SimpleInjector.Container();
+            _container = new Container();
             _entityExtractionService = _container.GetInstance<EntityExtractionService>();
             _languageDetectionService = _container.GetInstance<LanguageDetectionService>();
             _sentimentAnalysisService = _container.GetInstance<SentimentAnalysisService>();

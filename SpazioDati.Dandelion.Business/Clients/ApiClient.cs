@@ -3,17 +3,21 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using SpazioDati.Dandelion.Domain.Models;
 using SpazioDati.Dandelion.Business.Extensions;
+using SimpleInjector;
 
 namespace SpazioDati.Dandelion.Business.Clients
 {
     public class ApiClient
     {
-        private static SimpleInjector.Container _container;
+        private static Container _container;
 
         public static void Init()
-        {
-            _container = _container.GetInstance();
-            _container.Register<ApiClient>(SimpleInjector.Lifestyle.Singleton);
+        { 
+            if (_container == null)
+            {
+                _container = _container.GetInstance();
+                _container.Register<ApiClient>(Lifestyle.Singleton);
+            }
         }
       
         public static string EntityExtractionUrlBuilder(string source, EntityExtractionParameters parameters){

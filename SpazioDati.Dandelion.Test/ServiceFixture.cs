@@ -1,7 +1,6 @@
 using System;
 using SpazioDati.Dandelion.Business.Services;
 using SpazioDati.Dandelion.Business.Extensions;
-using Xunit;
 using SimpleInjector;
 
 namespace FactoryMind.TrackMe.Test
@@ -16,7 +15,7 @@ namespace FactoryMind.TrackMe.Test
         public TextClassificationService TextClassificationService { get; private set; }
         public TextSimilarityService TextSimilarityService { get; private set; }
         public WikisearchService WikisearchService { get; private set; }
-        private SimpleInjector.Container _container;
+        private Container _container;
 
         public ServiceFixture()
         {
