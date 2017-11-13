@@ -13,6 +13,7 @@ namespace SpazioDati.Dandelion.Business.Extensions
             if (_container == null)
             {
                 _container = new SimpleInjector.Container();
+                //_container.Options.AllowOverridingRegistrations = true;
             }
 
             return _container; //TODO try use this as ref

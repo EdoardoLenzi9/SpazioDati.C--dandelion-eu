@@ -2,6 +2,7 @@ using System;
 using SpazioDati.Dandelion.Business.Services;
 using SpazioDati.Dandelion.Business.Extensions;
 using Xunit;
+using SimpleInjector;
 
 namespace FactoryMind.TrackMe.Test
 {
@@ -20,7 +21,8 @@ namespace FactoryMind.TrackMe.Test
         public ServiceFixture()
         {
             ServiceUtils.Init();
-            _container = _container.GetInstance(); 
+            _container = _container.GetInstance();
+
             EntityExtractionService = _container.GetInstance<EntityExtractionService>();
             LanguageDetectionService = _container.GetInstance<LanguageDetectionService>();
             SentimentAnalysisService = _container.GetInstance<SentimentAnalysisService>();
