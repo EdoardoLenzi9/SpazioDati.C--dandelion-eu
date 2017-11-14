@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SimpleInjector;
+﻿using SimpleInjector;
 
 namespace SpazioDati.Dandelion.Business.Extensions
 {

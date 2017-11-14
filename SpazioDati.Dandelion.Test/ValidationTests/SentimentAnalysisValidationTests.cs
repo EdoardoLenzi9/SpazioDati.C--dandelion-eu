@@ -12,14 +12,16 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
         private ServiceFixture _fixture;
         private SentimentAnalysisService _sentimentAnalysisService;
 
-        public SentimentAnalysisValidationTests(ServiceFixture fixture) {
+        public SentimentAnalysisValidationTests(ServiceFixture fixture)
+        {
             _fixture = fixture;
             _sentimentAnalysisService = fixture.SentimentAnalysisService;
         }
 
         [Theory]
         [MemberData(nameof(GetParameters))]
-        public async void Should_ThrowException_When_CallSentimentAnalysisWithWrongParameters(SentimentAnalysisParameters parameters, string message, string wrongParameter) {
+        public async void Should_ThrowException_When_CallSentimentAnalysisWithWrongParameters(SentimentAnalysisParameters parameters, string message, string wrongParameter)
+        {
             //Act & Assert
 
             ArgumentException ex = await Assert.ThrowsAsync<ArgumentException>(() => _sentimentAnalysisService.CallSentimentAnalysisAsync(parameters));
@@ -36,7 +38,7 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
         public static IEnumerable<object[]> GetParameters()
         {
             yield return new object[] { new SentimentAnalysisParameters(), ErrorMessages.WrongSource, "" };
-            yield return new object[] { new SentimentAnalysisParameters { Text = "Text", Lang = LanguageOption.de}, ErrorMessages.WrongLang1, ErrorMessages.Lang };
+            yield return new object[] { new SentimentAnalysisParameters { Text = "Text", Lang = LanguageOption.de }, ErrorMessages.WrongLang1, ErrorMessages.Lang };
         }
     }
 }

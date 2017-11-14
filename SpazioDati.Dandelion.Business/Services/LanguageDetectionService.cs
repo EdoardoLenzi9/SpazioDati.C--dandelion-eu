@@ -13,11 +13,11 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
-        public Task<LanguageDetectionDto> CallLanguageDetectionAsync (LanguageDetectionParameters parameters)
-        {            
+        public Task<LanguageDetectionDto> CallLanguageDetectionAsync(LanguageDetectionParameters parameters)
+        {
             var source = SourceValidation.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<LanguageDetectionDto>(ApiClient.LanguageDetectionUrlBuilder(source, parameters));
         }
-        
+
     }
 }

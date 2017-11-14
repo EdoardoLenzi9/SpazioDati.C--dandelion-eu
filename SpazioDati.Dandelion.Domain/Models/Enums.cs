@@ -5,19 +5,19 @@ namespace SpazioDati.Dandelion.Domain.Models
     [Flags]
     public enum IncludeOption
     {
-        types, 
+        types,
         @abstract, //need @ because is a keyword
         categories,
         image,
-        lod, 
+        lod,
         alternate_labels,
-        score_details 
+        score_details
     }
 
     [Flags]
     public enum ExtraTypesOption
     {
- 	    phone, 
+        phone,
         vat
     }
 
@@ -25,51 +25,51 @@ namespace SpazioDati.Dandelion.Domain.Models
     [Flags]
     public enum LanguageOption
     {
-        de, 
-        en, 
-        es, 
-        fr, 
-        it, 
-        pt, 
-        ru, 
+        de,
+        en,
+        es,
+        fr,
+        it,
+        pt,
+        ru,
         auto
     }
 
     [Flags]
     public enum CountryOption
     {
-        AD, 
-        AE, 
-        AM, 
-        AO, 
-        AQ, 
-        AR, 
-        AU, 
-        BB, 
-        BR, 
-        BS, 
-        BY, 
-        CA, 
-        CH, 
-        CL, 
-        CN, 
-        CX, 
-        DE, 
-        FR, 
-        GB, 
-        HU, 
-        IT, 
-        JP, 
-        KR, 
-        MX, 
-        NZ, 
-        PG, 
-        PL, 
-        RE, 
-        SE, 
-        SG, 
-        US, 
-        YT, 
+        AD,
+        AE,
+        AM,
+        AO,
+        AQ,
+        AR,
+        AU,
+        BB,
+        BR,
+        BS,
+        BY,
+        CA,
+        CH,
+        CL,
+        CN,
+        CX,
+        DE,
+        FR,
+        GB,
+        HU,
+        IT,
+        JP,
+        KR,
+        MX,
+        NZ,
+        PG,
+        PL,
+        RE,
+        SE,
+        SG,
+        US,
+        YT,
         ZW
     }
 

@@ -14,15 +14,15 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
-        public Task<SentimentAnalysisDto> CallSentimentAnalysisAsync (SentimentAnalysisParameters parameters)
-        {            
-            if(parameters.Lang != LanguageOption.en && parameters.Lang != LanguageOption.it && parameters.Lang != LanguageOption.auto)
+        public Task<SentimentAnalysisDto> CallSentimentAnalysisAsync(SentimentAnalysisParameters parameters)
+        {
+            if (parameters.Lang != LanguageOption.en && parameters.Lang != LanguageOption.it && parameters.Lang != LanguageOption.auto)
             {
                 throw new ArgumentException(ErrorMessages.WrongLang1, ErrorMessages.Lang);
             }
             var source = SourceValidation.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<SentimentAnalysisDto>(ApiClient.SentimentAnalysisUrlBuilder(source, parameters));
         }
-        
+
     }
 }

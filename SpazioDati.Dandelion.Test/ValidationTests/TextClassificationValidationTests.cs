@@ -12,14 +12,16 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
         private ServiceFixture _fixture;
         private TextClassificationService _textClassificationService;
 
-        public TextClassificationValidationTests(ServiceFixture fixture) {
+        public TextClassificationValidationTests(ServiceFixture fixture)
+        {
             _fixture = fixture;
             _textClassificationService = fixture.TextClassificationService;
         }
 
         [Theory]
         [MemberData(nameof(GetParameters))]
-        public async void Should_ThrowException_When_CallTextClassificationWithWrongParameters(TextClassificationParameters parameters, string message, string wrongParameter) {
+        public async void Should_ThrowException_When_CallTextClassificationWithWrongParameters(TextClassificationParameters parameters, string message, string wrongParameter)
+        {
             //Act & Assert
 
             ArgumentException ex = await Assert.ThrowsAsync<ArgumentException>(() => _textClassificationService.CallTextClassificationAsync(parameters));
@@ -39,7 +41,7 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
             yield return new object[] { new TextClassificationParameters { Text = "Text", MinScore = -1 }, ErrorMessages.WrongMinScore, ErrorMessages.MinScore };
             yield return new object[] { new TextClassificationParameters { Text = "Text", MinScore = 2 }, ErrorMessages.WrongMinScore, ErrorMessages.MinScore };
             yield return new object[] { new TextClassificationParameters { Text = "Text", MaxAnnotations = 0 }, ErrorMessages.WrongMaxAnnotations, ErrorMessages.MaxAnnotations };
-            yield return new object[] { new TextClassificationParameters { Text = "Text", Include = new List<IncludeOption>() { IncludeOption.image} }, ErrorMessages.WrongInclude2, ErrorMessages.Include };
+            yield return new object[] { new TextClassificationParameters { Text = "Text", Include = new List<IncludeOption>() { IncludeOption.image } }, ErrorMessages.WrongInclude2, ErrorMessages.Include };
         }
     }
 }

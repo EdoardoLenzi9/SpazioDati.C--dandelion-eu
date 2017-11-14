@@ -13,11 +13,11 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
-        public Task<TextSimilarityDto> CallTextSimilaritiesAsync (TextSimilarityParameters parameters)
-        {            
+        public Task<TextSimilarityDto> CallTextSimilaritiesAsync(TextSimilarityParameters parameters)
+        {
             var source = SourceValidation.verifyMultipleSources(parameters);
             return _apiClient.CallApiAsync<TextSimilarityDto>(ApiClient.TextSimilarityUrlBuilder(source, parameters));
         }
-        
+
     }
 }

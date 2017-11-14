@@ -16,20 +16,20 @@ namespace SpazioDati.Dandelion
         private static WikisearchService _wikisearchService;
         private static Container _container;
 
-        public static void Resolve()
+        private static void Resolve()
         {
+            ServiceUtils.Init();
             _container = new Container();
             _entityExtractionService = _container.GetInstance<EntityExtractionService>();
             _languageDetectionService = _container.GetInstance<LanguageDetectionService>();
             _sentimentAnalysisService = _container.GetInstance<SentimentAnalysisService>();
             _textClassificationService = _container.GetInstance<TextClassificationService>();
             _textSimilarityService = _container.GetInstance<TextSimilarityService>();
-             _wikisearchService = _container.GetInstance<WikisearchService>();
+            _wikisearchService = _container.GetInstance<WikisearchService>();
         }
 
         public Dandelion() 
         {
-            ServiceUtils.Init();
             Resolve();
         }
 

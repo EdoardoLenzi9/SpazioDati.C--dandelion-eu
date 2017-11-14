@@ -15,23 +15,23 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
-        public Task<TextClassificationDto> CallTextClassificationAsync (TextClassificationParameters parameters) 
-        {            
+        public Task<TextClassificationDto> CallTextClassificationAsync(TextClassificationParameters parameters)
+        {
             //TODO controllo models https://dandelion.eu/docs/api/datatxt/cl/models/v1/
-            if(parameters.MinScore < 0.0 || parameters.MinScore > 1.0)
+            if (parameters.MinScore < 0.0 || parameters.MinScore > 1.0)
             {
                 throw new ArgumentException(ErrorMessages.WrongMinScore, ErrorMessages.MinScore);
             }
-            if(parameters.MaxAnnotations < 1) 
+            if (parameters.MaxAnnotations < 1)
             {
                 throw new ArgumentException(ErrorMessages.WrongMaxAnnotations, ErrorMessages.MaxAnnotations);
             }
-            if(parameters.Include != null)
+            if (parameters.Include != null)
             {
-                if(parameters.Include.FindAll(x => x != IncludeOption.score_details).ToList().Count > 0)
+                if (parameters.Include.FindAll(x => x != IncludeOption.score_details).ToList().Count > 0)
                 {
                     throw new ArgumentException(ErrorMessages.WrongInclude2, ErrorMessages.Include);
-                }       
+                }
             }
             var source = SourceValidation.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<TextClassificationDto>(ApiClient.TextClassificationUrlBuilder(source, parameters));

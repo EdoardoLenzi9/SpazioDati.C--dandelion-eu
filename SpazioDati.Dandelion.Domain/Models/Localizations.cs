@@ -17,7 +17,8 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string Url = "https://dandelion.eu/docs/api/datatxt/sim/v1/";
     }
 
-    public class ErrorMessages {
+    public class ErrorMessages
+    {
         public static string InvalidToken = "Invalid token";
         public static string WrongEpsilon = "Epsilon must be between 0.0 and 0.5";
         public static string WrongTopEntities = "TopEntities cannot be negative";
@@ -36,11 +37,11 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string WrongMinScore = "MinScore must be between 0.0 and 1.0";
         public static string WrongMaxAnnotations = "MaxAnnotations must be greater than 0";
         public static string WrongLimit = "Limit must be between 1 and 50";
-        
+
         public static string Token = "Token";
         public static string Epsilon = "Epsilon";
         public static string TopEntities = "TopEntities";
-        public static string MinConfidence = "MinConfidence";   
+        public static string MinConfidence = "MinConfidence";
         public static string MinLength = "MinLength";
         public static string Include = "Include";
         public static string Lang = "Lang";
@@ -55,7 +56,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string Url2 = "Url2";
         public static string Html2 = "Html2";
         public static string HtmlFragment2 = "HtmlFragment2";
-        
+
     }
 
     public class DefaultValues
@@ -64,18 +65,18 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static int TopEntities = 0;
         public static double MinConfidence = 0.6;
         public static int MinLength = 2;
-        public static bool SocialHashtag = false;  
+        public static bool SocialHashtag = false;
         public static bool SocialMention = false;
         public static List<IncludeOption> Include = null;
         public static List<ExtraTypesOption> ExtraTypes = null;
         public static string CustomSpots = "";
-        public static BowOption Bow = BowOption.never;      
+        public static BowOption Bow = BowOption.never;
         public static double MinScore = 0.0;
         public static int? MaxAnnotations = null;
-        public static bool Clean = false;  
-        public static LanguageOption WikiLang = LanguageOption.en; 
-        public static int Limit = 10; 
+        public static bool Clean = false;
+        public static LanguageOption WikiLang = LanguageOption.en;
+        public static int Limit = 10;
         public static int Offset = 0;
-        public static QueryOption Query = QueryOption.full;                                                                                   
+        public static QueryOption Query = QueryOption.full;
     }
 }

@@ -4,12 +4,14 @@ namespace SpazioDati.Dandelion.Business.Extensions
 {
     public static class RedundancyList
     {
-        public static bool hasDuplicates<T>(this List<T> list) {
-            if(list != null)
+        public static bool hasDuplicates<T>(this List<T> list)
+        {
+            if (list != null)
             {
                 var hs = new HashSet<T>();
 
-                for (var i = 0; i < list.Count; ++i) {
+                for (var i = 0; i < list.Count; ++i)
+                {
                     if (!hs.Add(list[i])) return true;
                 }
             }

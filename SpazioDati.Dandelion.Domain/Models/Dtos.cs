@@ -44,36 +44,43 @@ namespace SpazioDati.Dandelion.Domain.Models
         public List<Category> Categories;
     }
 
-    public class Category{
+    public class Category
+    {
         public string Name;
         public double Score;
         public List<ScoreDetail> ScoreDetails;
     }
 
-    public class ScoreDetail{
+    public class ScoreDetail
+    {
         public string Entity;
         public double Weight;
     }
 
-    public class LanguageDetectionDto : ResponseDto{
+    public class LanguageDetectionDto : ResponseDto
+    {
         public List<DetectedLang> DetectedLangs;
     }
 
-    public class DetectedLang{
+    public class DetectedLang
+    {
         public LanguageOption Lang;
         public double Confidence;
     }
 
-    public class SentimentAnalysisDto : ResponseDto{
+    public class SentimentAnalysisDto : ResponseDto
+    {
         public Sentiment Sentiment;
     }
 
-    public class Sentiment{
+    public class Sentiment
+    {
         public double score;
-        public string type; //make enum
+        public string type; //TODO make enum
     }
 
-    public class WikisearchDto{
+    public class WikisearchDto
+    {
         public DateTime Timestamp;
         public int Time;
         public int Count;
@@ -82,25 +89,28 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Query;
     }
 
-    public class Entity{
+    public class Entity
+    {
         public double Weight;
         public int Id;
         public string Title;
         public string Uri;
         public string Label;
-        public List<Type> Types; 
+        public List<Type> Types;
         public List<Category> Categories;
         public string Abstract;
         public Lod Lod;
-        public Image Image; 
+        public Image Image;
     }
 
-    public class Lod{
+    public class Lod
+    {
         public string Wikipedia;
         public string DbPedia;
     }
 
-    public class Image{
+    public class Image
+    {
         public string Full;
         public string Thumbnail;
     }

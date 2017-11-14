@@ -12,14 +12,16 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
         private ServiceFixture _fixture;
         private EntityExtractionService _entityExtractionService;
 
-        public EntityExtractionValidationTests(ServiceFixture fixture) {
+        public EntityExtractionValidationTests(ServiceFixture fixture)  
+        {
             _fixture = fixture;
             _entityExtractionService = fixture.EntityExtractionService;
         }
 
         [Theory]
         [MemberData(nameof(GetParameters))]
-        public async void Should_ThrowException_When_CallEntityExtractionWithWrongParameters(EntityExtractionParameters parameters, string message, string wrongParameter) {
+        public async void Should_ThrowException_When_CallEntityExtractionWithWrongParameters(EntityExtractionParameters parameters, string message, string wrongParameter)
+        {
             //Act & Assert
 
             ArgumentException ex = await Assert.ThrowsAsync<ArgumentException>(() => _entityExtractionService.CallEntityExtractionAsync(parameters));
@@ -35,14 +37,14 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
 
         public static IEnumerable<object[]> GetParameters()
         {
-            yield return new object[] { new EntityExtractionParameters (), ErrorMessages.WrongSource, "" };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", Epsilon = -1}, ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon };
+            yield return new object[] { new EntityExtractionParameters(), ErrorMessages.WrongSource, "" };
+            yield return new object[] { new EntityExtractionParameters { Text = "Text", Epsilon = -1 }, ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon };
             yield return new object[] { new EntityExtractionParameters { Text = "Text", Epsilon = 1 }, ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon };
             yield return new object[] { new EntityExtractionParameters { Text = "Text", TopEntities = -1 }, ErrorMessages.WrongTopEntities, ErrorMessages.TopEntities };
             yield return new object[] { new EntityExtractionParameters { Text = "Text", MinConfidence = -1 }, ErrorMessages.WrongMinConfidence, ErrorMessages.MinConfidence };
             yield return new object[] { new EntityExtractionParameters { Text = "Text", MinConfidence = 2 }, ErrorMessages.WrongMinConfidence, ErrorMessages.MinConfidence };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", MinLength = 1 }, ErrorMessages.WrongMinLength, ErrorMessages.MinLength};
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", Include = new List<IncludeOption> {IncludeOption.score_details } }, ErrorMessages.WrongInclude1, ErrorMessages.Include};
+            yield return new object[] { new EntityExtractionParameters { Text = "Text", MinLength = 1 }, ErrorMessages.WrongMinLength, ErrorMessages.MinLength };
+            yield return new object[] { new EntityExtractionParameters { Text = "Text", Include = new List<IncludeOption> { IncludeOption.score_details } }, ErrorMessages.WrongInclude1, ErrorMessages.Include };
         }
     }
 }
