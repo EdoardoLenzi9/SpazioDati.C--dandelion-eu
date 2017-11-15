@@ -1,11 +1,25 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Domain.Models;
 using SpazioDati.Dandelion.Business.Services;
 using SimpleInjector;
+using Newtonsoft.Json;
 
-namespace SpazioDati.Dandelion.Business
+namespace SpazioDati.Dandelion.ConsoleApp
 {
+    public class Program{
+        public static void Main(){
+            MainAsync().Wait();
+        }
+
+        public static async Task MainAsync() {
+            new Dandelion();
+            var a = JsonConvert.SerializeObject(await Dandelion.GetEntitiesAsync(new EntityExtractionParameters() { Text = "ronaldo & ronaldinho", Lang = LanguageOption.it }));
+            Debug.WriteLine("\n\n\n Ciaooo\n" + a);
+        }
+    }
+
     public class Dandelion
     {
         private static EntityExtractionService _entityExtractionService;
@@ -28,54 +42,54 @@ namespace SpazioDati.Dandelion.Business
             _wikisearchService = _container.GetInstance<WikisearchService>();
         }
 
-        public Dandelion() 
+        public Dandelion()
         {
             Resolve();
         }
 
         public static void SetToken(string token)
         { //need more security, dependency injection
-            if(String.IsNullOrEmpty(token) && String.IsNullOrEmpty(Localizations.Token))         //cambiare metodi statici
+            if (String.IsNullOrEmpty(token) && String.IsNullOrEmpty(Localizations.Token))         //cambiare metodi statici
             {
                 throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
             }
-            if(!String.IsNullOrEmpty(token))
+            if (!String.IsNullOrEmpty(token))
             {
                 Localizations.Token = token;
             }
         }
 
-        public static Task<EntityExtractionDto> GetEntitiesAsync (EntityExtractionParameters parameters, string token = "")
+        public static Task<EntityExtractionDto> GetEntitiesAsync(EntityExtractionParameters parameters, string token = "")
         {
             SetToken(token);
             return _entityExtractionService.CallEntityExtractionAsync(parameters);
         }
 
-        public static Task<TextSimilarityDto> GetSimilaritiesAsync (TextSimilarityParameters parameters, string token = "")
+        public static Task<TextSimilarityDto> GetSimilaritiesAsync(TextSimilarityParameters parameters, string token = "")
         {
             SetToken(token);
             return _textSimilarityService.CallTextSimilaritiesAsync(parameters);
         }
 
-        public static Task<TextClassificationDto> ClassifyTextAsync (TextClassificationParameters parameters, string token = "")
+        public static Task<TextClassificationDto> ClassifyTextAsync(TextClassificationParameters parameters, string token = "")
         {
             SetToken(token);
             return _textClassificationService.CallTextClassificationAsync(parameters);
         }
 
-        public static Task<LanguageDetectionDto> DetectLanguageAsync (LanguageDetectionParameters parameters, string token = "")
+        public static Task<LanguageDetectionDto> DetectLanguageAsync(LanguageDetectionParameters parameters, string token = "")
         {
             SetToken(token);
             return _languageDetectionService.CallLanguageDetectionAsync(parameters);
         }
 
-        public static Task<SentimentAnalysisDto> AnalyzeSentimentsAsync (SentimentAnalysisParameters parameters, string token = "")
+        public static Task<SentimentAnalysisDto> AnalyzeSentimentsAsync(SentimentAnalysisParameters parameters, string token = "")
         {
             SetToken(token);
             return _sentimentAnalysisService.CallSentimentAnalysisAsync(parameters);
         }
 
-        public static Task<WikisearchDto> GetWikiSearchAsync (WikisearchParameters parameters, string token = "")
+        public static Task<WikisearchDto> GetWikiSearchAsync(WikisearchParameters parameters, string token = "")
         {
             SetToken(token);
             return _wikisearchService.CallWikisearchAsync(parameters);
@@ -83,3 +97,4 @@ namespace SpazioDati.Dandelion.Business
 
     }
 }
+

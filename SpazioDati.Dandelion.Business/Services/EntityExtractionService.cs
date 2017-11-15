@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Business.Clients;
 using SpazioDati.Dandelion.Business.Extensions;
+using System.Net.Http;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
@@ -51,7 +52,8 @@ namespace SpazioDati.Dandelion.Business.Services
             }
 
             var source = SourceValidation.verifySingleSource(parameters);
-            return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUrlBuilder(source, parameters));
+            //return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUrlBuilder(source, parameters));
+            return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUriBuilder(), ApiClient.EntityExtractionContentBuilder(source, parameters));
         }
     }
 }

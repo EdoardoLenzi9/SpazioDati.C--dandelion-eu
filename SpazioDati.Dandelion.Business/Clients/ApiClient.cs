@@ -4,12 +4,20 @@ using Newtonsoft.Json;
 using SpazioDati.Dandelion.Domain.Models;
 using SpazioDati.Dandelion.Business.Extensions;
 using SimpleInjector;
+using System;
+using System.Collections.Generic;
 
 namespace SpazioDati.Dandelion.Business.Clients
 {
     public class ApiClient
     {
         private static Container _container;
+        private HttpClient _client;
+
+        public ApiClient()
+        {
+            _client = new HttpClient();
+        }
 
         public static void Init()
         {
@@ -18,6 +26,57 @@ namespace SpazioDati.Dandelion.Business.Clients
                 _container = _container.GetInstance();
                 _container.Register<ApiClient>(Lifestyle.Singleton);
             }
+        }
+
+        public static List<KeyValuePair<string, string>> EntityExtractionContentBuilder(string source, EntityExtractionParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("text", parameters.Text));
+            if (parameters.Lang != DefaultValues.Lang)
+            {
+                content.Add(new KeyValuePair<string, string>("lang", $"{parameters.Lang}"));
+            }
+            if (parameters.TopEntities != DefaultValues.TopEntities)
+            {
+                content.Add(new KeyValuePair<string, string>("top_entities", $"{parameters.TopEntities}"));
+            }
+            if (parameters.MinConfidence != DefaultValues.MinConfidence)
+            {
+                content.Add(new KeyValuePair<string, string>("min_confidence", $"{parameters.MinConfidence}"));
+            }
+            if (parameters.SocialHashtag != DefaultValues.SocialHashtag)
+            {
+                content.Add(new KeyValuePair<string, string>("social.hashtag", $"{parameters.SocialHashtag}"));
+            }
+            if (parameters.SocialMention != DefaultValues.SocialMention)
+            {
+                content.Add(new KeyValuePair<string, string>("social.mention", $"{parameters.SocialMention}"));
+            }
+            if (parameters.Include != DefaultValues.Include)
+            {
+                content.Add(new KeyValuePair<string, string>("include", $"{parameters.Include}"));
+            }
+            if (parameters.ExtraTypes != DefaultValues.ExtraTypes)
+            {
+                content.Add(new KeyValuePair<string, string>("extra_types", $"{parameters.ExtraTypes}"));
+            }
+            if (parameters.Country != null)
+            {
+                content.Add(new KeyValuePair<string, string>("country", $"{parameters.Country}"));
+            }
+            if (parameters.CustomSpots != DefaultValues.CustomSpots)
+            {
+                content.Add(new KeyValuePair<string, string>("custom_spots", $"{parameters.CustomSpots}"));
+            }
+            return content;
+        }
+
+        public static string EntityExtractionUriBuilder()
+        {
+            return $"{Localizations.DataTxt}/{Localizations.EntityExtractionUri}";
+
         }
 
         public static string EntityExtractionUrlBuilder(string source, EntityExtractionParameters parameters)
@@ -136,13 +195,28 @@ namespace SpazioDati.Dandelion.Business.Clients
             return url;
         }
 
-        public Task<T> CallApiAsync<T>(string Url)
+        public Task<T> CallApiAsync<T>(string uri)
         {
+            return null;
+        }
+
+        public Task<T> CallApiAsync<T>(string uri, List<KeyValuePair<string, string>> content, HttpMethod method = null)
+        {
+            if (method == null)
+            {
+                method = HttpMethod.Post;
+            }
+
             return Task.Run(async () =>
-           {
-               var client = new HttpClient();
-               var result = await client.GetStringAsync(Url);
-               return JsonConvert.DeserializeObject<T>(result); //TODO guardare status code http call
+            {
+                _client.BaseAddress = new Uri(Localizations.BaseUrl);
+                var httpContent = new HttpRequestMessage(method, uri)
+                {
+                    Content = new FormUrlEncodedContent(content.ToArray())
+                };
+                var result = await _client.SendAsync(httpContent);
+                string resultContent = await result.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(resultContent); 
             });
         }
     }
