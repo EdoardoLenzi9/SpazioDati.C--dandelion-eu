@@ -16,7 +16,7 @@ namespace SpazioDati.Dandelion.Business.Services
         public Task<TextSimilarityDto> CallTextSimilaritiesAsync(TextSimilarityParameters parameters)
         {
             var source = SourceValidation.verifyMultipleSources(parameters);
-            return _apiClient.CallApiAsync<TextSimilarityDto>(ApiClient.TextSimilarityUrlBuilder(source, parameters));
+            return _apiClient.CallApiAsync<TextSimilarityDto>(ApiClient.TextSimilarityUriBuilder(), ApiClient.TextSimilarityContentBuilder(source, parameters));
         }
 
     }

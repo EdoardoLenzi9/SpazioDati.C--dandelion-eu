@@ -21,7 +21,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 throw new ArgumentException(ErrorMessages.WrongLang1, ErrorMessages.Lang);
             }
             var source = SourceValidation.verifySingleSource(parameters);
-            return _apiClient.CallApiAsync<SentimentAnalysisDto>(ApiClient.SentimentAnalysisUrlBuilder(source, parameters));
+            return _apiClient.CallApiAsync<SentimentAnalysisDto>(ApiClient.SentimentAnalysisUriBuilder(), ApiClient.SentimentAnalysisContentBuilder(source, parameters));
         }
 
     }

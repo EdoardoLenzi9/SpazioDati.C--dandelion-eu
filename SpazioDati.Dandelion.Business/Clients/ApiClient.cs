@@ -79,127 +79,131 @@ namespace SpazioDati.Dandelion.Business.Clients
 
         }
 
-        public static string EntityExtractionUrlBuilder(string source, EntityExtractionParameters parameters)
+        public static List<KeyValuePair<string, string>> TextSimilarityContentBuilder(string source, TextSimilarityParameters parameters)
         {
-            var url = $"{Localizations.BaseUrl}/{Localizations.DataTxt}/{Localizations.EntityExtractionUri}?token={Localizations.Token}&{source}";
-            if (parameters.Lang != DefaultValues.Lang)
-            {
-                url = $"{url}&lang={parameters.Lang}";
-            }
-            if (parameters.TopEntities != DefaultValues.TopEntities)
-            {
-                url = $"{url}&top_entities={parameters.TopEntities}";
-            }
-            if (parameters.MinConfidence != DefaultValues.MinConfidence)
-            {
-                url = $"{url}&min_confidence={parameters.MinConfidence}";
-            }
-            if (parameters.SocialHashtag != DefaultValues.SocialHashtag)
-            {
-                url = $"{url}&social.hashtag={parameters.SocialHashtag}";
-            }
-            if (parameters.SocialMention != DefaultValues.SocialMention)
-            {
-                url = $"{url}&social.mention={parameters.SocialMention}";
-            }
-            if (parameters.Include != DefaultValues.Include)
-            {
-                url = $"{url}&include={parameters.Include}";
-            }
-            if (parameters.ExtraTypes != DefaultValues.ExtraTypes)
-            {
-                url = $"{url}&extra_types={parameters.ExtraTypes}";
-            }
-            if (parameters.Country != null)
-            {
-                url = $"{url}&country={parameters.Country}";
-            }
-            if (parameters.CustomSpots != DefaultValues.CustomSpots)
-            {
-                url = $"{url}&custom_spots={parameters.CustomSpots}";
-            }
-            return url;
-        }
+            var content = new List<KeyValuePair<string, string>>();
 
-        public static string TextSimilarityUrlBuilder(string source, TextSimilarityParameters parameters)
-        {
-            var url = $"{Localizations.BaseUrl}/{Localizations.DataTxt}/{Localizations.TextSimilarity}?token={Localizations.Token}&{source}";
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            //content.Add(new KeyValuePair<string, string>("text", parameters.Text));
+
             if (parameters.Lang != DefaultValues.Lang)
             {
-                url = $"{url}&lang={parameters.Lang}";
+                content.Add(new KeyValuePair<string, string>("lang", parameters.Lang.ToString()));
             }
             if (parameters.Bow != DefaultValues.Bow)
             {
-                url = $"{url}&top_entities={parameters.Bow}";
+                content.Add(new KeyValuePair<string, string>("top_entities", parameters.Bow.ToString()));
             }
-            return url;
+            return content;
         }
 
-        public static string TextClassificationUrlBuilder(string source, TextClassificationParameters parameters)
+        public static string TextSimilarityUriBuilder()
         {
-            var url = $"{Localizations.BaseUrl}/{Localizations.DataTxt}/{Localizations.TextSimilarity}?token={Localizations.Token}&{source}&model={parameters.Model}";
+            return $"{Localizations.DataTxt}/{Localizations.TextSimilarity}";
+        }
+
+        public static List<KeyValuePair<string, string>> TextClassificationContentBuilder(string source, TextClassificationParameters parameters)
+        { 
+            var content = new List<KeyValuePair<string, string>>();
+
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("text", parameters.Text));
+
             if (parameters.MinScore != DefaultValues.MinScore)
             {
-                url = $"{url}&min_score={parameters.MinScore}";
+                content.Add(new KeyValuePair<string, string>("min_score", parameters.MinScore.ToString()));
             }
             if (parameters.MaxAnnotations != DefaultValues.MaxAnnotations)
             {
-                url = $"{url}&max_annotations={parameters.MaxAnnotations}";
+                content.Add(new KeyValuePair<string, string>("max_annotations", parameters.MaxAnnotations.ToString()));
             }
             if (parameters.Include != DefaultValues.Include) //TODO refact ogni lista
             {
-                url = $"{url}&include={parameters.Include}";
+                content.Add(new KeyValuePair<string, string>("include", parameters.Include.ToString()));
             }
-            return url;
+            return content;
         }
 
-        public static string LanguageDetectionUrlBuilder(string source, LanguageDetectionParameters parameters)
+        public static string TextClassificationUriBuilder()
         {
-            var url = $"{Localizations.BaseUrl}/{Localizations.DataTxt}/{Localizations.LanguageDetection}?token={Localizations.Token}&{source}";
+            return $"{Localizations.DataTxt}/{Localizations.TextClassification}";
+        }
+
+        public static List<KeyValuePair<string, string>> LanguageDetectionContentBuilder(string source, LanguageDetectionParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("text", parameters.Text)); //TODO switch source
+
             if (parameters.Clean != DefaultValues.Clean)
             {
-                url = $"{url}&clean={parameters.Clean}";
+                content.Add(new KeyValuePair<string, string>("clean", parameters.Clean.ToString()));
             }
-            return url;
+
+            return content;
         }
 
-        public static string SentimentAnalysisUrlBuilder(string source, SentimentAnalysisParameters parameters)
+        public static string LanguageDetectionUriBuilder()
         {
-            var url = $"{Localizations.BaseUrl}/{Localizations.DataTxt}/{Localizations.SentimentAnalysis}?token={Localizations.Token}&{source}";
+            return $"{Localizations.DataTxt}/{Localizations.LanguageDetection}";
+        }
+
+        public static List<KeyValuePair<string, string>> SentimentAnalysisContentBuilder(string source, SentimentAnalysisParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("text", parameters.Text)); //TODO switch source
+
+
             if (parameters.Lang != DefaultValues.Lang)
             {
-                url = $"{url}&lang={parameters.Lang}";
+                content.Add(new KeyValuePair<string, string>("lang", parameters.Lang.ToString()));
             }
-            return url;
+
+            return content;
         }
 
-        public static string WikisearchUrlBuilder(string source, WikisearchParameters parameters)
+        public static string SentimentAnalysisUriBuilder()
         {
-            var url = $"{Localizations.BaseUrl}/{Localizations.Datagraph}/{Localizations.WikiSearch}/?token={Localizations.Token}&{source}&lang={parameters.Lang}";
+            return $"{Localizations.DataTxt}/{Localizations.SentimentAnalysis}";
+        }
+
+        public static List<KeyValuePair<string, string>> WikisearchContentBuilder(string source, WikisearchParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("text", parameters.Text)); //TODO switch source
+
+
             if (parameters.Limit != DefaultValues.Limit)
             {
-                url = $"{url}&limit={parameters.Limit}";
+                content.Add(new KeyValuePair<string, string>("limit", parameters.Limit.ToString()));
             }
             if (parameters.Offset != DefaultValues.Offset)
             {
-                url = $"{url}&offset={parameters.Offset}";
+                content.Add(new KeyValuePair<string, string>("offset", parameters.Offset.ToString()));
             }
             if (parameters.Query != DefaultValues.Query)
             {
-                url = $"{url}&query={parameters.Query}";
+                content.Add(new KeyValuePair<string, string>("query", parameters.Query.ToString()));
             }
             if (parameters.Include != DefaultValues.Include)
             {
-                url = $"{url}&include={parameters.Include}";
+                content.Add(new KeyValuePair<string, string>("include", parameters.Include.ToString()));
             }
-            return url;
+
+            return content;
         }
 
-        public Task<T> CallApiAsync<T>(string uri)
+        public static string WikisearchUriBuilder()
         {
-            return null;
+            return $"{Localizations.Datagraph}/{Localizations.WikiSearch}";
         }
 
+        /*
         public Task<T> CallApiAsync<T>(string uri, List<KeyValuePair<string, string>> content, HttpMethod method = null)
         {
             if (method == null)
@@ -218,6 +222,23 @@ namespace SpazioDati.Dandelion.Business.Clients
                 string resultContent = await result.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(resultContent); 
             });
+        }*/
+
+        public async Task<T> CallApiAsync<T>(string uri, List<KeyValuePair<string, string>> content, HttpMethod method = null)
+        {
+            if (method == null)
+            {
+                method = HttpMethod.Post;
+            }
+
+            _client.BaseAddress = new Uri(Localizations.BaseUrl);
+            var httpContent = new HttpRequestMessage(method, uri)
+            {
+                Content = new FormUrlEncodedContent(content.ToArray())
+            };
+            var result = await _client.SendAsync(httpContent);
+            string resultContent = await result.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(resultContent);
         }
     }
 }

@@ -34,7 +34,8 @@ namespace SpazioDati.Dandelion.Business.Services
                 }
             }
             var source = SourceValidation.verifySingleSource(parameters);
-            return _apiClient.CallApiAsync<TextClassificationDto>(ApiClient.TextClassificationUrlBuilder(source, parameters));
+            return _apiClient.CallApiAsync<TextClassificationDto>(ApiClient.TextClassificationUriBuilder(), ApiClient.TextClassificationContentBuilder(source, parameters));
+
         }
     }
 }

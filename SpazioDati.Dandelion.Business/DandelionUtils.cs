@@ -6,7 +6,7 @@ using SimpleInjector;
 
 namespace SpazioDati.Dandelion.Business
 {
-    public class Dandelion
+    public class DandelionUtils
     {
         private static EntityExtractionService _entityExtractionService;
         private static LanguageDetectionService _languageDetectionService;
@@ -28,13 +28,13 @@ namespace SpazioDati.Dandelion.Business
             _wikisearchService = _container.GetInstance<WikisearchService>();
         }
 
-        public Dandelion() 
+        public DandelionUtils() 
         {
             Resolve();
         }
 
-        public static void SetToken(string token)
-        { //need more security, dependency injection
+        private static void SetToken(string token)
+        { 
             if(String.IsNullOrEmpty(token) && String.IsNullOrEmpty(Localizations.Token))         //cambiare metodi statici
             {
                 throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
