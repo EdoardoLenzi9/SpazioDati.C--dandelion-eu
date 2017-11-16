@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System;
 
 namespace SpazioDati.Dandelion.Domain.Models
 {
@@ -70,4 +69,25 @@ namespace SpazioDati.Dandelion.Domain.Models
         public QueryOption Query = QueryOption.full;
         public List<IncludeOption> Include = null;
     }
+
+    public class CustomSpotParameters
+    {
+        public string Id;
+        public DataParameters Data;
+    }
+
+    public class DataParameters
+    {
+        public string Lang;
+        public string Description;
+        public ListParameters List;
+    }
+
+    public class ListParameters
+    {
+        public string Spot;
+        public string Topic;
+        public bool Greedy = DefaultValues.Greedy;
+        public bool ExactMatch = DefaultValues.ExactMatch;
+    }    
 }

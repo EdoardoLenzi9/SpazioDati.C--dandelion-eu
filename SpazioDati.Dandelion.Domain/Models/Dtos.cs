@@ -89,6 +89,44 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Query;
     }
 
+    public class CustomSpotDto
+    {
+        public string Id;
+        public DataDto Data;
+        public DateTime Created;
+        public DateTime Modified;
+        public string DataType;
+        public DateTime Timestamp;
+    }
+
+    public class CustomSpotsListDto
+    {
+        public int Count;
+        public List<CustomSpotDto> Items;
+    }
+
+    public class DataDto {
+        public string Lang;
+        public DefaultsDto Defaults;
+        public ListDto List;
+        public string Description;
+    }
+
+    public class DefaultsDto {
+        public bool ExactMatch;
+        public bool Greedy;
+        public bool NamedEntity;
+    }
+
+    public class ListDto
+    {
+        public string Spot;
+        public string Topic;
+        public bool ExactMatch;
+        public bool Greedy;
+        public bool NamedEntity;
+    }
+
     public class Entity
     {
         public double Weight;

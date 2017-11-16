@@ -19,6 +19,10 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<EntityExtractionDto> CallEntityExtractionAsync(EntityExtractionParameters parameters)
         {
+            if (parameters == null)
+            {
+                throw new ArgumentException(ErrorMessages.MissingParameters);
+            }
             if (parameters.Epsilon < 0.0 || parameters.Epsilon > 0.5)
             {
                 throw new ArgumentException(ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon);
@@ -52,7 +56,6 @@ namespace SpazioDati.Dandelion.Business.Services
             }
 
             var source = SourceValidation.verifySingleSource(parameters);
-            //return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUrlBuilder(source, parameters));
             return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUriBuilder(), ApiClient.EntityExtractionContentBuilder(source, parameters));
         }
     }

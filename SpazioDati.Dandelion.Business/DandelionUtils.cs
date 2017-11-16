@@ -14,6 +14,7 @@ namespace SpazioDati.Dandelion.Business
         private static TextClassificationService _textClassificationService;
         private static TextSimilarityService _textSimilarityService;
         private static WikisearchService _wikisearchService;
+        private static CustomSpotService _customSpotService;
         private static Container _container;
 
         private static void Resolve()
@@ -26,6 +27,7 @@ namespace SpazioDati.Dandelion.Business
             _textClassificationService = _container.GetInstance<TextClassificationService>();
             _textSimilarityService = _container.GetInstance<TextSimilarityService>();
             _wikisearchService = _container.GetInstance<WikisearchService>();
+            _customSpotService = _container.GetInstance<CustomSpotService>();
         }
 
         public DandelionUtils() 
@@ -79,6 +81,36 @@ namespace SpazioDati.Dandelion.Business
         {
             SetToken(token);
             return _wikisearchService.CallWikisearchAsync(parameters);
+        }
+
+        public static Task<CustomSpotDto> CreateCustomSpot(CustomSpotParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customSpotService.CallCreateCustomSpotAsync(parameters);
+        }
+
+        public static Task<CustomSpotDto> ReadCustomSpot(CustomSpotParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customSpotService.CallReadCustomSpotAsync(parameters);
+        }
+
+        public static Task<CustomSpotDto> UpdateCustomSpot(CustomSpotParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customSpotService.CallUpdateCustomSpotAsync(parameters);
+        }
+
+        public static Task DeleteCustomSpot(CustomSpotParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customSpotService.CallDeleteCustomSpotAsync(parameters);
+        }
+
+        public static Task<CustomSpotsListDto> ListAllCustomSpots(CustomSpotParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customSpotService.CallListAllCustomSpotsAsync();
         }
 
     }

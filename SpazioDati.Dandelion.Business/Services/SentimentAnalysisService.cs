@@ -16,6 +16,10 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<SentimentAnalysisDto> CallSentimentAnalysisAsync(SentimentAnalysisParameters parameters)
         {
+            if (parameters == null)
+            {
+                throw new ArgumentException(ErrorMessages.MissingParameters);
+            }
             if (parameters.Lang != LanguageOption.en && parameters.Lang != LanguageOption.it && parameters.Lang != LanguageOption.auto)
             {
                 throw new ArgumentException(ErrorMessages.WrongLang1, ErrorMessages.Lang);

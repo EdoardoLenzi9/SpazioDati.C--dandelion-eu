@@ -28,12 +28,13 @@ namespace SpazioDati.Dandelion.Business.Clients
             }
         }
 
-        public static List<KeyValuePair<string, string>> EntityExtractionContentBuilder(string source, EntityExtractionParameters parameters)
+        public static List<KeyValuePair<string, string>> EntityExtractionContentBuilder(List<KeyValuePair<string, string>> source, EntityExtractionParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            content.Add(new KeyValuePair<string, string>("text", parameters.Text));
+            content.AddRange(source);
+            
             if (parameters.Lang != DefaultValues.Lang)
             {
                 content.Add(new KeyValuePair<string, string>("lang", $"{parameters.Lang}"));
@@ -79,12 +80,12 @@ namespace SpazioDati.Dandelion.Business.Clients
 
         }
 
-        public static List<KeyValuePair<string, string>> TextSimilarityContentBuilder(string source, TextSimilarityParameters parameters)
+        public static List<KeyValuePair<string, string>> TextSimilarityContentBuilder(List<KeyValuePair<string, string>> source, TextSimilarityParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            //content.Add(new KeyValuePair<string, string>("text", parameters.Text));
+            content.AddRange(source);
 
             if (parameters.Lang != DefaultValues.Lang)
             {
@@ -102,12 +103,12 @@ namespace SpazioDati.Dandelion.Business.Clients
             return $"{Localizations.DataTxt}/{Localizations.TextSimilarity}";
         }
 
-        public static List<KeyValuePair<string, string>> TextClassificationContentBuilder(string source, TextClassificationParameters parameters)
+        public static List<KeyValuePair<string, string>> TextClassificationContentBuilder(List<KeyValuePair<string, string>> source, TextClassificationParameters parameters)
         { 
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            content.Add(new KeyValuePair<string, string>("text", parameters.Text));
+            content.AddRange(source);
 
             if (parameters.MinScore != DefaultValues.MinScore)
             {
@@ -129,12 +130,12 @@ namespace SpazioDati.Dandelion.Business.Clients
             return $"{Localizations.DataTxt}/{Localizations.TextClassification}";
         }
 
-        public static List<KeyValuePair<string, string>> LanguageDetectionContentBuilder(string source, LanguageDetectionParameters parameters)
+        public static List<KeyValuePair<string, string>> LanguageDetectionContentBuilder(List<KeyValuePair<string, string>> source, LanguageDetectionParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            content.Add(new KeyValuePair<string, string>("text", parameters.Text)); //TODO switch source
+            content.AddRange(source);
 
             if (parameters.Clean != DefaultValues.Clean)
             {
@@ -149,12 +150,12 @@ namespace SpazioDati.Dandelion.Business.Clients
             return $"{Localizations.DataTxt}/{Localizations.LanguageDetection}";
         }
 
-        public static List<KeyValuePair<string, string>> SentimentAnalysisContentBuilder(string source, SentimentAnalysisParameters parameters)
+        public static List<KeyValuePair<string, string>> SentimentAnalysisContentBuilder(List<KeyValuePair<string, string>> source, SentimentAnalysisParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            content.Add(new KeyValuePair<string, string>("text", parameters.Text)); //TODO switch source
+            content.AddRange(source);
 
 
             if (parameters.Lang != DefaultValues.Lang)
@@ -170,13 +171,12 @@ namespace SpazioDati.Dandelion.Business.Clients
             return $"{Localizations.DataTxt}/{Localizations.SentimentAnalysis}";
         }
 
-        public static List<KeyValuePair<string, string>> WikisearchContentBuilder(string source, WikisearchParameters parameters)
+        public static List<KeyValuePair<string, string>> WikisearchContentBuilder(List<KeyValuePair<string, string>> source, WikisearchParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            content.Add(new KeyValuePair<string, string>("text", parameters.Text)); //TODO switch source
-
+            content.AddRange(source);
 
             if (parameters.Limit != DefaultValues.Limit)
             {
@@ -201,6 +201,41 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static string WikisearchUriBuilder()
         {
             return $"{Localizations.Datagraph}/{Localizations.WikiSearch}";
+        }
+
+        public static List<KeyValuePair<string, string>> CreateCustomSpotContentBuilder(CustomSpotParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data))); 
+            return content;
+        }
+
+        public static List<KeyValuePair<string, string>> UpdateCustomSpotContentBuilder(CustomSpotParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("id", parameters.Id));
+            content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
+            return content;
+        }
+        
+        public static List<KeyValuePair<string, string>> ReadCustomSpotContentBuilder(CustomSpotParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("id", parameters.Id));
+            return content;
+        }
+
+        public static List<KeyValuePair<string, string>> DeleteCustomSpotContentBuilder(CustomSpotParameters parameters)
+        {
+            return ReadCustomSpotContentBuilder(parameters);
+        }
+
+        public static string CustomSpotUriBuilder()
+        {
+            return $"{Localizations.DataTxt}/{Localizations.CustomSpot}";
         }
 
         /*
@@ -232,12 +267,18 @@ namespace SpazioDati.Dandelion.Business.Clients
             }
 
             _client.BaseAddress = new Uri(Localizations.BaseUrl);
-            var httpContent = new HttpRequestMessage(method, uri)
+            var httpContent = new HttpRequestMessage(method, uri);
+            if (content != null)
             {
-                Content = new FormUrlEncodedContent(content.ToArray())
-            };
+                httpContent.Content = new FormUrlEncodedContent(content.ToArray());
+            }
             var result = await _client.SendAsync(httpContent);
             string resultContent = await result.Content.ReadAsStringAsync();
+
+            if (!result.IsSuccessStatusCode)
+            {
+                throw new Exception(resultContent); //TODO forse eccessivo
+            }
             return JsonConvert.DeserializeObject<T>(resultContent);
         }
     }

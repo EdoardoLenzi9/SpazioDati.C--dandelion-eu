@@ -12,6 +12,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string LanguageDetection = "li/v1";
         public static string SentimentAnalysis = "sent/v1";
         public static string WikiSearch = "wikisearch/v1";
+        public static string CustomSpot = "custom-spots/v1";
         public static string Datagraph = "datagraph";
         public static string Token = "41d8b2b068754a9287cc3aeab1d4f079"; //TODO get set token
         public static string Url = "https://dandelion.eu/docs/api/datatxt/sim/v1/";
@@ -31,12 +32,19 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string WrongUrl = "Not well formed Url";
         public static string WrongText = "Text must be set";
         public static string WrongSource = "At least one filed between Text, Url, Html and HtmlFragment must be set";
+        public static string MultipleSources = "Only one parameter between Text, Url, Html and HtmlFragment must be set";
         public static string WrongSource1 = "Only one parameter between Text1, Url1, Html1 and HtmlFragment1 must be set";
         public static string WrongSource2 = "Only one parameter between Text2, Url2, Html2 and HtmlFragment2 must be set";
         public static string WrongSources = "Two text sources are needed";
         public static string WrongMinScore = "MinScore must be between 0.0 and 1.0";
         public static string WrongMaxAnnotations = "MaxAnnotations must be greater than 0";
         public static string WrongLimit = "Limit must be between 1 and 50";
+        public static string WrongSpot = "Spot required";
+        public static string WrongTopic = "Topic required";
+        public static string WrongId = "Id must be set";
+        public static string MissingParameters = "Missing Paramenters";
+        public static string MissingData = "Missing Data";
+        public static string MissingList = "Missing List";
 
         public static string Token = "Token";
         public static string Epsilon = "Epsilon";
@@ -50,13 +58,17 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string MinScore = "MinScore";
         public static string MaxAnnotations = "MaxAnnotations";
         public static string Limit = "Limit";
+        public static string Html = "Html";
+        public static string HtmlFragment = "HtmlFragment";
         public static string Url1 = "Url1";
         public static string Html1 = "Html1";
         public static string HtmlFragment1 = "HtmlFragment1";
         public static string Url2 = "Url2";
         public static string Html2 = "Html2";
         public static string HtmlFragment2 = "HtmlFragment2";
-
+        public static string Spot = "Spot";
+        public static string Topic = "Topic";
+        public static string Id = "Id";
     }
 
     public class DefaultValues
@@ -78,5 +90,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static int Limit = 10;
         public static int Offset = 0;
         public static QueryOption Query = QueryOption.full;
+        public static bool Greedy = false;
+        public static bool ExactMatch = false;
     }
 }
