@@ -11,7 +11,6 @@ namespace FactoryMind.TrackMe.Test
         public EntityExtractionService EntityExtractionService { get; private set; }
         public LanguageDetectionService LanguageDetectionService { get; private set; }
         public SentimentAnalysisService SentimentAnalysisService { get; private set; }
-        public SourceValidation SourceValidation { get; private set; }
         public TextClassificationService TextClassificationService { get; private set; }
         public TextSimilarityService TextSimilarityService { get; private set; }
         public WikisearchService WikisearchService { get; private set; }
@@ -25,7 +24,6 @@ namespace FactoryMind.TrackMe.Test
             EntityExtractionService = _container.GetInstance<EntityExtractionService>();
             LanguageDetectionService = _container.GetInstance<LanguageDetectionService>();
             SentimentAnalysisService = _container.GetInstance<SentimentAnalysisService>();
-            SourceValidation = _container.GetInstance<SourceValidation>();
             TextClassificationService = _container.GetInstance<TextClassificationService>();
             TextSimilarityService = _container.GetInstance<TextSimilarityService>();
             WikisearchService = _container.GetInstance<WikisearchService>();

@@ -37,7 +37,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 throw new ArgumentException(ErrorMessages.WrongLimit, ErrorMessages.Limit);
             }
 
-            var source = SourceValidation.verifySingleSource(parameters);
+            var source = SourceValidationService.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<WikisearchDto>(ApiClient.WikisearchUriBuilder(), ApiClient.WikisearchContentBuilder(source, parameters));
         }
     }

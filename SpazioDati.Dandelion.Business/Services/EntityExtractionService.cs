@@ -55,7 +55,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 parameters.ExtraTypes = parameters.ExtraTypes.Distinct().ToList();
             }
 
-            var source = SourceValidation.verifySingleSource(parameters);
+            var source = SourceValidationService.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUriBuilder(), ApiClient.EntityExtractionContentBuilder(source, parameters));
         }
     }

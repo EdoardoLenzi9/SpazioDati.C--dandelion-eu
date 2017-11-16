@@ -20,7 +20,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 throw new ArgumentException(ErrorMessages.MissingParameters);
             }
-            var source = SourceValidation.verifyMultipleSources(parameters);
+            var source = SourceValidationService.verifyMultipleSources(parameters);
             return _apiClient.CallApiAsync<TextSimilarityDto>(ApiClient.TextSimilarityUriBuilder(), ApiClient.TextSimilarityContentBuilder(source, parameters));
         }
 

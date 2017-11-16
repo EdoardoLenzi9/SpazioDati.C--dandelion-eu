@@ -6,15 +6,25 @@ using SpazioDati.Dandelion.Business;
 
 namespace SpazioDati.Dandelion.ConsoleApp
 {
-    public class Program{
+    public class Program
+    {
+        public static string Url1 = "http://milano.repubblica.it/cronaca/2017/11/16/news/divorzio_berlusconi_veronica_lario-181256569/?ref=RHPPLF-BH-I0-C8-P2-S1.8-T2";
+        public static string Url2 = "https://xunit.github.io/docs/getting-started-desktop.html";
+        public static string Text = "ronaldo & ronaldinho";
         public static void Main(){
             MainAsync().Wait();
         }
 
         public static async Task MainAsync() {
             new DandelionUtils();
-            var response = JsonConvert.SerializeObject(await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Text = "ronaldo & ronaldinho", Lang = LanguageOption.it }));
-            Debug.WriteLine("\n\n\n Response: \n\n\n" + response);
+            /*var response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url1, Lang = LanguageOption.it });
+            response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url2});
+            response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url2, Text = Text });
+            var responseJson = JsonConvert.SerializeObject(response);
+            Debug.WriteLine("\n\n\n Response: \n\n\n" + responseJson);
+             */
+            var response2 = await DandelionUtils.GetSimilaritiesAsync(new TextSimilarityParameters() { Url1 = Url1, Text1 = Text, Url2 = Url2 });
+
         }
     }
 }

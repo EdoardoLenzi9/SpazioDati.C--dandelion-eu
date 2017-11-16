@@ -265,8 +265,10 @@ namespace SpazioDati.Dandelion.Business.Clients
             {
                 method = HttpMethod.Post;
             }
-
-            _client.BaseAddress = new Uri(Localizations.BaseUrl);
+            if (_client.BaseAddress == null)
+            {
+                _client.BaseAddress = new Uri(Localizations.BaseUrl);
+            }
             var httpContent = new HttpRequestMessage(method, uri);
             if (content != null)
             {

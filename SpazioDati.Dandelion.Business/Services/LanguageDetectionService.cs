@@ -20,7 +20,7 @@ namespace SpazioDati.Dandelion.Business.Services
             {
                 throw new ArgumentException(ErrorMessages.MissingParameters);
             }
-            var source = SourceValidation.verifySingleSource(parameters);
+            var source = SourceValidationService.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<LanguageDetectionDto>(ApiClient.LanguageDetectionUriBuilder(), ApiClient.LanguageDetectionContentBuilder(source, parameters));
         }
 

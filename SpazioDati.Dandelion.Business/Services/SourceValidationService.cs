@@ -4,7 +4,7 @@ using SpazioDati.Dandelion.Domain.Models;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
-    public class SourceValidation
+    public class SourceValidationService
     {
         public static List<KeyValuePair<string, string>> verifySingleSource(SourceParameters parameters)
         { //TODO testme
@@ -15,7 +15,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 key = "text";
                 value = $"{parameters.Text}";
             }
-            else if (!String.IsNullOrEmpty(parameters.Url) && Uri.IsWellFormedUriString(parameters.Url, UriKind.RelativeOrAbsolute))
+            if (!String.IsNullOrEmpty(parameters.Url) && Uri.IsWellFormedUriString(parameters.Url, UriKind.Absolute))
             {
                 if (!String.IsNullOrEmpty(value))
                 {
@@ -24,7 +24,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 key = "url";
                 value = $"{parameters.Url}";
             }
-            else if (!String.IsNullOrEmpty(parameters.Html))
+            if (!String.IsNullOrEmpty(parameters.Html))
             {
                 if (!String.IsNullOrEmpty(value))
                 {
@@ -33,7 +33,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 key = "html";
                 value = $"{parameters.Html}";
             }
-            else if (!String.IsNullOrEmpty(parameters.HtmlFragment))
+            if (!String.IsNullOrEmpty(parameters.HtmlFragment))
             {
                 if (!String.IsNullOrEmpty(value))
                 {
@@ -74,7 +74,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 key1 = "text1";
                 value1 = $"{parameters.Text1}";
             }
-            if (!String.IsNullOrEmpty(parameters.Url1) && !Uri.IsWellFormedUriString(parameters.Url1, UriKind.RelativeOrAbsolute))
+            if (!String.IsNullOrEmpty(parameters.Url1) && Uri.IsWellFormedUriString(parameters.Url1, UriKind.Absolute))
             {
                 if (!String.IsNullOrEmpty(value1))
                 {
@@ -107,7 +107,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 key2 = "text2";
                 value2 = $"{parameters.Text2}";
             }
-            if (!String.IsNullOrEmpty(parameters.Url2) && !Uri.IsWellFormedUriString(parameters.Url2, UriKind.RelativeOrAbsolute))
+            if (!String.IsNullOrEmpty(parameters.Url2) && Uri.IsWellFormedUriString(parameters.Url2, UriKind.Absolute))
             {
                 if (!String.IsNullOrEmpty(value2))
                 {
