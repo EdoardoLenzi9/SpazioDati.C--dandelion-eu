@@ -86,6 +86,6 @@ namespace SpazioDati.Dandelion.Business.Services
         public Task<CustomSpotsListDto> CallListAllCustomSpotsAsync()
         {
             return _apiClient.CallApiAsync<CustomSpotsListDto>(ApiClient.CustomSpotUriBuilder(), null, HttpMethod.Get);
-        } 
+        }
     }
 }

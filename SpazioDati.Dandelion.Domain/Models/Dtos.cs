@@ -113,7 +113,8 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Description;
     }
 
-    public class DefaultsDto {
+    public class DefaultsDto
+    {
         public bool ExactMatch;
         public bool Greedy;
         public bool NamedEntity;
@@ -160,7 +161,8 @@ namespace SpazioDati.Dandelion.Domain.Models
         public List<CustomModelDto> Items;
     }
 
-    public class CustomModelDto {
+    public class CustomModelDto
+    {
         public string Id;
         public CustomModelDataDto Data;
         public DateTime Created;

@@ -45,7 +45,6 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
         public void Should_ThrowException_When_CallVerifyMultipleSourcesWithWrongParameters(TextSimilarityParameters parameters, string message, string wrongParameter)
         {
             //Act & Assert
-
             ArgumentException ex = Assert.Throws<ArgumentException>(() => SourceValidationService.verifyMultipleSources(parameters));
             if (String.IsNullOrEmpty(wrongParameter))
             {

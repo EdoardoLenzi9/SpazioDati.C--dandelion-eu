@@ -12,7 +12,7 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
         private ServiceFixture _fixture;
         private EntityExtractionService _entityExtractionService;
 
-        public EntityExtractionValidationTests(ServiceFixture fixture)  
+        public EntityExtractionValidationTests(ServiceFixture fixture)
         {
             _fixture = fixture;
             _entityExtractionService = fixture.EntityExtractionService;

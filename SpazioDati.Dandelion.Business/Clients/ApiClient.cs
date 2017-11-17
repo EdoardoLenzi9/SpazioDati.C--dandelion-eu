@@ -107,7 +107,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         }
 
         public static List<KeyValuePair<string, string>> TextClassificationContentBuilder(List<KeyValuePair<string, string>> source, TextClassificationParameters parameters)
-        { 
+        {
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
@@ -121,7 +121,7 @@ namespace SpazioDati.Dandelion.Business.Clients
             {
                 content.Add(new KeyValuePair<string, string>("max_annotations", parameters.MaxAnnotations.ToString()));
             }
-            if (parameters.Include != DefaultValues.Include) 
+            if (parameters.Include != DefaultValues.Include)
             {
                 content.Add(new KeyValuePair<string, string>("include", $"{String.Join(" , ", parameters.Include)}"));
             }
@@ -210,7 +210,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         {
             var content = new List<KeyValuePair<string, string>>();
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data))); 
+            content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
             return content;
         }
 
@@ -222,7 +222,7 @@ namespace SpazioDati.Dandelion.Business.Clients
             content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
             return content;
         }
-        
+
         public static List<KeyValuePair<string, string>> ReadCustomSpotContentBuilder(CustomSpotParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();

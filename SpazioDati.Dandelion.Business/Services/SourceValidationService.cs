@@ -7,7 +7,7 @@ namespace SpazioDati.Dandelion.Business.Services
     public class SourceValidationService
     {
         public static List<KeyValuePair<string, string>> verifySingleSource(SourceParameters parameters)
-        { //TODO testme
+        {
             var key = "";
             var value = "";
             if (!String.IsNullOrEmpty(parameters.Text))

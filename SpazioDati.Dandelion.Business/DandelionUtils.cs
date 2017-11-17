@@ -33,63 +33,64 @@ namespace SpazioDati.Dandelion.Business
             _customModelService = _container.GetInstance<CustomModelService>();
         }
 
-        public DandelionUtils() 
+        public DandelionUtils()
         {
             Resolve();
         }
 
         private static void SetToken(string token)
-        { 
-            if(String.IsNullOrEmpty(token) && String.IsNullOrEmpty(Localizations.Token))         //cambiare metodi statici
+        {
+            if (String.IsNullOrEmpty(token) && String.IsNullOrEmpty(Localizations.Token))         //cambiare metodi statici
             {
                 throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
             }
-            if(!String.IsNullOrEmpty(token))
+            if (!String.IsNullOrEmpty(token))
             {
                 Localizations.Token = token;
             }
         }
 
-        public static T GetParametersFromJson<T>(string jsonParamenters) {
+        public static T GetParametersFromJson<T>(string jsonParamenters)
+        {
             return JsonConvert.DeserializeObject<T>(jsonParamenters);
         }
 
-        public static Task<EntityExtractionDto> GetEntitiesAsync (EntityExtractionParameters parameters, string token = "")
+        public static Task<EntityExtractionDto> GetEntitiesAsync(EntityExtractionParameters parameters, string token = "")
         {
             SetToken(token);
             return _entityExtractionService.CallEntityExtractionAsync(parameters);
         }
 
-        public static Task<TextSimilarityDto> GetSimilaritiesAsync (TextSimilarityParameters parameters, string token = "")
+        public static Task<TextSimilarityDto> GetSimilaritiesAsync(TextSimilarityParameters parameters, string token = "")
         {
             SetToken(token);
             return _textSimilarityService.CallTextSimilaritiesAsync(parameters);
         }
 
-        public static Task<TextClassificationDto> ClassifyTextAsync (TextClassificationParameters parameters, string token = "")
+        public static Task<TextClassificationDto> ClassifyTextAsync(TextClassificationParameters parameters, string token = "")
         {
             SetToken(token);
             return _textClassificationService.CallTextClassificationAsync(parameters);
         }
 
-        public static Task<LanguageDetectionDto> DetectLanguageAsync (LanguageDetectionParameters parameters, string token = "")
+        public static Task<LanguageDetectionDto> DetectLanguageAsync(LanguageDetectionParameters parameters, string token = "")
         {
             SetToken(token);
             return _languageDetectionService.CallLanguageDetectionAsync(parameters);
         }
 
-        public static Task<SentimentAnalysisDto> AnalyzeSentimentsAsync (SentimentAnalysisParameters parameters, string token = "")
+        public static Task<SentimentAnalysisDto> AnalyzeSentimentsAsync(SentimentAnalysisParameters parameters, string token = "")
         {
             SetToken(token);
             return _sentimentAnalysisService.CallSentimentAnalysisAsync(parameters);
         }
 
-        public static Task<WikisearchDto> GetWikiSearchAsync (WikisearchParameters parameters, string token = "")
+        public static Task<WikisearchDto> GetWikiSearchAsync(WikisearchParameters parameters, string token = "")
         {
             SetToken(token);
             return _wikisearchService.CallWikisearchAsync(parameters);
         }
-        /******************************************************************************************************/
+
         public static Task<CustomSpotDto> CreateCustomSpot(CustomSpotParameters parameters, string token = "")
         {
             SetToken(token);
@@ -119,8 +120,7 @@ namespace SpazioDati.Dandelion.Business
             SetToken(token);
             return _customSpotService.CallListAllCustomSpotsAsync();
         }
-        /******************************************************************************************************/
-        //TODO call pass json string
+
         public static Task<CustomModelDto> CreateCustomModel(CustomModelParameters parameters, string token = "")
         {
             SetToken(token);

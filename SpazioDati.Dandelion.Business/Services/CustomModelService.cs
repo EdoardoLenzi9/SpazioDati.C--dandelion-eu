@@ -86,6 +86,6 @@ namespace SpazioDati.Dandelion.Business.Services
         public Task<CustomModelsListDto> CallListAllCustomModelsAsync()
         {
             return _apiClient.CallApiAsync<CustomModelsListDto>(ApiClient.CustomModelUriBuilder(), null, HttpMethod.Get);
-        } 
+        }
     }
 }

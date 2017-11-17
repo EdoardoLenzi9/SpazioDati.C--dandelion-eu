@@ -17,7 +17,6 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<TextClassificationDto> CallTextClassificationAsync(TextClassificationParameters parameters)
         {
-            //TODO controllo models https://dandelion.eu/docs/api/datatxt/cl/models/v1/
             if (parameters == null)
             {
                 throw new ArgumentException(ErrorMessages.MissingParameters);
