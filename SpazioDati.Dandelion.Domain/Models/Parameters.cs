@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace SpazioDati.Dandelion.Domain.Models
 {
@@ -8,6 +9,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Url;
         public string Html;
         public string HtmlFragment;
+        public HttpMethod HttpMethod = null;
     }
 
     public class EntityExtractionParameters : SourceParameters

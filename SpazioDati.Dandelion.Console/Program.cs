@@ -27,7 +27,7 @@ namespace SpazioDati.Dandelion.ConsoleApp
             var responseJson = JsonConvert.SerializeObject(response);
             Debug.WriteLine("\n\n\n Response: \n\n\n" + responseJson);
 
-            var response2 = await DandelionUtils.GetSimilaritiesAsync(new TextSimilarityParameters() { Url1 = Url1, Text1 = Text, Url2 = Url2 });
+            //var response2 = await DandelionUtils.GetSimilaritiesAsync(new TextSimilarityParameters() { Url1 = Url1, Text1 = Text, Url2 = Url2 });
 
         }
     }
