@@ -34,7 +34,10 @@ namespace SpazioDati.Dandelion.Business.Clients
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
             content.AddRange(source);
-            
+            if (parameters.Epsilon != DefaultValues.Epsilon)
+            {
+                content.Add(new KeyValuePair<string, string>("epsilon", $"{parameters.Epsilon}"));
+            }
             if (parameters.Lang != DefaultValues.Lang)
             {
                 content.Add(new KeyValuePair<string, string>("lang", $"{parameters.Lang}"));
@@ -63,7 +66,7 @@ namespace SpazioDati.Dandelion.Business.Clients
             {
                 content.Add(new KeyValuePair<string, string>("extra_types", $"{parameters.ExtraTypes}"));
             }
-            if (parameters.Country != null)
+            if (parameters.Country != DefaultValues.Country)
             {
                 content.Add(new KeyValuePair<string, string>("country", $"{parameters.Country}"));
             }
@@ -236,6 +239,41 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static string CustomSpotUriBuilder()
         {
             return $"{Localizations.DataTxt}/{Localizations.CustomSpot}";
+        }
+
+        public static List<KeyValuePair<string, string>> CreateCustomModelContentBuilder(CustomModelParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
+            return content;
+        }
+
+        public static List<KeyValuePair<string, string>> UpdateCustomModelContentBuilder(CustomModelParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("id", parameters.Id));
+            content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
+            return content;
+        }
+
+        public static List<KeyValuePair<string, string>> ReadCustomModelContentBuilder(CustomModelParameters parameters)
+        {
+            var content = new List<KeyValuePair<string, string>>();
+            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("id", parameters.Id));
+            return content;
+        }
+
+        public static List<KeyValuePair<string, string>> DeleteCustomModelContentBuilder(CustomModelParameters parameters)
+        {
+            return ReadCustomModelContentBuilder(parameters);
+        }
+
+        public static string CustomModelUriBuilder()
+        {
+            return $"{Localizations.DataTxt}/{Localizations.CustomModel}";
         }
 
         /*

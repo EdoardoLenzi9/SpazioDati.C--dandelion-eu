@@ -13,6 +13,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string SentimentAnalysis = "sent/v1";
         public static string WikiSearch = "wikisearch/v1";
         public static string CustomSpot = "custom-spots/v1";
+        public static string CustomModel = "cl/models/v1";
         public static string Datagraph = "datagraph";
         public static string Token = "41d8b2b068754a9287cc3aeab1d4f079"; //TODO get set token
         public static string Url = "https://dandelion.eu/docs/api/datatxt/sim/v1/";
@@ -45,6 +46,8 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string MissingParameters = "Missing Paramenters";
         public static string MissingData = "Missing Data";
         public static string MissingList = "Missing List";
+        public static string EmptyList = "Empty List";
+        public static string MissingCategories = "Missing Categories";
 
         public static string Token = "Token";
         public static string Epsilon = "Epsilon";
@@ -69,6 +72,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string Spot = "Spot";
         public static string Topic = "Topic";
         public static string Id = "Id";
+        public static string List = "List";
+        public static string Categories = "Categories";
+        public static string Data = "Data";
     }
 
     public class DefaultValues
@@ -92,5 +98,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static QueryOption Query = QueryOption.full;
         public static bool Greedy = false;
         public static bool ExactMatch = false;
+        public static double Epsilon = 0.3;
+        public static CountryOption? Country = null;
     }
 }

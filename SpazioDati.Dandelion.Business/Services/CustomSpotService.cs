@@ -23,19 +23,15 @@ namespace SpazioDati.Dandelion.Business.Services
             }
             if (parameters.Data == null)
             {
-                throw new ArgumentException(ErrorMessages.MissingData);
+                throw new ArgumentException(ErrorMessages.MissingData, ErrorMessages.Data);
             }
             if (parameters.Data.List == null)
             {
-                throw new ArgumentException(ErrorMessages.MissingList);
+                throw new ArgumentException(ErrorMessages.MissingList, ErrorMessages.List);
             }
-            if (string.IsNullOrEmpty(parameters.Data.List.Spot))
+            if (parameters.Data.List.Count <= 0)
             {
-                throw new ArgumentException(ErrorMessages.WrongSpot, ErrorMessages.Spot);
-            }
-            if (string.IsNullOrEmpty(parameters.Data.List.Topic))
-            {
-                throw new ArgumentException(ErrorMessages.WrongTopic, ErrorMessages.Topic);
+                throw new ArgumentException(ErrorMessages.EmptyList, ErrorMessages.List);
             }
 
             return _apiClient.CallApiAsync<CustomSpotDto>(ApiClient.CustomSpotUriBuilder(), ApiClient.CreateCustomSpotContentBuilder(parameters), HttpMethod.Post);
@@ -59,19 +55,15 @@ namespace SpazioDati.Dandelion.Business.Services
             }
             if (parameters.Data == null)
             {
-                throw new ArgumentException(ErrorMessages.MissingData);
+                throw new ArgumentException(ErrorMessages.MissingData, ErrorMessages.Data);
             }
             if (parameters.Data.List == null)
             {
-                throw new ArgumentException(ErrorMessages.MissingList);
+                throw new ArgumentException(ErrorMessages.MissingList, ErrorMessages.List);
             }
-            if (string.IsNullOrEmpty(parameters.Data.List.Spot))
+            if (parameters.Data.List.Count <= 0)
             {
-                throw new ArgumentException(ErrorMessages.WrongSpot, ErrorMessages.Spot);
-            }
-            if (string.IsNullOrEmpty(parameters.Data.List.Topic))
-            {
-                throw new ArgumentException(ErrorMessages.WrongTopic, ErrorMessages.Topic);
+                throw new ArgumentException(ErrorMessages.EmptyList, ErrorMessages.List);
             }
             if (string.IsNullOrEmpty(parameters.Id))
             {

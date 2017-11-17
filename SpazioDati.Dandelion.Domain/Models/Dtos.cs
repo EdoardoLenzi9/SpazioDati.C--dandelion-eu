@@ -92,7 +92,7 @@ namespace SpazioDati.Dandelion.Domain.Models
     public class CustomSpotDto
     {
         public string Id;
-        public DataDto Data;
+        public CustomSpotsDataDto Data;
         public DateTime Created;
         public DateTime Modified;
         public string DataType;
@@ -105,7 +105,8 @@ namespace SpazioDati.Dandelion.Domain.Models
         public List<CustomSpotDto> Items;
     }
 
-    public class DataDto {
+    public class CustomSpotsDataDto
+    {
         public string Lang;
         public DefaultsDto Defaults;
         public ListDto List;
@@ -151,5 +152,31 @@ namespace SpazioDati.Dandelion.Domain.Models
     {
         public string Full;
         public string Thumbnail;
+    }
+
+    public class CustomModelsListDto
+    {
+        public int Count;
+        public List<CustomModelDto> Items;
+    }
+
+    public class CustomModelDto {
+        public string Id;
+        public CustomModelDataDto Data;
+        public DateTime Created;
+        public DateTime Modified;
+    }
+
+    public class CustomModelDataDto
+    {
+        public string Lang;
+        public List<CategoriesDto> Categories;
+        public string Description;
+    }
+
+    public class CategoriesDto
+    {
+        public string Name;
+        public Dictionary<string, float> Topics;
     }
 }

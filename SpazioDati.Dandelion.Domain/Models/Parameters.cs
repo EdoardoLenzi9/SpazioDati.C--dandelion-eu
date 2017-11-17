@@ -12,17 +12,17 @@ namespace SpazioDati.Dandelion.Domain.Models
 
     public class EntityExtractionParameters : SourceParameters
     {
-        public LanguageOption Lang = LanguageOption.auto;
-        public int TopEntities = 0;
-        public double MinConfidence = 0.6;
-        public int MinLength = 2;
-        public bool SocialHashtag = false;
-        public bool SocialMention = false;
-        public List<IncludeOption> Include = null;
-        public List<ExtraTypesOption> ExtraTypes = null;
-        public CountryOption? Country = null;
-        public string CustomSpots = "";
-        public double Epsilon = 0.3;
+        public LanguageOption Lang = DefaultValues.Lang;
+        public int TopEntities = DefaultValues.TopEntities;
+        public double MinConfidence = DefaultValues.MinConfidence;
+        public int MinLength = DefaultValues.MinLength;
+        public bool SocialHashtag = DefaultValues.SocialHashtag;
+        public bool SocialMention = DefaultValues.SocialMention;
+        public List<IncludeOption> Include = DefaultValues.Include;
+        public List<ExtraTypesOption> ExtraTypes = DefaultValues.ExtraTypes;
+        public CountryOption? Country = DefaultValues.Country;
+        public string CustomSpots = DefaultValues.CustomSpots;
+        public double Epsilon = DefaultValues.Epsilon;
     }
 
     public class TextSimilarityParameters
@@ -38,56 +38,75 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Html2;
         public string HtmlFragment1;
         public string HtmlFragment2;
-        public LanguageOption Lang = LanguageOption.auto;
-        public BowOption Bow = BowOption.never;
+        public LanguageOption Lang = DefaultValues.Lang;
+        public BowOption Bow = DefaultValues.Bow;
     }
 
     public class TextClassificationParameters : SourceParameters
     {
         public int Model;
-        public double MinScore = 0.0;
-        public int? MaxAnnotations = null;
-        public List<IncludeOption> Include = null;
+        public double MinScore = DefaultValues.MinScore;
+        public int? MaxAnnotations = DefaultValues.MaxAnnotations;
+        public List<IncludeOption> Include = DefaultValues.Include;
     }
 
     public class LanguageDetectionParameters : SourceParameters
     {
-        public bool Clean = false;
+        public bool Clean = DefaultValues.Clean;
     }
 
     public class SentimentAnalysisParameters : SourceParameters
     {
-        public LanguageOption Lang = LanguageOption.auto;
+        public LanguageOption Lang = DefaultValues.Lang;
     }
 
     public class WikisearchParameters
     {
         public string Text;
         public LanguageOption Lang = LanguageOption.en;
-        public int Limit = 10;
-        public int Offset = 0;
-        public QueryOption Query = QueryOption.full;
-        public List<IncludeOption> Include = null;
+        public int Limit = DefaultValues.Limit;
+        public int Offset = DefaultValues.Offset;
+        public QueryOption Query = DefaultValues.Query;
+        public List<IncludeOption> Include = DefaultValues.Include;
     }
 
     public class CustomSpotParameters
     {
         public string Id;
-        public DataParameters Data;
+        public CustomSpotDataParameters Data;
     }
 
-    public class DataParameters
+    public class CustomSpotDataParameters
     {
-        public string Lang;
+        public LanguageOption Lang;
         public string Description;
-        public ListParameters List;
+        public List<CustomSpotListParameters> List;
     }
 
-    public class ListParameters
+    public class CustomSpotListParameters
     {
         public string Spot;
         public string Topic;
         public bool Greedy = DefaultValues.Greedy;
         public bool ExactMatch = DefaultValues.ExactMatch;
-    }    
+    }
+
+    public class CustomModelParameters
+    {
+        public string Id;
+        public CustomModelDataParameters Data;
+    }
+
+    public class CustomModelDataParameters
+    {
+        public LanguageOption Lang;
+        public string Description;
+        public List<CustomModelCategoryParameters> Categories;
+    }
+
+    public class CustomModelCategoryParameters
+    {
+        public string Name;
+        public Dictionary<string, double> Topics;
+    }
 }

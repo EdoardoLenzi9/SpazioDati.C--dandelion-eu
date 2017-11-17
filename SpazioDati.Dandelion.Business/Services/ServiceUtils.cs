@@ -20,6 +20,7 @@ namespace SpazioDati.Dandelion.Business.Services
                 _container.Register<TextSimilarityService>(Lifestyle.Singleton);
                 _container.Register<WikisearchService>(Lifestyle.Singleton);
                 _container.Register<CustomSpotService>(Lifestyle.Singleton);
+                _container.Register<CustomModelService>(Lifestyle.Singleton);
                 _container.Register<ApiClient>(Lifestyle.Singleton);
                 ApiClient.Init();
             }

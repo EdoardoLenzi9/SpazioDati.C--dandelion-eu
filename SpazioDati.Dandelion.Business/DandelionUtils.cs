@@ -15,6 +15,7 @@ namespace SpazioDati.Dandelion.Business
         private static TextSimilarityService _textSimilarityService;
         private static WikisearchService _wikisearchService;
         private static CustomSpotService _customSpotService;
+        private static CustomModelService _customModelService;
         private static Container _container;
 
         private static void Resolve()
@@ -28,6 +29,7 @@ namespace SpazioDati.Dandelion.Business
             _textSimilarityService = _container.GetInstance<TextSimilarityService>();
             _wikisearchService = _container.GetInstance<WikisearchService>();
             _customSpotService = _container.GetInstance<CustomSpotService>();
+            _customModelService = _container.GetInstance<CustomModelService>();
         }
 
         public DandelionUtils() 
@@ -82,7 +84,7 @@ namespace SpazioDati.Dandelion.Business
             SetToken(token);
             return _wikisearchService.CallWikisearchAsync(parameters);
         }
-
+        /******************************************************************************************************/
         public static Task<CustomSpotDto> CreateCustomSpot(CustomSpotParameters parameters, string token = "")
         {
             SetToken(token);
@@ -112,6 +114,36 @@ namespace SpazioDati.Dandelion.Business
             SetToken(token);
             return _customSpotService.CallListAllCustomSpotsAsync();
         }
+        /******************************************************************************************************/
+        //TODO call pass json string
+        public static Task<CustomModelDto> CreateCustomModel(CustomModelParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customModelService.CallCreateCustomModelAsync(parameters);
+        }
 
+        public static Task<CustomModelDto> ReadCustomModel(CustomModelParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customModelService.CallReadCustomModelAsync(parameters);
+        }
+
+        public static Task<CustomModelDto> UpdateCustomModel(CustomModelParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customModelService.CallUpdateCustomModelAsync(parameters);
+        }
+
+        public static Task DeleteCustomModel(CustomModelParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customModelService.CallDeleteCustomModelAsync(parameters);
+        }
+
+        public static Task<CustomModelsListDto> ListAllCustomModels(CustomModelParameters parameters, string token = "")
+        {
+            SetToken(token);
+            return _customModelService.CallListAllCustomModelsAsync();
+        }
     }
 }
