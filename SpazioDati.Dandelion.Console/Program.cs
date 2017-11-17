@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using SpazioDati.Dandelion.Domain.Models;
 using Newtonsoft.Json;
 using SpazioDati.Dandelion.Business;
+using System.Collections.Generic;
 
 namespace SpazioDati.Dandelion.ConsoleApp
 {
@@ -17,12 +18,13 @@ namespace SpazioDati.Dandelion.ConsoleApp
 
         public static async Task MainAsync() {
             new DandelionUtils();
-            /*var response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url1, Lang = LanguageOption.it });
+            var response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Include = new List<IncludeOption> { IncludeOption.image, IncludeOption.categories, IncludeOption.lod }, Url = Url1, Lang = LanguageOption.it });
+            /*response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url1, Lang = LanguageOption.it });
             response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url2});
-            response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url2, Text = Text });
+            response = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() { Url = Url2, Text = Text });*/
             var responseJson = JsonConvert.SerializeObject(response);
             Debug.WriteLine("\n\n\n Response: \n\n\n" + responseJson);
-             */
+             
             var response2 = await DandelionUtils.GetSimilaritiesAsync(new TextSimilarityParameters() { Url1 = Url1, Text1 = Text, Url2 = Url2 });
 
         }

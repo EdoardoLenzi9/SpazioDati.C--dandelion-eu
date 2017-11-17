@@ -60,11 +60,11 @@ namespace SpazioDati.Dandelion.Business.Clients
             }
             if (parameters.Include != DefaultValues.Include)
             {
-                content.Add(new KeyValuePair<string, string>("include", $"{parameters.Include}"));
+                content.Add(new KeyValuePair<string, string>("include", $"{String.Join(" , ", parameters.Include)}"));
             }
             if (parameters.ExtraTypes != DefaultValues.ExtraTypes)
             {
-                content.Add(new KeyValuePair<string, string>("extra_types", $"{parameters.ExtraTypes}"));
+                content.Add(new KeyValuePair<string, string>("extra_types", $"{String.Join(" , ", parameters.ExtraTypes)}"));
             }
             if (parameters.Country != DefaultValues.Country)
             {
@@ -121,9 +121,9 @@ namespace SpazioDati.Dandelion.Business.Clients
             {
                 content.Add(new KeyValuePair<string, string>("max_annotations", parameters.MaxAnnotations.ToString()));
             }
-            if (parameters.Include != DefaultValues.Include) //TODO refact ogni lista
+            if (parameters.Include != DefaultValues.Include) 
             {
-                content.Add(new KeyValuePair<string, string>("include", parameters.Include.ToString()));
+                content.Add(new KeyValuePair<string, string>("include", $"{String.Join(" , ", parameters.Include)}"));
             }
             return content;
         }
@@ -195,7 +195,7 @@ namespace SpazioDati.Dandelion.Business.Clients
             }
             if (parameters.Include != DefaultValues.Include)
             {
-                content.Add(new KeyValuePair<string, string>("include", parameters.Include.ToString()));
+                content.Add(new KeyValuePair<string, string>("include", $"{String.Join(" , ", parameters.Include)}"));
             }
 
             return content;

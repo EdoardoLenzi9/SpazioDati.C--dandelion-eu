@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using SpazioDati.Dandelion.Domain.Models;
 using SpazioDati.Dandelion.Business.Services;
 using SimpleInjector;
+using Newtonsoft.Json;
 
 namespace SpazioDati.Dandelion.Business
 {
@@ -47,6 +48,10 @@ namespace SpazioDati.Dandelion.Business
             {
                 Localizations.Token = token;
             }
+        }
+
+        public static T GetParametersFromJson<T>(string jsonParamenters) {
+            return JsonConvert.DeserializeObject<T>(jsonParamenters);
         }
 
         public static Task<EntityExtractionDto> GetEntitiesAsync (EntityExtractionParameters parameters, string token = "")
