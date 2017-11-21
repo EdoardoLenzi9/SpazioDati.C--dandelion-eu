@@ -38,7 +38,7 @@ namespace SpazioDati.Dandelion.Business.Services
             }
 
             var source = SourceValidationService.verifySingleSource(parameters);
-            return _apiClient.CallApiAsync<WikisearchDto>(ApiClient.WikisearchUriBuilder(), ApiClient.WikisearchContentBuilder(source, parameters));
+            return _apiClient.CallApiAsync<WikisearchDto>(ApiClient.WikisearchUriBuilder(), ApiClient.WikisearchContentBuilder(source, parameters), parameters.HttpMethod);
         }
     }
 }

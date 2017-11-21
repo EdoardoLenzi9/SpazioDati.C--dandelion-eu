@@ -48,6 +48,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string MissingList = "Missing List";
         public static string EmptyList = "Empty List";
         public static string MissingCategories = "Missing Categories";
+        public static string UriTooLong = "Uri too long, try to change HttpMethod or reduce the length of the parameters under 2000 chars";
 
         public static string Token = "Token";
         public static string Epsilon = "Epsilon";

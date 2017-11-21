@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="SimpleInjector" Version="4.0.12" />
-	  <ProjectReference Include="..\SpazioDati.Dandelion.Domain\SpazioDati.Dandelion.Domain.csproj" />   
+	<ProjectReference Include="..\SpazioDati.Dandelion.Domain\SpazioDati.Dandelion.Domain.csproj" />   
   </ItemGroup>
 
 </Project>

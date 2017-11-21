@@ -42,6 +42,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string HtmlFragment2;
         public LanguageOption Lang = DefaultValues.Lang;
         public BowOption Bow = DefaultValues.Bow;
+        public HttpMethod HttpMethod = null;
     }
 
     public class TextClassificationParameters : SourceParameters
@@ -70,6 +71,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public int Offset = DefaultValues.Offset;
         public QueryOption Query = DefaultValues.Query;
         public List<IncludeOption> Include = DefaultValues.Include;
+        public HttpMethod HttpMethod = null;
     }
 
     public class CustomSpotParameters

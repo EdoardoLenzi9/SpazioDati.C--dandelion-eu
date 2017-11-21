@@ -1,11 +1,11 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SpazioDati.Dandelion.Domain.Models;
 using SpazioDati.Dandelion.Business.Extensions;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
+using SpazioDati.Dandelion.Domain.Models;
 
 namespace SpazioDati.Dandelion.Business.Clients
 {
@@ -276,50 +276,59 @@ namespace SpazioDati.Dandelion.Business.Clients
             return $"{Localizations.DataTxt}/{Localizations.CustomModel}";
         }
 
-        /*
         public Task<T> CallApiAsync<T>(string uri, List<KeyValuePair<string, string>> content, HttpMethod method = null)
         {
+            var result = new HttpResponseMessage();
             if (method == null)
             {
                 method = HttpMethod.Post;
             }
 
-            return Task.Run(async () =>
-            {
-                _client.BaseAddress = new Uri(Localizations.BaseUrl);
-                var httpContent = new HttpRequestMessage(method, uri)
-                {
-                    Content = new FormUrlEncodedContent(content.ToArray())
-                };
-                var result = await _client.SendAsync(httpContent);
-                string resultContent = await result.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(resultContent); 
-            });
-        }*/
-
-        public async Task<T> CallApiAsync<T>(string uri, List<KeyValuePair<string, string>> content, HttpMethod method = null)
-        {
-            if (method == null)
-            {
-                method = HttpMethod.Post;
-            }
             if (_client.BaseAddress == null)
             {
                 _client.BaseAddress = new Uri(Localizations.BaseUrl);
             }
-            var httpContent = new HttpRequestMessage(method, uri);
-            if (content != null)
+            return Task.Run(async () =>
             {
-                httpContent.Content = new FormUrlEncodedContent(content.ToArray());
-            }
-            var result = await _client.SendAsync(httpContent);
-            string resultContent = await result.Content.ReadAsStringAsync();
+                if (method == HttpMethod.Get || method == HttpMethod.Delete)
+                {
+                    string query;
+                    using (var encodedContent = new FormUrlEncodedContent(content))
+                    {
+                        query = encodedContent.ReadAsStringAsync().Result;
+                    }
+                    if (query.Length > 2000)
+                    {
+                        throw new ArgumentException(ErrorMessages.UriTooLong);
+                    }
+                    result = await _client.GetAsync($"{uri}/?{query}");
+                }
+                else if (method == HttpMethod.Delete)
+                {
+                    string query;
+                    using (var encodedContent = new FormUrlEncodedContent(content))
+                    {
+                        query = encodedContent.ReadAsStringAsync().Result;
+                    }
+                    result = await _client.DeleteAsync($"{uri}/?{query}");
+                }
+                else
+                {
+                    var httpContent = new HttpRequestMessage(method, uri);
+                    if (content != null)
+                    {
+                        httpContent.Content = new FormUrlEncodedContent(content.ToArray());
+                    }
+                    result = await _client.SendAsync(httpContent);
+                }
+                string resultContent = await result.Content.ReadAsStringAsync();
 
-            if (!result.IsSuccessStatusCode)
-            {
-                throw new Exception(resultContent); //TODO forse eccessivo
-            }
-            return JsonConvert.DeserializeObject<T>(resultContent);
+                if (!result.IsSuccessStatusCode)
+                {
+                    throw new Exception(resultContent); 
+                }
+                return JsonConvert.DeserializeObject<T>(resultContent);
+            });
         }
     }
 }
