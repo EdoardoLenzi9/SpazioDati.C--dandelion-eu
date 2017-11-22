@@ -82,7 +82,7 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
             yield return new object[] { new SourceParameters { Url = "https://www.google.it", Html = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.MultipleSources, ErrorMessages.Html };
             yield return new object[] { new SourceParameters { Url = "https://www.google.it", HtmlFragment = "<p> Html Text </p>" }, ErrorMessages.MultipleSources, ErrorMessages.HtmlFragment };
             yield return new object[] { new SourceParameters { HtmlFragment = "<p> Html Text </p>", Html = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.MultipleSources, ErrorMessages.HtmlFragment };
-            yield return new object[] { new SourceParameters { Text = "<p> Html Text </p>", Html = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.MultipleSources, ErrorMessages.HtmlFragment };
+            yield return new object[] { new SourceParameters { Text = "<p> Html Text </p>", Html = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.MultipleSources, ErrorMessages.Html };
         }
     }
 }
