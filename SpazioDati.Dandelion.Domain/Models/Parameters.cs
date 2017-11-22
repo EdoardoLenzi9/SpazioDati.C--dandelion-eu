@@ -27,10 +27,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public double Epsilon = DefaultValues.Epsilon;
     }
 
-    public class TextSimilarityParameters
-    /*TODO
-        Did you know?
-        You can use the Entity Extraction API's parameters as well, prefixing them with nex. (e.g: nex.min_confidence)  */
+    public class TextSimilarityParameters : EntityExtractionParameters
     {
         public string Text1;
         public string Text2;
@@ -40,9 +37,11 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Html2;
         public string HtmlFragment1;
         public string HtmlFragment2;
-        public LanguageOption Lang = DefaultValues.Lang;
         public BowOption Bow = DefaultValues.Bow;
-        public HttpMethod HttpMethod = null;
+        private new string Text;
+        private new string Url;
+        private new string Html;
+        private new string HtmlFragment;
     }
 
     public class TextClassificationParameters : SourceParameters

@@ -28,15 +28,14 @@ namespace SpazioDati.Dandelion.Business.Clients
             }
         }
 
-        public static List<KeyValuePair<string, string>> EntityExtractionContentBuilder(List<KeyValuePair<string, string>> source, EntityExtractionParameters parameters)
+        public static List<KeyValuePair<string, string>> NexContentBuilder(EntityExtractionParameters parameters, string prefix = "")
         {
             var content = new List<KeyValuePair<string, string>>();
 
             content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
-            content.AddRange(source);
             if (parameters.Epsilon != DefaultValues.Epsilon)
             {
-                content.Add(new KeyValuePair<string, string>("epsilon", $"{parameters.Epsilon}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}epsilon", $"{parameters.Epsilon}"));
             }
             if (parameters.Lang != DefaultValues.Lang)
             {
@@ -44,36 +43,43 @@ namespace SpazioDati.Dandelion.Business.Clients
             }
             if (parameters.TopEntities != DefaultValues.TopEntities)
             {
-                content.Add(new KeyValuePair<string, string>("top_entities", $"{parameters.TopEntities}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}top_entities", $"{parameters.TopEntities}"));
             }
             if (parameters.MinConfidence != DefaultValues.MinConfidence)
             {
-                content.Add(new KeyValuePair<string, string>("min_confidence", $"{parameters.MinConfidence}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}min_confidence", $"{parameters.MinConfidence}"));
             }
             if (parameters.SocialHashtag != DefaultValues.SocialHashtag)
             {
-                content.Add(new KeyValuePair<string, string>("social.hashtag", $"{parameters.SocialHashtag}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}social.hashtag", $"{parameters.SocialHashtag}"));
             }
             if (parameters.SocialMention != DefaultValues.SocialMention)
             {
-                content.Add(new KeyValuePair<string, string>("social.mention", $"{parameters.SocialMention}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}social.mention", $"{parameters.SocialMention}"));
             }
             if (parameters.Include != DefaultValues.Include)
             {
-                content.Add(new KeyValuePair<string, string>("include", $"{String.Join(" , ", parameters.Include)}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}include", $"{String.Join(" , ", parameters.Include)}"));
             }
             if (parameters.ExtraTypes != DefaultValues.ExtraTypes)
             {
-                content.Add(new KeyValuePair<string, string>("extra_types", $"{String.Join(" , ", parameters.ExtraTypes)}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}extra_types", $"{String.Join(" , ", parameters.ExtraTypes)}"));
             }
             if (parameters.Country != DefaultValues.Country)
             {
-                content.Add(new KeyValuePair<string, string>("country", $"{parameters.Country}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}country", $"{parameters.Country}"));
             }
             if (parameters.CustomSpots != DefaultValues.CustomSpots)
             {
-                content.Add(new KeyValuePair<string, string>("custom_spots", $"{parameters.CustomSpots}"));
+                content.Add(new KeyValuePair<string, string>($"{prefix}custom_spots", $"{parameters.CustomSpots}"));
             }
+            return content;
+        }
+
+        public static List<KeyValuePair<string, string>> EntityExtractionContentBuilder(List<KeyValuePair<string, string>> source, EntityExtractionParameters parameters)
+        {
+            var content = NexContentBuilder(parameters);
+            content.AddRange(source);
             return content;
         }
 
@@ -85,18 +91,12 @@ namespace SpazioDati.Dandelion.Business.Clients
 
         public static List<KeyValuePair<string, string>> TextSimilarityContentBuilder(List<KeyValuePair<string, string>> source, TextSimilarityParameters parameters)
         {
-            var content = new List<KeyValuePair<string, string>>();
-
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            var content = NexContentBuilder(parameters, "nex.");
             content.AddRange(source);
 
-            if (parameters.Lang != DefaultValues.Lang)
-            {
-                content.Add(new KeyValuePair<string, string>("lang", parameters.Lang.ToString()));
-            }
             if (parameters.Bow != DefaultValues.Bow)
             {
-                content.Add(new KeyValuePair<string, string>("top_entities", parameters.Bow.ToString()));
+                content.Add(new KeyValuePair<string, string>("bow", parameters.Bow.ToString()));
             }
             return content;
         }

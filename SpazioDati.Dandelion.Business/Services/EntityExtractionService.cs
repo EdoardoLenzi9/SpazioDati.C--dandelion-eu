@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Business.Clients;
 using SpazioDati.Dandelion.Business.Extensions;
-using System.Net.Http;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
@@ -19,6 +18,12 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<EntityExtractionDto> CallEntityExtractionAsync(EntityExtractionParameters parameters)
         {
+            ValidateParameters(parameters);
+            var source = SourceValidationService.verifySingleSource(parameters);
+            return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUriBuilder(), ApiClient.EntityExtractionContentBuilder(source, parameters), parameters.HttpMethod);
+        }
+
+        public static void ValidateParameters(EntityExtractionParameters parameters) {
             if (parameters == null)
             {
                 throw new ArgumentException(ErrorMessages.MissingParameters);
@@ -46,17 +51,14 @@ namespace SpazioDati.Dandelion.Business.Services
                     throw new ArgumentException(ErrorMessages.WrongInclude1, ErrorMessages.Include);
                 }
             }
-            if (parameters.Include.hasDuplicates<IncludeOption>())
+            if (parameters.Include.hasDuplicates())
             {
                 parameters.Include = parameters.Include.Distinct().ToList();
             }
-            if (parameters.ExtraTypes.hasDuplicates<ExtraTypesOption>())
+            if (parameters.ExtraTypes.hasDuplicates())
             {
                 parameters.ExtraTypes = parameters.ExtraTypes.Distinct().ToList();
             }
-
-            var source = SourceValidationService.verifySingleSource(parameters);
-            return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUriBuilder(), ApiClient.EntityExtractionContentBuilder(source, parameters), parameters.HttpMethod);
         }
     }
 }

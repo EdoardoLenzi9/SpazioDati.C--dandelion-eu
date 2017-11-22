@@ -1,8 +1,6 @@
 using SpazioDati.Dandelion.Domain.Models;
 using System.Threading.Tasks;
 using SpazioDati.Dandelion.Business.Clients;
-using System;
-
 namespace SpazioDati.Dandelion.Business.Services
 {
     public class TextSimilarityService
@@ -16,10 +14,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<TextSimilarityDto> CallTextSimilaritiesAsync(TextSimilarityParameters parameters)
         {
-            if (parameters == null)
-            {
-                throw new ArgumentException(ErrorMessages.MissingParameters);
-            }
+            EntityExtractionService.ValidateParameters(parameters);
             var source = SourceValidationService.verifyMultipleSources(parameters);
             return _apiClient.CallApiAsync<TextSimilarityDto>(ApiClient.TextSimilarityUriBuilder(), ApiClient.TextSimilarityContentBuilder(source, parameters), parameters.HttpMethod);
         }
