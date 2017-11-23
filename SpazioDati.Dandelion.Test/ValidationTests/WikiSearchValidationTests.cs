@@ -37,11 +37,11 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
 
         public static IEnumerable<object[]> GetParameters()
         {
-            yield return new object[] { new WikisearchParameters(), ErrorMessages.WrongText, ErrorMessages.Text };
-            yield return new object[] { new WikisearchParameters { Text = "Text", Limit = 51 }, ErrorMessages.WrongLimit, ErrorMessages.Limit };
-            yield return new object[] { new WikisearchParameters { Text = "Text", Limit = 0 }, ErrorMessages.WrongLimit, ErrorMessages.Limit };
-            yield return new object[] { new WikisearchParameters { Text = "Text", Lang = LanguageOption.auto }, ErrorMessages.WrongLang2, ErrorMessages.Lang };
-            yield return new object[] { new WikisearchParameters { Text = "Text", Include = new List<IncludeOption>() { IncludeOption.score_details } }, ErrorMessages.WrongInclude1, ErrorMessages.Include };
+            yield return new object[] { new WikisearchParameters { Token = "Token" }, ErrorMessages.WrongText, ErrorMessages.Text };
+            yield return new object[] { new WikisearchParameters { Token = "Token", Text = "Text", Limit = 51 }, ErrorMessages.WrongLimit, ErrorMessages.Limit };
+            yield return new object[] { new WikisearchParameters { Token = "Token", Text = "Text", Limit = 0 }, ErrorMessages.WrongLimit, ErrorMessages.Limit };
+            yield return new object[] { new WikisearchParameters { Token = "Token", Text = "Text", Lang = LanguageOption.auto }, ErrorMessages.WrongLang2, ErrorMessages.Lang };
+            yield return new object[] { new WikisearchParameters { Token = "Token", Text = "Text", Include = new List<IncludeOption>() { IncludeOption.score_details } }, ErrorMessages.WrongInclude1, ErrorMessages.Include };
         }
     }
 }

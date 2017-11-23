@@ -37,14 +37,14 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
 
         public static IEnumerable<object[]> GetParameters()
         {
-            yield return new object[] { new EntityExtractionParameters(), ErrorMessages.WrongSource, "" };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", Epsilon = -1 }, ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", Epsilon = 1 }, ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", TopEntities = -1 }, ErrorMessages.WrongTopEntities, ErrorMessages.TopEntities };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", MinConfidence = -1 }, ErrorMessages.WrongMinConfidence, ErrorMessages.MinConfidence };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", MinConfidence = 2 }, ErrorMessages.WrongMinConfidence, ErrorMessages.MinConfidence };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", MinLength = 1 }, ErrorMessages.WrongMinLength, ErrorMessages.MinLength };
-            yield return new object[] { new EntityExtractionParameters { Text = "Text", Include = new List<IncludeOption> { IncludeOption.score_details } }, ErrorMessages.WrongInclude1, ErrorMessages.Include };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token" }, ErrorMessages.WrongSource, "" };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token", Text = "Text", Epsilon = -1 }, ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token", Text = "Text", Epsilon = 1 }, ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token", Text = "Text", TopEntities = -1 }, ErrorMessages.WrongTopEntities, ErrorMessages.TopEntities };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token", Text = "Text", MinConfidence = -1 }, ErrorMessages.WrongMinConfidence, ErrorMessages.MinConfidence };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token", Text = "Text", MinConfidence = 2 }, ErrorMessages.WrongMinConfidence, ErrorMessages.MinConfidence };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token", Text = "Text", MinLength = 1 }, ErrorMessages.WrongMinLength, ErrorMessages.MinLength };
+            yield return new object[] { new EntityExtractionParameters { Token = "Token", Text = "Text", Include = new List<IncludeOption> { IncludeOption.score_details } }, ErrorMessages.WrongInclude1, ErrorMessages.Include };
         }
     }
 }

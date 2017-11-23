@@ -35,13 +35,13 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
             }
         }
 
-        public static IEnumerable<object[]> GetParameters()
+        public static IEnumerable<object[]> GetParameters() 
         {
-            yield return new object[] { new TextClassificationParameters(), ErrorMessages.WrongSource, "" };
-            yield return new object[] { new TextClassificationParameters { Text = "Text", MinScore = -1 }, ErrorMessages.WrongMinScore, ErrorMessages.MinScore };
-            yield return new object[] { new TextClassificationParameters { Text = "Text", MinScore = 2 }, ErrorMessages.WrongMinScore, ErrorMessages.MinScore };
-            yield return new object[] { new TextClassificationParameters { Text = "Text", MaxAnnotations = 0 }, ErrorMessages.WrongMaxAnnotations, ErrorMessages.MaxAnnotations };
-            yield return new object[] { new TextClassificationParameters { Text = "Text", Include = new List<IncludeOption>() { IncludeOption.image } }, ErrorMessages.WrongInclude2, ErrorMessages.Include };
+            yield return new object[] { new TextClassificationParameters { Token = "Token" } , ErrorMessages.WrongSource, "" };
+            yield return new object[] { new TextClassificationParameters { Token = "Token", Text = "Text", MinScore = -1 }, ErrorMessages.WrongMinScore, ErrorMessages.MinScore };
+            yield return new object[] { new TextClassificationParameters { Token = "Token", Text = "Text", MinScore = 2 }, ErrorMessages.WrongMinScore, ErrorMessages.MinScore };
+            yield return new object[] { new TextClassificationParameters { Token = "Token", Text = "Text", MaxAnnotations = 0 }, ErrorMessages.WrongMaxAnnotations, ErrorMessages.MaxAnnotations };
+            yield return new object[] { new TextClassificationParameters { Token = "Token", Text = "Text", Include = new List<IncludeOption>() { IncludeOption.image } }, ErrorMessages.WrongInclude2, ErrorMessages.Include };
         }
     }
 }

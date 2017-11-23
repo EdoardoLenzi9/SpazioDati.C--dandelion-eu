@@ -37,8 +37,8 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
 
         public static IEnumerable<object[]> GetParameters()
         {
-            yield return new object[] { new SentimentAnalysisParameters(), ErrorMessages.WrongSource, "" };
-            yield return new object[] { new SentimentAnalysisParameters { Text = "Text", Lang = LanguageOption.de }, ErrorMessages.WrongLang1, ErrorMessages.Lang };
+            yield return new object[] { new SentimentAnalysisParameters { Token = "Token" } , ErrorMessages.WrongSource, "" };
+            yield return new object[] { new SentimentAnalysisParameters { Token = "Token", Text = "Text", Lang = LanguageOption.de }, ErrorMessages.WrongLang1, ErrorMessages.Lang };
         }
     }
 }
