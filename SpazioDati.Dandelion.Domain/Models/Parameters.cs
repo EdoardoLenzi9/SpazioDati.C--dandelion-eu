@@ -10,6 +10,7 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Html;
         public string HtmlFragment;
         public HttpMethod HttpMethod = null;
+        public string Token;
     }
 
     public class EntityExtractionParameters : SourceParameters
@@ -65,6 +66,7 @@ namespace SpazioDati.Dandelion.Domain.Models
     public class WikisearchParameters
     {
         public string Text;
+        public string Token;
         public LanguageOption Lang = LanguageOption.en;
         public int Limit = DefaultValues.Limit;
         public int Offset = DefaultValues.Offset;
@@ -76,6 +78,7 @@ namespace SpazioDati.Dandelion.Domain.Models
     public class CustomSpotParameters
     {
         public string Id;
+        public string Token;
         public CustomSpotDataParameters Data;
     }
 
@@ -97,6 +100,7 @@ namespace SpazioDati.Dandelion.Domain.Models
     public class CustomModelParameters
     {
         public string Id;
+        public string Token;
         public CustomModelDataParameters Data;
     }
 

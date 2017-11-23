@@ -15,8 +15,6 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string CustomSpot = "custom-spots/v1";
         public static string CustomModel = "cl/models/v1";
         public static string Datagraph = "datagraph";
-        public static string Token = "41d8b2b068754a9287cc3aeab1d4f079"; //TODO get set token
-        public static string Url = "https://dandelion.eu/docs/api/datatxt/sim/v1/";
     }
 
     public class ErrorMessages

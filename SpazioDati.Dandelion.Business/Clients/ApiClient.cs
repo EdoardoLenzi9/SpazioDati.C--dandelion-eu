@@ -31,7 +31,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         {
             var content = new List<KeyValuePair<string, string>>();
 
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             if (parameters.Epsilon != DefaultValues.Epsilon)
             {
                 content.Add(new KeyValuePair<string, string>($"{prefix}epsilon", $"{parameters.Epsilon}"));
@@ -109,7 +109,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         {
             var content = new List<KeyValuePair<string, string>>();
 
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.AddRange(source);
 
             if (parameters.MinScore != DefaultValues.MinScore)
@@ -136,7 +136,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         {
             var content = new List<KeyValuePair<string, string>>();
 
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.AddRange(source);
 
             if (parameters.Clean != DefaultValues.Clean)
@@ -156,7 +156,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         {
             var content = new List<KeyValuePair<string, string>>();
 
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.AddRange(source);
 
 
@@ -177,7 +177,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         {
             var content = new List<KeyValuePair<string, string>>();
 
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.AddRange(source);
 
             if (parameters.Limit != DefaultValues.Limit)
@@ -208,7 +208,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static List<KeyValuePair<string, string>> CreateCustomSpotContentBuilder(CustomSpotParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
             return content;
         }
@@ -216,7 +216,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static List<KeyValuePair<string, string>> UpdateCustomSpotContentBuilder(CustomSpotParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.Add(new KeyValuePair<string, string>("id", parameters.Id));
             content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
             return content;
@@ -225,7 +225,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static List<KeyValuePair<string, string>> ReadCustomSpotContentBuilder(CustomSpotParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.Add(new KeyValuePair<string, string>("id", parameters.Id));
             return content;
         }
@@ -243,7 +243,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static List<KeyValuePair<string, string>> CreateCustomModelContentBuilder(CustomModelParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
             return content;
         }
@@ -251,7 +251,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static List<KeyValuePair<string, string>> UpdateCustomModelContentBuilder(CustomModelParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.Add(new KeyValuePair<string, string>("id", parameters.Id));
             content.Add(new KeyValuePair<string, string>("data", JsonConvert.SerializeObject(parameters.Data)));
             return content;
@@ -260,7 +260,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         public static List<KeyValuePair<string, string>> ReadCustomModelContentBuilder(CustomModelParameters parameters)
         {
             var content = new List<KeyValuePair<string, string>>();
-            content.Add(new KeyValuePair<string, string>("token", Localizations.Token));
+            content.Add(new KeyValuePair<string, string>("token", parameters.Token));
             content.Add(new KeyValuePair<string, string>("id", parameters.Id));
             return content;
         }
@@ -289,16 +289,12 @@ namespace SpazioDati.Dandelion.Business.Clients
             }
             return Task.Run(async () =>
             {
-                if (method == HttpMethod.Get || method == HttpMethod.Delete)
+                if (method == HttpMethod.Get)
                 {
                     string query;
                     using (var encodedContent = new FormUrlEncodedContent(content))
                     {
                         query = encodedContent.ReadAsStringAsync().Result;
-                    }
-                    if (query.Length > 2000)
-                    {
-                        throw new ArgumentException(ErrorMessages.UriTooLong);
                     }
                     result = await _client.GetAsync($"{uri}/?{query}");
                 }
@@ -308,10 +304,6 @@ namespace SpazioDati.Dandelion.Business.Clients
                     using (var encodedContent = new FormUrlEncodedContent(content))
                     {
                         query = encodedContent.ReadAsStringAsync().Result;
-                    }
-                    if (query.Length > 2000)
-                    {
-                        throw new ArgumentException(ErrorMessages.UriTooLong);
                     }
                     result = await _client.DeleteAsync($"{uri}/?{query}");
                 }
@@ -325,7 +317,10 @@ namespace SpazioDati.Dandelion.Business.Clients
                     result = await _client.SendAsync(httpContent);
                 }
                 string resultContent = await result.Content.ReadAsStringAsync();
-
+                if (result.StatusCode == System.Net.HttpStatusCode.RequestUriTooLong)
+                {
+                    throw new ArgumentException(ErrorMessages.UriTooLong);
+                }
                 if (!result.IsSuccessStatusCode)
                 {
                     throw new Exception(resultContent); 
