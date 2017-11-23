@@ -24,10 +24,7 @@ namespace SpazioDati.Dandelion.Business.Services
         }
 
         public static void ValidateParameters(EntityExtractionParameters parameters) {
-            if (parameters == null)
-            {
-                throw new ArgumentException(ErrorMessages.MissingParameters);
-            }
+            ServiceUtils.ParameterValidation(parameters);
             if (parameters.Epsilon < 0.0 || parameters.Epsilon > 0.5)
             {
                 throw new ArgumentException(ErrorMessages.WrongEpsilon, ErrorMessages.Epsilon);

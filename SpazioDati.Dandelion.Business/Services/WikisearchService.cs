@@ -17,10 +17,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<WikisearchDto> CallWikisearchAsync(WikisearchParameters parameters)
         {
-            if (parameters == null)
-            {
-                throw new ArgumentException(ErrorMessages.MissingParameters);
-            }
+            ServiceUtils.ParameterValidation(parameters);
             if (parameters.Include != null)
             {
                 if (parameters.Include.FindAll(x => x == IncludeOption.score_details).ToList().Count > 0)

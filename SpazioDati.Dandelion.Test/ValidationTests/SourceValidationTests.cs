@@ -71,7 +71,6 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
             yield return new object[] { new TextSimilarityParameters { Token = "Token", Text1 = "Text", Url2 = "https://www.google.it", Html2 = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.WrongSource2, ErrorMessages.Html2 };
             yield return new object[] { new TextSimilarityParameters { Token = "Token", Text1 = "Text", Url2 = "https://www.google.it", HtmlFragment2 = "<p> Html Text </p>" }, ErrorMessages.WrongSource2, ErrorMessages.HtmlFragment2 };
             yield return new object[] { new TextSimilarityParameters { Token = "Token", Text1 = "Text", HtmlFragment2 = "<p> Html Text </p>", Html2 = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.WrongSource2, ErrorMessages.HtmlFragment2 };
-            yield return new object[] { new TextSimilarityParameters { Token = "", Text1 = "Text", HtmlFragment2 = "<p> Html Text </p>" }, ErrorMessages.InvalidToken, ErrorMessages.Token };
         }
 
         public static IEnumerable<object[]> GetSingleSourceParameters()
@@ -84,7 +83,6 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
             yield return new object[] { new SourceParameters { Token = "Token", Url = "https://www.google.it", HtmlFragment = "<p> Html Text </p>" }, ErrorMessages.MultipleSources, ErrorMessages.HtmlFragment };
             yield return new object[] { new SourceParameters { Token = "Token", HtmlFragment = "<p> Html Text </p>", Html = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.MultipleSources, ErrorMessages.HtmlFragment };
             yield return new object[] { new SourceParameters { Token = "Token", Text = "<p> Html Text </p>", Html = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.MultipleSources, ErrorMessages.Html };
-            yield return new object[] { new SourceParameters { Token = "", Text = "<p> Html Text </p>" }, ErrorMessages.InvalidToken, ErrorMessages.Token };
         }
     }
 }

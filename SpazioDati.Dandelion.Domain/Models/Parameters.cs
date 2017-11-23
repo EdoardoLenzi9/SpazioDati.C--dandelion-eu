@@ -3,14 +3,19 @@ using System.Net.Http;
 
 namespace SpazioDati.Dandelion.Domain.Models
 {
-    public class SourceParameters
+
+    public class Parameters
+    {
+        public string Token;
+    }
+
+    public class SourceParameters : Parameters
     {
         public string Text;
         public string Url;
         public string Html;
         public string HtmlFragment;
         public HttpMethod HttpMethod = null;
-        public string Token;
     }
 
     public class EntityExtractionParameters : SourceParameters
@@ -63,10 +68,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public LanguageOption Lang = DefaultValues.Lang;
     }
 
-    public class WikisearchParameters
+    public class WikisearchParameters : Parameters
     {
         public string Text;
-        public string Token;
         public LanguageOption Lang = LanguageOption.en;
         public int Limit = DefaultValues.Limit;
         public int Offset = DefaultValues.Offset;
@@ -75,21 +79,20 @@ namespace SpazioDati.Dandelion.Domain.Models
         public HttpMethod HttpMethod = null;
     }
 
-    public class CustomSpotParameters
+    public class CustomSpotParameters : Parameters
     {
         public string Id;
-        public string Token;
         public CustomSpotDataParameters Data;
     }
 
-    public class CustomSpotDataParameters
+    public class CustomSpotDataParameters 
     {
         public LanguageOption Lang;
         public string Description;
         public List<CustomSpotListParameters> List;
     }
 
-    public class CustomSpotListParameters
+    public class CustomSpotListParameters 
     {
         public string Spot;
         public string Topic;
@@ -97,10 +100,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public bool ExactMatch = DefaultValues.ExactMatch;
     }
 
-    public class CustomModelParameters
+    public class CustomModelParameters : Parameters
     {
         public string Id;
-        public string Token;
         public CustomModelDataParameters Data;
     }
 

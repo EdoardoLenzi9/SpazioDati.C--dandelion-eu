@@ -1,5 +1,7 @@
+using System;
 using SpazioDati.Dandelion.Business.Clients;
 using SpazioDati.Dandelion.Business.Containers;
+using SpazioDati.Dandelion.Domain.Models;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
@@ -21,6 +23,23 @@ namespace SpazioDati.Dandelion.Business.Services
                 _container.Register<CustomSpotService>(Lifestyle.Singleton);
                 _container.Register<CustomModelService>(Lifestyle.Singleton);
                 ApiClient.Init();
+            }
+        }
+
+        public static void ParameterValidation(Parameters parameters)
+        {
+            if (parameters == null)
+            {
+                throw new ArgumentException(ErrorMessages.MissingParameters);
+            }
+            TokenValidation(parameters);
+        }
+
+        public static void TokenValidation(Parameters parameters)
+        {
+            if (String.IsNullOrEmpty(parameters.Token))
+            {
+                throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
             }
         }
     }

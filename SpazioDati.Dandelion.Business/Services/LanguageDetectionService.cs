@@ -16,10 +16,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<LanguageDetectionDto> CallLanguageDetectionAsync(LanguageDetectionParameters parameters)
         {
-            if (parameters == null)
-            {
-                throw new ArgumentException(ErrorMessages.MissingParameters);
-            }
+            ServiceUtils.ParameterValidation(parameters);
             var source = SourceValidationService.verifySingleSource(parameters);
             return _apiClient.CallApiAsync<LanguageDetectionDto>(ApiClient.LanguageDetectionUriBuilder(), ApiClient.LanguageDetectionContentBuilder(source, parameters), parameters.HttpMethod);
         }

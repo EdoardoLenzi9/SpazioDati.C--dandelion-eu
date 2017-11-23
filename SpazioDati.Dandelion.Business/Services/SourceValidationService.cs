@@ -8,10 +8,6 @@ namespace SpazioDati.Dandelion.Business.Services
     {
         public static List<KeyValuePair<string, string>> verifySingleSource(SourceParameters parameters)
         {
-            if (String.IsNullOrEmpty(parameters.Token))
-            {
-                throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
-            }
             var key = "";
             var value = "";
             if (!String.IsNullOrEmpty(parameters.Text))
@@ -57,10 +53,6 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public static List<KeyValuePair<string, string>> verifySingleSource(WikisearchParameters parameters)
         {
-            if (String.IsNullOrEmpty(parameters.Token))
-            {
-                throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
-            }
             if (String.IsNullOrEmpty(parameters.Text))
             {
                 throw new ArgumentException(ErrorMessages.WrongText, ErrorMessages.Text);
@@ -72,10 +64,6 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public static List<KeyValuePair<string, string>> verifyMultipleSources(TextSimilarityParameters parameters)
         {
-            if (String.IsNullOrEmpty(parameters.Token))
-            {
-                throw new ArgumentException(ErrorMessages.InvalidToken, ErrorMessages.Token);
-            }
             var key1 = "";
             var value1 = "";
             var key2 = "";

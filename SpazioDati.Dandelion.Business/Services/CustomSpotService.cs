@@ -17,10 +17,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<CustomSpotDto> CallCreateCustomSpotAsync(CustomSpotParameters parameters)
         {
-            if (parameters == null)
-            {
-                throw new ArgumentException(ErrorMessages.MissingParameters);
-            }
+            ServiceUtils.ParameterValidation(parameters);
             if (parameters.Data == null)
             {
                 throw new ArgumentException(ErrorMessages.MissingData, ErrorMessages.Data);
@@ -39,6 +36,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<CustomSpotDto> CallReadCustomSpotAsync(CustomSpotParameters parameters)
         {
+            ServiceUtils.ParameterValidation(parameters);
             if (string.IsNullOrEmpty(parameters.Id))
             {
                 throw new ArgumentException(ErrorMessages.WrongId, ErrorMessages.Id);
@@ -49,10 +47,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<CustomSpotDto> CallUpdateCustomSpotAsync(CustomSpotParameters parameters)
         {
-            if (parameters == null)
-            {
-                throw new ArgumentException(ErrorMessages.MissingParameters);
-            }
+            ServiceUtils.ParameterValidation(parameters);
             if (parameters.Data == null)
             {
                 throw new ArgumentException(ErrorMessages.MissingData, ErrorMessages.Data);
@@ -75,6 +70,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task CallDeleteCustomSpotAsync(CustomSpotParameters parameters)
         {
+            ServiceUtils.ParameterValidation(parameters);
             if (string.IsNullOrEmpty(parameters.Id))
             {
                 throw new ArgumentException(ErrorMessages.WrongId, ErrorMessages.Id);

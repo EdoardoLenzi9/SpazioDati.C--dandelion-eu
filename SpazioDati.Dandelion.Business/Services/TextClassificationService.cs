@@ -17,10 +17,7 @@ namespace SpazioDati.Dandelion.Business.Services
 
         public Task<TextClassificationDto> CallTextClassificationAsync(TextClassificationParameters parameters)
         {
-            if (parameters == null)
-            {
-                throw new ArgumentException(ErrorMessages.MissingParameters);
-            }
+            ServiceUtils.ParameterValidation(parameters);
             if (parameters.MinScore < 0.0 || parameters.MinScore > 1.0)
             {
                 throw new ArgumentException(ErrorMessages.WrongMinScore, ErrorMessages.MinScore);
