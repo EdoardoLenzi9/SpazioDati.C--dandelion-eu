@@ -310,6 +310,10 @@ namespace SpazioDati.Dandelion.Business.Clients
                     {
                         query = encodedContent.ReadAsStringAsync().Result;
                     }
+                    if (query.Length > 2000)
+                    {
+                        throw new ArgumentException(ErrorMessages.UriTooLong);
+                    }
                     result = await _client.DeleteAsync($"{uri}/?{query}");
                 }
                 else
