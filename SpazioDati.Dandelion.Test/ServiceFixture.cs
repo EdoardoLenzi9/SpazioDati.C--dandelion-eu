@@ -1,7 +1,6 @@
 using System;
+using SpazioDati.Dandelion.Business.Containers;
 using SpazioDati.Dandelion.Business.Services;
-using SpazioDati.Dandelion.Business.Extensions;
-using SimpleInjector;
 
 namespace FactoryMind.TrackMe.Test
 {
@@ -19,14 +18,14 @@ namespace FactoryMind.TrackMe.Test
         public ServiceFixture()
         {
             ServiceUtils.Init();
-            _container = _container.GetInstance();
+            _container = Container.GetInstance();
 
-            EntityExtractionService = _container.GetInstance<EntityExtractionService>();
-            LanguageDetectionService = _container.GetInstance<LanguageDetectionService>();
-            SentimentAnalysisService = _container.GetInstance<SentimentAnalysisService>();
-            TextClassificationService = _container.GetInstance<TextClassificationService>();
-            TextSimilarityService = _container.GetInstance<TextSimilarityService>();
-            WikisearchService = _container.GetInstance<WikisearchService>();
+            EntityExtractionService = _container.Resolve<EntityExtractionService>();
+            LanguageDetectionService = _container.Resolve<LanguageDetectionService>();
+            SentimentAnalysisService = _container.Resolve<SentimentAnalysisService>();
+            TextClassificationService = _container.Resolve<TextClassificationService>();
+            TextSimilarityService = _container.Resolve<TextSimilarityService>();
+            WikisearchService = _container.Resolve<WikisearchService>();
         }
 
         void IDisposable.Dispose()

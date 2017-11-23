@@ -24,7 +24,6 @@ namespace SpazioDati.Dandelion.ConsoleApp
 
         public static async Task MainAsync()
         {
-            new DandelionUtils();
             /*
             var entities1 = await DandelionUtils.GetEntitiesAsync(new EntityExtractionParameters() {Text = Text, HttpMethod = HttpMethod.Get });
             Debug.WriteLine("\n\n\n Response: \n\n\n" + JsonConvert.SerializeObject(entities1));

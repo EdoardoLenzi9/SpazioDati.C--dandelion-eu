@@ -1,6 +1,5 @@
-using SimpleInjector;
 using SpazioDati.Dandelion.Business.Clients;
-using SpazioDati.Dandelion.Business.Extensions;
+using SpazioDati.Dandelion.Business.Containers;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
@@ -12,7 +11,7 @@ namespace SpazioDati.Dandelion.Business.Services
         {
             if (_container == null)
             {
-                _container = _container.GetInstance();
+                _container = Container.GetInstance();
                 _container.Register<EntityExtractionService>(Lifestyle.Singleton);
                 _container.Register<LanguageDetectionService>(Lifestyle.Singleton);
                 _container.Register<SentimentAnalysisService>(Lifestyle.Singleton);
@@ -21,7 +20,6 @@ namespace SpazioDati.Dandelion.Business.Services
                 _container.Register<WikisearchService>(Lifestyle.Singleton);
                 _container.Register<CustomSpotService>(Lifestyle.Singleton);
                 _container.Register<CustomModelService>(Lifestyle.Singleton);
-                _container.Register<ApiClient>(Lifestyle.Singleton);
                 ApiClient.Init();
             }
         }

@@ -1,11 +1,10 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using SpazioDati.Dandelion.Business.Extensions;
-using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using SpazioDati.Dandelion.Domain.Models;
+using SpazioDati.Dandelion.Business.Containers;
 
 namespace SpazioDati.Dandelion.Business.Clients
 {
@@ -23,7 +22,7 @@ namespace SpazioDati.Dandelion.Business.Clients
         {
             if (_container == null)
             {
-                _container = _container.GetInstance();
+                _container = Container.GetInstance();
                 _container.Register<ApiClient>(Lifestyle.Singleton);
             }
         }
