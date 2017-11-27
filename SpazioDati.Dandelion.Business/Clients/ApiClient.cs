@@ -275,6 +275,16 @@ namespace SpazioDati.Dandelion.Business.Clients
             return $"{Localizations.DataTxt}/{Localizations.CustomModel}";
         }
 
+        ///<summary> 
+        ///     Asyncronous method that made a generic http/https call.         
+        ///</summary>
+        ///<remarks>
+        ///     The base url is declared in <c>Localizations.BaseUrl</c>    
+        ///</remarks> 
+        ///<param name="uri"> URI  </param>
+        ///<param name="content"> Dictionary populated with the parameters for the call </param>
+        ///<param name="method"> Http method, in case of Get or Delete the content is passed (and encoded) as an uri parameter instead of a bady parameter </param>
+        ///<returns>Returns the http/https response</returns>
         public Task<T> CallApiAsync<T>(string uri, List<KeyValuePair<string, string>> content, HttpMethod method = null)
         {
             var result = new HttpResponseMessage();

@@ -6,6 +6,10 @@ using SpazioDati.Dandelion.Business.Containers;
 
 namespace SpazioDati.Dandelion.Business
 {
+    ///<summary> 
+    ///     Utility class that allow to call Dandelion API 
+    ///     <link> Visit </link>
+    ///</summary>
     public class DandelionUtils
     {
         private static EntityExtractionService _entityExtractionService;
@@ -18,6 +22,9 @@ namespace SpazioDati.Dandelion.Business
         private static CustomModelService _customModelService;
         private static Container _container;
 
+        ///<summary> 
+        ///     This methods useful in order to initialize services with Simple Injection
+        ///</summary>
         private static void Init()
         {
             if (_container == null)
@@ -35,10 +42,24 @@ namespace SpazioDati.Dandelion.Business
             }
         }
 
+        ///<summary> 
+        ///     Deserialize a JSON of a parameter class <seealso cref="Parameters"/>        
+        ///</summary>
+        ///<param name="jsonParamenters"> JSON that represent generic <typeparamref name="T"/> ParameterClass </param>
+        ///<typeparam name="T">The parameter class</typeparam>
+        ///<returns>Returns a <typeparamref name="T"/> parameter instance deserialized from <paramref name="jsonParamenters"/> string</returns>
+
         public static T GetParametersFromJson<T>(string jsonParamenters)
         {
             return JsonConvert.DeserializeObject<T>(jsonParamenters);
         }
+
+        ///<summary> 
+        ///     Asyncronous method that call EntityExtraction end-point to compute a text source          
+        ///     <link> </link>
+        ///</summary>
+        ///<param name="parameters"> Parameters to specify all'options for the EntityExtraction process </param>
+        ///<returns>Returns a <c>EntityExtractionDto</c> populated with the result of the EntityExtraction process </returns>
 
         public static Task<EntityExtractionDto> GetEntitiesAsync(EntityExtractionParameters parameters)
         {
@@ -46,12 +67,24 @@ namespace SpazioDati.Dandelion.Business
             return _entityExtractionService.CallEntityExtractionAsync(parameters);
         }
 
+        ///<summary> 
+        ///     Asyncronous method that call TextSimilarity end-point to compare two text sources          
+        ///     <link> </link>
+        ///</summary>
+        ///<param name="parameters"> Parameters to specify all'options for the TextSimilarity process </param>
+        ///<returns>Returns a <c>TextSimilarityDto</c> populated with the result of the TextSimilarity process </returns>
         public static Task<TextSimilarityDto> GetSimilaritiesAsync(TextSimilarityParameters parameters)
         {
             Init();
             return _textSimilarityService.CallTextSimilaritiesAsync(parameters);
         }
 
+        ///<summary> 
+        ///     Asyncronous method that call TextClassification end-point to compute a text source          
+        ///     <link> </link>
+        ///</summary>
+        ///<param name="parameters"> Parameters to specify all'options for the TextSimilarity process </param>
+        ///<returns>Returns a <c>TextSimilarityDto</c> populated with the result of the TextSimilarity process </returns>
         public static Task<TextClassificationDto> ClassifyTextAsync(TextClassificationParameters parameters)
         {
             Init();
