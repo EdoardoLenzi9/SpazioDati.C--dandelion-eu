@@ -34,30 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"Program",
-        content:"Program",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
-        title:"CustomModelCategoryParameters",
-        content:"CustomModelCategoryParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:2,
-        title:"EntityExtractionDto",
-        content:"EntityExtractionDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:3,
         title:"EntityExtractionParameters",
         content:"EntityExtractionParameters",
         description:'',
@@ -65,87 +41,71 @@ var searchModule = function() {
     });
 
     a({
+        id:1,
+        title:"ServiceUtils",
+        content:"ServiceUtils",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:2,
+        title:"CustomModelService",
+        content:"CustomModelService",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:3,
+        title:"Sentiment",
+        content:"Sentiment",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:4,
-        title:"SentimentAnalysisDto",
-        content:"SentimentAnalysisDto",
+        title:"EntityExtractionDto",
+        content:"EntityExtractionDto",
         description:'',
         tags:''
     });
 
     a({
         id:5,
-        title:"TextSimilarityService",
-        content:"TextSimilarityService",
+        title:"SourceValidationService",
+        content:"SourceValidationService",
         description:'',
         tags:''
     });
 
     a({
         id:6,
-        title:"ServiceFixture",
-        content:"ServiceFixture",
+        title:"CustomSpotsListDto",
+        content:"CustomSpotsListDto",
         description:'',
         tags:''
     });
 
     a({
         id:7,
-        title:"DetectedLang",
-        content:"DetectedLang",
+        title:"TextClassificationService",
+        content:"TextClassificationService",
         description:'',
         tags:''
     });
 
     a({
         id:8,
-        title:"Entity",
-        content:"Entity",
+        title:"Container",
+        content:"Container",
         description:'',
         tags:''
     });
 
     a({
         id:9,
-        title:"TextSimilarityParameters",
-        content:"TextSimilarityParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:10,
-        title:"CustomSpotDataParameters",
-        content:"CustomSpotDataParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:11,
-        title:"CustomSpotService",
-        content:"CustomSpotService",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:12,
-        title:"LanguageOption",
-        content:"LanguageOption",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:13,
-        title:"SentimentAnalysisService",
-        content:"SentimentAnalysisService",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:14,
         title:"DefaultsDto",
         content:"DefaultsDto",
         description:'',
@@ -153,111 +113,31 @@ var searchModule = function() {
     });
 
     a({
-        id:15,
-        title:"RedundancyList",
-        content:"RedundancyList",
+        id:10,
+        title:"ErrorMessages",
+        content:"ErrorMessages",
         description:'',
         tags:''
     });
 
     a({
-        id:16,
-        title:"Lifestyle",
-        content:"Lifestyle",
+        id:11,
+        title:"LanguageOption",
+        content:"LanguageOption",
         description:'',
         tags:''
     });
 
     a({
-        id:17,
-        title:"CustomSpotListParameters",
-        content:"CustomSpotListParameters",
+        id:12,
+        title:"DefaultValues",
+        content:"DefaultValues",
         description:'',
         tags:''
     });
 
     a({
-        id:18,
-        title:"Lod",
-        content:"Lod",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:19,
-        title:"SentimentAnalysisValidationTests",
-        content:"SentimentAnalysisValidationTests",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:20,
-        title:"CustomModelsListDto",
-        content:"CustomModelsListDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:21,
-        title:"LanguageDetectionDto",
-        content:"LanguageDetectionDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:22,
-        title:"Image",
-        content:"Image",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:23,
-        title:"ApiClient",
-        content:"ApiClient",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:24,
-        title:"WikisearchValidationTests",
-        content:"WikisearchValidationTests",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:25,
-        title:"WikisearchParameters",
-        content:"WikisearchParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:26,
-        title:"TextClassificationParameters",
-        content:"TextClassificationParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:27,
-        title:"Localizations",
-        content:"Localizations",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:28,
+        id:13,
         title:"SourceValidationTests",
         content:"SourceValidationTests",
         description:'',
@@ -265,25 +145,145 @@ var searchModule = function() {
     });
 
     a({
+        id:14,
+        title:"Lod",
+        content:"Lod",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:15,
+        title:"BowOption",
+        content:"BowOption",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:16,
+        title:"DandelionUtils",
+        content:"DandelionUtils",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:17,
+        title:"CustomModelsListDto",
+        content:"CustomModelsListDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:18,
+        title:"Localizations",
+        content:"Localizations",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:19,
+        title:"LanguageDetectionParameters",
+        content:"LanguageDetectionParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:20,
+        title:"SentimentAnalysisValidationTests",
+        content:"SentimentAnalysisValidationTests",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:21,
+        title:"SentimentAnalysisDto",
+        content:"SentimentAnalysisDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:22,
+        title:"RedundancyList",
+        content:"RedundancyList",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:23,
+        title:"CustomSpotService",
+        content:"CustomSpotService",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:24,
+        title:"WikisearchParameters",
+        content:"WikisearchParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:25,
+        title:"CustomSpotDto",
+        content:"CustomSpotDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:26,
+        title:"ResponseDto",
+        content:"ResponseDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:27,
+        title:"SentimentAnalysisParameters",
+        content:"SentimentAnalysisParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:28,
+        title:"ListDto",
+        content:"ListDto",
+        description:'',
+        tags:''
+    });
+
+    a({
         id:29,
-        title:"EntityExtractionService",
-        content:"EntityExtractionService",
+        title:"CategoriesDto",
+        content:"CategoriesDto",
         description:'',
         tags:''
     });
 
     a({
         id:30,
-        title:"CustomModelDataParameters",
-        content:"CustomModelDataParameters",
+        title:"Parameters",
+        content:"Parameters",
         description:'',
         tags:''
     });
 
     a({
         id:31,
-        title:"DefaultValues",
-        content:"DefaultValues",
+        title:"EntityExtractionValidationTests",
+        content:"EntityExtractionValidationTests",
         description:'',
         tags:''
     });
@@ -298,62 +298,22 @@ var searchModule = function() {
 
     a({
         id:33,
-        title:"ListDto",
-        content:"ListDto",
+        title:"CustomModelDataParameters",
+        content:"CustomModelDataParameters",
         description:'',
         tags:''
     });
 
     a({
         id:34,
-        title:"SourceParameters",
-        content:"SourceParameters",
+        title:"SentimentAnalysisService",
+        content:"SentimentAnalysisService",
         description:'',
         tags:''
     });
 
     a({
         id:35,
-        title:"CategoriesDto",
-        content:"CategoriesDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:36,
-        title:"EntityExtractionValidationTests",
-        content:"EntityExtractionValidationTests",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:37,
-        title:"TextClassificationService",
-        content:"TextClassificationService",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:38,
-        title:"LanguageDetectionService",
-        content:"LanguageDetectionService",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:39,
-        title:"Category",
-        content:"Category",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:40,
         title:"ExtraTypesOption",
         content:"ExtraTypesOption",
         description:'',
@@ -361,199 +321,7 @@ var searchModule = function() {
     });
 
     a({
-        id:41,
-        title:"CustomModelParameters",
-        content:"CustomModelParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:42,
-        title:"Parameters",
-        content:"Parameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:43,
-        title:"CountryOption",
-        content:"CountryOption",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:44,
-        title:"CustomSpotsListDto",
-        content:"CustomSpotsListDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:45,
-        title:"AnnotationDto",
-        content:"AnnotationDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:46,
-        title:"SourceValidationService",
-        content:"SourceValidationService",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:47,
-        title:"ErrorMessages",
-        content:"ErrorMessages",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:48,
-        title:"ResponseDto",
-        content:"ResponseDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:49,
-        title:"CustomSpotDto",
-        content:"CustomSpotDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:50,
-        title:"BowOption",
-        content:"BowOption",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:51,
-        title:"Sentiment",
-        content:"Sentiment",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:52,
-        title:"TextClassificationDto",
-        content:"TextClassificationDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:53,
-        title:"QueryOption",
-        content:"QueryOption",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:54,
-        title:"WikisearchDto",
-        content:"WikisearchDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:55,
-        title:"TextSimilarityDto",
-        content:"TextSimilarityDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:56,
-        title:"Container",
-        content:"Container",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:57,
-        title:"WikisearchService",
-        content:"WikisearchService",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:58,
-        title:"CustomSpotParameters",
-        content:"CustomSpotParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:59,
-        title:"CustomSpotsDataDto",
-        content:"CustomSpotsDataDto",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:60,
-        title:"TextClassificationValidationTests",
-        content:"TextClassificationValidationTests",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:61,
-        title:"CustomModelService",
-        content:"CustomModelService",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:62,
-        title:"SentimentAnalysisParameters",
-        content:"SentimentAnalysisParameters",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:63,
-        title:"ScoreDetail",
-        content:"ScoreDetail",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:64,
-        title:"DandelionUtils",
-        content:"DandelionUtils",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:65,
+        id:36,
         title:"IncludeOption",
         content:"IncludeOption",
         description:'',
@@ -561,15 +329,71 @@ var searchModule = function() {
     });
 
     a({
-        id:66,
-        title:"ServiceUtils",
-        content:"ServiceUtils",
+        id:37,
+        title:"CustomSpotParameters",
+        content:"CustomSpotParameters",
         description:'',
         tags:''
     });
 
     a({
-        id:67,
+        id:38,
+        title:"Category",
+        content:"Category",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:39,
+        title:"LanguageDetectionDto",
+        content:"LanguageDetectionDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:40,
+        title:"EntityExtractionService",
+        content:"EntityExtractionService",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:41,
+        title:"ScoreDetail",
+        content:"ScoreDetail",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:42,
+        title:"WikisearchService",
+        content:"WikisearchService",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:43,
+        title:"CustomModelCategoryParameters",
+        content:"CustomModelCategoryParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:44,
+        title:"CustomSpotListParameters",
+        content:"CustomSpotListParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:45,
         title:"CustomModelDto",
         content:"CustomModelDto",
         description:'',
@@ -577,22 +401,202 @@ var searchModule = function() {
     });
 
     a({
-        id:68,
-        title:"LanguageDetectionParameters",
-        content:"LanguageDetectionParameters",
+        id:46,
+        title:"DetectedLang",
+        content:"DetectedLang",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:47,
+        title:"Entity",
+        content:"Entity",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:48,
+        title:"TextClassificationDto",
+        content:"TextClassificationDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:49,
+        title:"TextSimilarityService",
+        content:"TextSimilarityService",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:50,
+        title:"Lifestyle",
+        content:"Lifestyle",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:51,
+        title:"LanguageDetectionService",
+        content:"LanguageDetectionService",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:52,
+        title:"TextClassificationParameters",
+        content:"TextClassificationParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:53,
+        title:"AnnotationDto",
+        content:"AnnotationDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:54,
+        title:"ServiceFixture",
+        content:"ServiceFixture",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:55,
+        title:"CustomSpotsDataDto",
+        content:"CustomSpotsDataDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:56,
+        title:"SourceParameters",
+        content:"SourceParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:57,
+        title:"WikisearchDto",
+        content:"WikisearchDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:58,
+        title:"CustomSpotDataParameters",
+        content:"CustomSpotDataParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:59,
+        title:"QueryOption",
+        content:"QueryOption",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:60,
+        title:"TextSimilarityDto",
+        content:"TextSimilarityDto",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:61,
+        title:"ApiClient",
+        content:"ApiClient",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:62,
+        title:"TextSimilarityParameters",
+        content:"TextSimilarityParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:63,
+        title:"TextClassificationValidationTests",
+        content:"TextClassificationValidationTests",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:64,
+        title:"WikisearchValidationTests",
+        content:"WikisearchValidationTests",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:65,
+        title:"Image",
+        content:"Image",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:66,
+        title:"CustomModelParameters",
+        content:"CustomModelParameters",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:67,
+        title:"CountryOption",
+        content:"CountryOption",
         description:'',
         tags:''
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.ConsoleApp/Program',
-        title:"Program",
+        url:'/api/SpazioDati.Dandelion.Domain.Models/EntityExtractionParameters',
+        title:"EntityExtractionParameters",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelCategoryParameters',
-        title:"CustomModelCategoryParameters",
+        url:'/api/SpazioDati.Dandelion.Business.Services/ServiceUtils',
+        title:"ServiceUtils",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business.Services/CustomModelService',
+        title:"CustomModelService",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/Sentiment',
+        title:"Sentiment",
         description:""
     });
 
@@ -603,8 +607,98 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/EntityExtractionParameters',
-        title:"EntityExtractionParameters",
+        url:'/api/SpazioDati.Dandelion.Business.Services/SourceValidationService',
+        title:"SourceValidationService",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotsListDto',
+        title:"CustomSpotsListDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business.Services/TextClassificationService',
+        title:"TextClassificationService",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business.Containers/Container',
+        title:"Container",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/DefaultsDto',
+        title:"DefaultsDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/ErrorMessages',
+        title:"ErrorMessages",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/LanguageOption',
+        title:"LanguageOption",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/DefaultValues',
+        title:"DefaultValues",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/SourceValidationTests',
+        title:"SourceValidationTests",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/Lod',
+        title:"Lod",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/BowOption',
+        title:"BowOption",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business/DandelionUtils',
+        title:"DandelionUtils",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelsListDto',
+        title:"CustomModelsListDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/Localizations',
+        title:"Localizations",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/LanguageDetectionParameters',
+        title:"LanguageDetectionParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/SentimentAnalysisValidationTests',
+        title:"SentimentAnalysisValidationTests",
         description:""
     });
 
@@ -615,14 +709,146 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/TextSimilarityService',
-        title:"TextSimilarityService",
+        url:'/api/SpazioDati.Dandelion.Business.Extensions/RedundancyList',
+        title:"RedundancyList",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Test/ServiceFixture',
-        title:"ServiceFixture",
+        url:'/api/SpazioDati.Dandelion.Business.Services/CustomSpotService',
+        title:"CustomSpotService",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/WikisearchParameters',
+        title:"WikisearchParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotDto',
+        title:"CustomSpotDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/ResponseDto',
+        title:"ResponseDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/SentimentAnalysisParameters',
+        title:"SentimentAnalysisParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/ListDto',
+        title:"ListDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CategoriesDto',
+        title:"CategoriesDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/Parameters',
+        title:"Parameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/EntityExtractionValidationTests',
+        title:"EntityExtractionValidationTests",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelDataDto',
+        title:"CustomModelDataDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelDataParameters',
+        title:"CustomModelDataParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business.Services/SentimentAnalysisService',
+        title:"SentimentAnalysisService",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/ExtraTypesOption',
+        title:"ExtraTypesOption",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/IncludeOption',
+        title:"IncludeOption",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotParameters',
+        title:"CustomSpotParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/Category',
+        title:"Category",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/LanguageDetectionDto',
+        title:"LanguageDetectionDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business.Services/EntityExtractionService',
+        title:"EntityExtractionService",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/ScoreDetail',
+        title:"ScoreDetail",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business.Services/WikisearchService',
+        title:"WikisearchService",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelCategoryParameters',
+        title:"CustomModelCategoryParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotListParameters',
+        title:"CustomSpotListParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelDto',
+        title:"CustomModelDto",
         description:""
     });
 
@@ -639,44 +865,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/TextSimilarityParameters',
-        title:"TextSimilarityParameters",
+        url:'/api/SpazioDati.Dandelion.Domain.Models/TextClassificationDto',
+        title:"TextClassificationDto",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotDataParameters',
-        title:"CustomSpotDataParameters",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/CustomSpotService',
-        title:"CustomSpotService",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/LanguageOption',
-        title:"LanguageOption",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/SentimentAnalysisService',
-        title:"SentimentAnalysisService",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/DefaultsDto',
-        title:"DefaultsDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Extensions/RedundancyList',
-        title:"RedundancyList",
+        url:'/api/SpazioDati.Dandelion.Business.Services/TextSimilarityService',
+        title:"TextSimilarityService",
         description:""
     });
 
@@ -687,56 +883,8 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotListParameters',
-        title:"CustomSpotListParameters",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/Lod',
-        title:"Lod",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/SentimentAnalysisValidationTests',
-        title:"SentimentAnalysisValidationTests",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelsListDto',
-        title:"CustomModelsListDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/LanguageDetectionDto',
-        title:"LanguageDetectionDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/Image',
-        title:"Image",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Clients/ApiClient',
-        title:"ApiClient",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/WikisearchValidationTests',
-        title:"WikisearchValidationTests",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/WikisearchParameters',
-        title:"WikisearchParameters",
+        url:'/api/SpazioDati.Dandelion.Business.Services/LanguageDetectionService',
+        title:"LanguageDetectionService",
         description:""
     });
 
@@ -747,194 +895,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/Localizations',
-        title:"Localizations",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/SourceValidationTests',
-        title:"SourceValidationTests",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/EntityExtractionService',
-        title:"EntityExtractionService",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelDataParameters',
-        title:"CustomModelDataParameters",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/DefaultValues',
-        title:"DefaultValues",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelDataDto',
-        title:"CustomModelDataDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/ListDto',
-        title:"ListDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/SourceParameters',
-        title:"SourceParameters",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CategoriesDto',
-        title:"CategoriesDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/EntityExtractionValidationTests',
-        title:"EntityExtractionValidationTests",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/TextClassificationService',
-        title:"TextClassificationService",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/LanguageDetectionService',
-        title:"LanguageDetectionService",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/Category',
-        title:"Category",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/ExtraTypesOption',
-        title:"ExtraTypesOption",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelParameters',
-        title:"CustomModelParameters",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/Parameters',
-        title:"Parameters",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CountryOption',
-        title:"CountryOption",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotsListDto',
-        title:"CustomSpotsListDto",
-        description:""
-    });
-
-    y({
         url:'/api/SpazioDati.Dandelion.Domain.Models/AnnotationDto',
         title:"AnnotationDto",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/SourceValidationService',
-        title:"SourceValidationService",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/ErrorMessages',
-        title:"ErrorMessages",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/ResponseDto',
-        title:"ResponseDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotDto',
-        title:"CustomSpotDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/BowOption',
-        title:"BowOption",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/Sentiment',
-        title:"Sentiment",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/TextClassificationDto',
-        title:"TextClassificationDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/QueryOption',
-        title:"QueryOption",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/WikisearchDto',
-        title:"WikisearchDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/TextSimilarityDto',
-        title:"TextSimilarityDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Containers/Container',
-        title:"Container",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/WikisearchService',
-        title:"WikisearchService",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotParameters',
-        title:"CustomSpotParameters",
+        url:'/api/SpazioDati.Dandelion.Test/ServiceFixture',
+        title:"ServiceFixture",
         description:""
     });
 
@@ -945,56 +913,74 @@ var searchModule = function() {
     });
 
     y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/SourceParameters',
+        title:"SourceParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/WikisearchDto',
+        title:"WikisearchDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomSpotDataParameters',
+        title:"CustomSpotDataParameters",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/QueryOption',
+        title:"QueryOption",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/TextSimilarityDto',
+        title:"TextSimilarityDto",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Business.Clients/ApiClient',
+        title:"ApiClient",
+        description:""
+    });
+
+    y({
+        url:'/api/SpazioDati.Dandelion.Domain.Models/TextSimilarityParameters',
+        title:"TextSimilarityParameters",
+        description:""
+    });
+
+    y({
         url:'/api/SpazioDati.Dandelion.Test.ValidationTests/TextClassificationValidationTests',
         title:"TextClassificationValidationTests",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/CustomModelService',
-        title:"CustomModelService",
+        url:'/api/SpazioDati.Dandelion.Test.ValidationTests/WikisearchValidationTests',
+        title:"WikisearchValidationTests",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/SentimentAnalysisParameters',
-        title:"SentimentAnalysisParameters",
+        url:'/api/SpazioDati.Dandelion.Domain.Models/Image',
+        title:"Image",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/ScoreDetail',
-        title:"ScoreDetail",
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelParameters',
+        title:"CustomModelParameters",
         description:""
     });
 
     y({
-        url:'/api/SpazioDati.Dandelion.Business/DandelionUtils',
-        title:"DandelionUtils",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/IncludeOption',
-        title:"IncludeOption",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Business.Services/ServiceUtils',
-        title:"ServiceUtils",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/CustomModelDto',
-        title:"CustomModelDto",
-        description:""
-    });
-
-    y({
-        url:'/api/SpazioDati.Dandelion.Domain.Models/LanguageDetectionParameters',
-        title:"LanguageDetectionParameters",
+        url:'/api/SpazioDati.Dandelion.Domain.Models/CountryOption',
+        title:"CountryOption",
         description:""
     });
 
