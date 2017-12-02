@@ -6,6 +6,10 @@ using SpazioDati.Dandelion.Business.Clients;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
+    /// <summary> 
+    ///     Services class that parse the user parameters and call the <c>client</c> 
+    /// </summary>
+    /// <seealso cref="ApiClient"/> 
     public class WikisearchService
     {
         private ApiClient _apiClient;
@@ -15,6 +19,12 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a <c>WikisearchDto</c> populated with the result of the call </returns>
+        /// <seealso cref="WikisearchDto"/> 
         public Task<WikisearchDto> CallWikisearchAsync(WikisearchParameters parameters)
         {
             ServiceUtils.ParameterValidation(parameters);

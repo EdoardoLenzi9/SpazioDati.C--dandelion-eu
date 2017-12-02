@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using FactoryMind.TrackMe.Test;
 using SpazioDati.Dandelion.Business.Services;
 using SpazioDati.Dandelion.Domain.Models;
 using Xunit;
 
 namespace SpazioDati.Dandelion.Test.ValidationTests
 {
-    public class SourceValidationTests : IClassFixture<ServiceFixture>
+    public class SourceValidationTests 
     {
 
         [Theory]
@@ -73,7 +72,7 @@ namespace SpazioDati.Dandelion.Test.ValidationTests
             yield return new object[] { new TextSimilarityParameters { Token = "Token", Text1 = "Text", HtmlFragment2 = "<p> Html Text </p>", Html2 = "<html><body><p>Html Text</p></body></html>" }, ErrorMessages.WrongSource2, ErrorMessages.HtmlFragment2 };
         }
 
-        public static IEnumerable<object[]> GetSingleSourceParameters()
+        public static IEnumerable<object[]> GetSingleSourceParameters()  
         {
             yield return new object[] { new SourceParameters { Token = "Token" } , ErrorMessages.WrongSource, "" };
             yield return new object[] { new SourceParameters { Token = "Token", Text = "Text", Url = "https://www.google.it" }, ErrorMessages.MultipleSources, ErrorMessages.Url };

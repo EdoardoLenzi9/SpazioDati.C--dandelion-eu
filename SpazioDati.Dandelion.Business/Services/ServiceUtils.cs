@@ -5,10 +5,16 @@ using SpazioDati.Dandelion.Domain.Models;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
+    /// <summary> 
+    ///     Generic services class that provide methods useful to validate parameters and initialize other services 
+    /// </summary>
     public static class ServiceUtils
     {
         private static Container _container;
 
+        /// <summary> 
+        ///     Method that initialize the container of the <see href="https://www.nuget.org/packages/SimpleInjector/">Simple Injector</see>       
+        /// </summary>
         public static void Init()
         {
             if (_container == null)
@@ -26,6 +32,10 @@ namespace SpazioDati.Dandelion.Business.Services
             }
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters 
+        /// </summary>
+        /// <param name="parameters"></param>
         public static void ParameterValidation(Parameters parameters)
         {
             if (parameters == null)
@@ -35,6 +45,10 @@ namespace SpazioDati.Dandelion.Business.Services
             TokenValidation(parameters);
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the token parameter
+        /// </summary>
+        /// <param name="parameters"></param>
         public static void TokenValidation(Parameters parameters)
         {
             if (String.IsNullOrEmpty(parameters.Token))

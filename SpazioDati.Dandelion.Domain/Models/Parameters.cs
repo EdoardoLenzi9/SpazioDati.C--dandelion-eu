@@ -3,7 +3,10 @@ using System.Net.Http;
 
 namespace SpazioDati.Dandelion.Domain.Models
 {
-
+    ///<summary> 
+    ///     Generic class extended by any other parameter class; contains only the <c>Token</c> variable, necessary for every call.   
+    ///</summary>
+    ///<remarks> Api key is available on the <see href="https://dandelion.eu/docs/api/#calling-our-api-authentication">authentication page</see></remarks> 
     public class Parameters
     {
         public string Token;
@@ -18,6 +21,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public HttpMethod HttpMethod = null;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datatxt/nex/v1/#parameters">Dandelion page</see>
+    ///</summary>
     public class EntityExtractionParameters : SourceParameters
     {
         public LanguageOption Lang = DefaultValues.Lang;
@@ -33,6 +39,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public double Epsilon = DefaultValues.Epsilon;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datatxt/sim/v1/#parameters">Dandelion page</see>
+    ///</summary>
     public class TextSimilarityParameters : EntityExtractionParameters
     {
         public string Text1;
@@ -50,6 +59,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         private new string HtmlFragment;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datatxt/cl/v1/#parameters">Dandelion page</see>
+    ///</summary>
     public class TextClassificationParameters : SourceParameters
     {
         public int Model;
@@ -58,16 +70,25 @@ namespace SpazioDati.Dandelion.Domain.Models
         public List<IncludeOption> Include = DefaultValues.Include;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datatxt/li/v1/#parameters">Dandelion page</see>
+    ///</summary>
     public class LanguageDetectionParameters : SourceParameters
     {
         public bool Clean = DefaultValues.Clean;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datatxt/sent/v1/#parameters">Dandelion page</see>
+    ///</summary>
     public class SentimentAnalysisParameters : SourceParameters
     {
         public LanguageOption Lang = DefaultValues.Lang;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datagraph/wikisearch/">Dandelion page</see>
+    ///</summary>
     public class WikisearchParameters : Parameters
     {
         public string Text;
@@ -79,12 +100,18 @@ namespace SpazioDati.Dandelion.Domain.Models
         public HttpMethod HttpMethod = null;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datagraph/wikisearch/">Dandelion page</see>
+    ///</summary>
     public class CustomSpotParameters : Parameters
     {
         public string Id;
         public CustomSpotDataParameters Data;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datatxt/custom-spots/v1/">Dandelion page</see>
+    ///</summary>
     public class CustomSpotDataParameters 
     {
         public LanguageOption Lang;
@@ -100,6 +127,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public bool ExactMatch = DefaultValues.ExactMatch;
     }
 
+    ///<summary> 
+    ///     Complete description of the parameters on the <see href="https://dandelion.eu/docs/api/datatxt/cl/models/v1/">Dandelion page</see>
+    ///</summary>
     public class CustomModelParameters : Parameters
     {
         public string Id;

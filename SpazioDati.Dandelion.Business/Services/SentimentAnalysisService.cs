@@ -5,6 +5,10 @@ using SpazioDati.Dandelion.Business.Clients;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
+    /// <summary> 
+    ///     Services class that parse the user parameters and call the <c>client</c> 
+    /// </summary>
+    /// <seealso cref="ApiClient"/> 
     public class SentimentAnalysisService
     {
         private ApiClient _apiClient;
@@ -14,6 +18,12 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a <c>SentimentAnalysisDto</c> populated with the result of the call </returns>
+        /// <seealso cref="SentimentAnalysisDto"/> 
         public Task<SentimentAnalysisDto> CallSentimentAnalysisAsync(SentimentAnalysisParameters parameters)
         {
             ServiceUtils.ParameterValidation(parameters);

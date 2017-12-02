@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace SpazioDati.Dandelion.Domain.Models
 {
+    ///<summary> 
+    ///     Generic model class extended by any other Dto class 
+    ///</summary>
     public class ResponseDto
     {
         public DateTime Timestamp;
@@ -13,6 +16,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Url;
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an EntityExtraction API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datatxt/nex/v1/#response">Dandelion page</see>
+    ///</summary>
     public class EntityExtractionDto : ResponseDto
     {
         public List<AnnotationDto> Annotations;
@@ -30,6 +37,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Label;
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an TextSimilarity API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datatxt/sim/v1/#response">Dandelion page</see>
+    ///</summary>
     public class TextSimilarityDto : ResponseDto
     {
         public string Text1;
@@ -39,6 +50,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public double Similarity;
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an TextClassification API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datatxt/cl/v1/#response">Dandelion page</see>
+    ///</summary>
     public class TextClassificationDto : ResponseDto
     {
         public List<Category> Categories;
@@ -57,6 +72,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public double Weight;
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an LanguageDetection API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datatxt/li/v1/#response">Dandelion page</see>
+    ///</summary>
     public class LanguageDetectionDto : ResponseDto
     {
         public List<DetectedLang> DetectedLangs;
@@ -68,6 +87,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public double Confidence;
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an SentimentAnalysis API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datatxt/sent/v1/#response">Dandelion page</see>
+    ///</summary>
     public class SentimentAnalysisDto : ResponseDto
     {
         public Sentiment Sentiment;
@@ -79,6 +102,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string type; //TODO make enum
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an Wikisearch API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datagraph/wikisearch/#response">Dandelion page</see>
+    ///</summary>
     public class WikisearchDto
     {
         public DateTime Timestamp;
@@ -89,6 +116,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public string Query;
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an CustomSpot API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datatxt/custom-spots/v1/">Dandelion page</see>
+    ///</summary>
     public class CustomSpotDto
     {
         public string Id;
@@ -161,6 +192,10 @@ namespace SpazioDati.Dandelion.Domain.Models
         public List<CustomModelDto> Items;
     }
 
+    ///<summary> 
+    ///     Model class for deserialize the response of an CustomModel API call; 
+    ///     Complete description of the variables on the <see href="https://dandelion.eu/docs/api/datatxt/cl/v1/">Dandelion page</see>
+    ///</summary>
     public class CustomModelDto
     {
         public string Id;

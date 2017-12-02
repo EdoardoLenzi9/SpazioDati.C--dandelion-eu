@@ -4,8 +4,16 @@ using SpazioDati.Dandelion.Domain.Models;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
+    /// <summary> 
+    ///     Generic services class that provide methods useful to validate the text sources of the parameters 
+    /// </summary>
     public class SourceValidationService
     {
+        /// <summary> 
+        ///     Asyncronous method that validate the source parameter       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a dictionary populated with the source parameter</returns>
         public static List<KeyValuePair<string, string>> verifySingleSource(SourceParameters parameters)
         {
             var key = "";
@@ -51,6 +59,11 @@ namespace SpazioDati.Dandelion.Business.Services
             return source;
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the source parameter        
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a dictionary populated with the source parameter</returns>
         public static List<KeyValuePair<string, string>> verifySingleSource(WikisearchParameters parameters)
         {
             if (String.IsNullOrEmpty(parameters.Text))
@@ -62,6 +75,11 @@ namespace SpazioDati.Dandelion.Business.Services
             return source;
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the sources parameters       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a dictionary populated with the sources parameters</returns>
         public static List<KeyValuePair<string, string>> verifyMultipleSources(TextSimilarityParameters parameters)
         {
             var key1 = "";

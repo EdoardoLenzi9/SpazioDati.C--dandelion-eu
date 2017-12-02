@@ -2,7 +2,7 @@ using System;
 using SpazioDati.Dandelion.Business.Containers;
 using SpazioDati.Dandelion.Business.Services;
 
-namespace FactoryMind.TrackMe.Test
+namespace SpazioDati.Dandelion.Test
 {
 
     public class ServiceFixture : IDisposable

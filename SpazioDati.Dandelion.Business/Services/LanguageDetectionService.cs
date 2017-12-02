@@ -5,6 +5,10 @@ using System;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
+    /// <summary> 
+    ///     Services class that parse the user parameters and call the <c>client</c> 
+    /// </summary>
+    /// <seealso cref="ApiClient"/> 
     public class LanguageDetectionService
     {
         private ApiClient _apiClient;

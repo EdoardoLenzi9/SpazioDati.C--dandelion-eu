@@ -1,5 +1,8 @@
 namespace SpazioDati.Dandelion.Business.Containers
 {
+    /// <summary> 
+    ///     Represent Simple Injector Lifestyle
+    /// </summary>
     public enum Lifestyle
     {
         Singleton,
@@ -7,6 +10,9 @@ namespace SpazioDati.Dandelion.Business.Containers
         Scoped
     };
 
+    /// <summary> 
+    ///     Class that "wraps" Simple Injector Container in order to make it singleton
+    /// </summary>
     public class Container
     {
         private static Container _instance;
@@ -16,6 +22,10 @@ namespace SpazioDati.Dandelion.Business.Containers
             _container = new SimpleInjector.Container();
         }
 
+        /// <summary> 
+        ///     Method that returns the instance of the container
+        /// </summary>
+        /// <returns>Returns the singleton instance of the container </returns>
         public static Container GetInstance()
         {
             if (_instance == null)
@@ -25,6 +35,9 @@ namespace SpazioDati.Dandelion.Business.Containers
             return _instance;
         }
 
+        /// <summary> 
+        ///     Method that calls <c>Container.Register&lt;TService, TImplementation&gt;(Lifestyle lifestyle)</c>
+        /// </summary>
         public void Register<TService, TImplementation>(Lifestyle lifeStyle)
             where TService : class
             where TImplementation : class, TService
@@ -43,6 +56,9 @@ namespace SpazioDati.Dandelion.Business.Containers
             }
         }
 
+        /// <summary>
+        ///     Method that calls <c>Container.Register&lt;TConcrete&gt;(Lifestyle lifestyle)</c>
+        /// </summary>
         public void Register<TImplementation>(Lifestyle lifeStyle)
             where TImplementation : class
         {
@@ -60,6 +76,10 @@ namespace SpazioDati.Dandelion.Business.Containers
             }
         }
 
+        /// <summary>
+        ///     Method that calls <c>Container.GetInstance&lt;TService&gt;()</c>
+        /// </summary>
+        /// <returns>Returns an instance of <c>T</c> that respect the Lifestyle declared</returns>
         public T Resolve<T>()
             where T : class
         {

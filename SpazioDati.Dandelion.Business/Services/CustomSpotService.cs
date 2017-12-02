@@ -6,6 +6,10 @@ using SpazioDati.Dandelion.Domain.Models;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
+    /// <summary> 
+    ///     Services class that parse the user parameters and call the <c>client</c> 
+    /// </summary>
+    /// <seealso cref="ApiClient"/> 
     public class CustomSpotService
     {
         private ApiClient _apiClient;
@@ -15,6 +19,12 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a <c>CustomSpotDto</c> populated with the result of the call </returns>
+        /// <seealso cref="CustomSpotDto"/> 
         public Task<CustomSpotDto> CallCreateCustomSpotAsync(CustomSpotParameters parameters)
         {
             ServiceUtils.ParameterValidation(parameters);
@@ -34,6 +44,12 @@ namespace SpazioDati.Dandelion.Business.Services
             return _apiClient.CallApiAsync<CustomSpotDto>(ApiClient.CustomSpotUriBuilder(), ApiClient.CreateCustomSpotContentBuilder(parameters), HttpMethod.Post);
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a <c>CustomSpotDto</c> populated with the result of the call </returns>
+        /// <seealso cref="CustomSpotDto"/>
         public Task<CustomSpotDto> CallReadCustomSpotAsync(CustomSpotParameters parameters)
         {
             ServiceUtils.ParameterValidation(parameters);
@@ -45,6 +61,12 @@ namespace SpazioDati.Dandelion.Business.Services
             return _apiClient.CallApiAsync<CustomSpotDto>(ApiClient.CustomSpotUriBuilder(), ApiClient.ReadCustomSpotContentBuilder(parameters), HttpMethod.Get);
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a <c>CustomSpotDto</c> populated with the result of the call </returns>
+        /// <seealso cref="CustomSpotDto"/>
         public Task<CustomSpotDto> CallUpdateCustomSpotAsync(CustomSpotParameters parameters)
         {
             ServiceUtils.ParameterValidation(parameters);
@@ -68,6 +90,12 @@ namespace SpazioDati.Dandelion.Business.Services
             return _apiClient.CallApiAsync<CustomSpotDto>(ApiClient.CustomSpotUriBuilder(), ApiClient.UpdateCustomSpotContentBuilder(parameters), HttpMethod.Put);
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a <c>CustomSpotDto</c> populated with the result of the call </returns>
+        /// <seealso cref="CustomSpotDto"/>
         public Task CallDeleteCustomSpotAsync(CustomSpotParameters parameters)
         {
             ServiceUtils.ParameterValidation(parameters);
@@ -79,6 +107,9 @@ namespace SpazioDati.Dandelion.Business.Services
             return _apiClient.CallApiAsync<CustomSpotDto>(ApiClient.CustomSpotUriBuilder(), ApiClient.DeleteCustomSpotContentBuilder(parameters), HttpMethod.Delete);
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
         public Task<CustomSpotsListDto> CallListAllCustomSpotsAsync()
         {
             return _apiClient.CallApiAsync<CustomSpotsListDto>(ApiClient.CustomSpotUriBuilder(), null, HttpMethod.Get);

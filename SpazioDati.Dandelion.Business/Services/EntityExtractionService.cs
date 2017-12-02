@@ -7,6 +7,10 @@ using SpazioDati.Dandelion.Business.Extensions;
 
 namespace SpazioDati.Dandelion.Business.Services
 {
+    /// <summary> 
+    ///     Services class that parse the user parameters and call the <c>client</c> 
+    /// </summary>
+    /// <seealso cref="ApiClient"/> 
     public class EntityExtractionService
     {
         private ApiClient _apiClient;
@@ -16,6 +20,12 @@ namespace SpazioDati.Dandelion.Business.Services
             _apiClient = apiClient;
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the user parameters and call <c>ApiClient</c>       
+        /// </summary>
+        /// <param name="parameters"></param>
+        /// <returns>Returns a <c>EntityExtractionDto</c> populated with the result of the call </returns>
+        /// <seealso cref="EntityExtractionDto"/> 
         public Task<EntityExtractionDto> CallEntityExtractionAsync(EntityExtractionParameters parameters)
         {
             ValidateParameters(parameters);
@@ -23,6 +33,10 @@ namespace SpazioDati.Dandelion.Business.Services
             return _apiClient.CallApiAsync<EntityExtractionDto>(ApiClient.EntityExtractionUriBuilder(), ApiClient.EntityExtractionContentBuilder(source, parameters), parameters.HttpMethod);
         }
 
+        /// <summary> 
+        ///     Asyncronous method that validate the <c>EntityExtractionParameters</c> and <c>TextSimilarityParameters</c> in <see href="https://dandelion.eu/docs/api/datatxt/sim/v1/">special cases</see>         
+        /// </summary>
+        /// <param name="parameters"></param>
         public static void ValidateParameters(EntityExtractionParameters parameters) {
             ServiceUtils.ParameterValidation(parameters);
             if (parameters.Epsilon < 0.0 || parameters.Epsilon > 0.5)

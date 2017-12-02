@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace SpazioDati.Dandelion.Domain.Models
 {
+    ///<summary> 
+    ///     Contains the strings necessary to build the url of the <see href="https://dandelion.eu/docs/">Dandelion end points</see>        
+    ///</summary>
     public class Localizations
     {
         public static string BaseUrl = "https://api.dandelion.eu";
@@ -17,6 +20,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string Datagraph = "datagraph";
     }
 
+    ///<summary> 
+    ///     Contains the common error messages for the exceptions throw in case of wrong parameters         
+    ///</summary>
     public class ErrorMessages
     {
         public static string InvalidToken = "Invalid token";
@@ -76,6 +82,9 @@ namespace SpazioDati.Dandelion.Domain.Models
         public static string Data = "Data";
     }
 
+    ///<summary> 
+    ///     Contains the default values for the parameters, specified in the <see href="https://dandelion.eu/docs/">official documentation page</see>   
+    ///</summary>
     public class DefaultValues
     {
         public static LanguageOption Lang = LanguageOption.auto;
