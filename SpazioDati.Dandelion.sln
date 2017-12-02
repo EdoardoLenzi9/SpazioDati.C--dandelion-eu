@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpazioDati.Dandelion.Business", "SpazioDati.Dandelion.Business\SpazioDati.Dandelion.Business.csproj", "{4E4746A5-7D36-4733-B273-FE109EC27836}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpazioDati.Dandelion.Business", "SpazioDati.Dandelion.Business\SpazioDati.Dandelion.Business.csproj", "{947CB102-F0D7-46C5-B55A-606BBBC13E0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpazioDati.Dandelion.Domain", "SpazioDati.Dandelion.Domain\SpazioDati.Dandelion.Domain.csproj", "{315B6186-7410-46F8-8F67-D26FC37A78D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpazioDati.Dandelion.Domain", "SpazioDati.Dandelion.Domain\SpazioDati.Dandelion.Domain.csproj", "{55D82521-E3D3-4A52-9424-4420EC79A80E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpazioDati.Dandelion.Examples", "SpazioDati.Dandelion.Examples\SpazioDati.Dandelion.Examples.csproj", "{1EE32C18-5EC2-4001-ACA8-9F44DCD6853F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpazioDati.Dandelion.Test", "SpazioDati.Dandelion.Test\SpazioDati.Dandelion.Test.csproj", "{C61430EE-43D2-4CC2-9FAB-0585F1684B1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +17,27 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4E4746A5-7D36-4733-B273-FE109EC27836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E4746A5-7D36-4733-B273-FE109EC27836}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E4746A5-7D36-4733-B273-FE109EC27836}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E4746A5-7D36-4733-B273-FE109EC27836}.Release|Any CPU.Build.0 = Release|Any CPU
-		{315B6186-7410-46F8-8F67-D26FC37A78D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{315B6186-7410-46F8-8F67-D26FC37A78D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{315B6186-7410-46F8-8F67-D26FC37A78D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{315B6186-7410-46F8-8F67-D26FC37A78D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947CB102-F0D7-46C5-B55A-606BBBC13E0A}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{947CB102-F0D7-46C5-B55A-606BBBC13E0A}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{947CB102-F0D7-46C5-B55A-606BBBC13E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947CB102-F0D7-46C5-B55A-606BBBC13E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55D82521-E3D3-4A52-9424-4420EC79A80E}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{55D82521-E3D3-4A52-9424-4420EC79A80E}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{55D82521-E3D3-4A52-9424-4420EC79A80E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55D82521-E3D3-4A52-9424-4420EC79A80E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE32C18-5EC2-4001-ACA8-9F44DCD6853F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE32C18-5EC2-4001-ACA8-9F44DCD6853F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE32C18-5EC2-4001-ACA8-9F44DCD6853F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE32C18-5EC2-4001-ACA8-9F44DCD6853F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61430EE-43D2-4CC2-9FAB-0585F1684B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61430EE-43D2-4CC2-9FAB-0585F1684B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61430EE-43D2-4CC2-9FAB-0585F1684B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61430EE-43D2-4CC2-9FAB-0585F1684B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FD88C4D0-6305-4C4C-9B3E-96EA2786E280}
+		SolutionGuid = {A17C0E4E-194C-40CA-B7C0-28B7F0A08AD0}
 	EndGlobalSection
 EndGlobal

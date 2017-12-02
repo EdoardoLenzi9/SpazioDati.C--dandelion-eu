@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SpazioDati.Dandelion</id>
+    <version>1.0.1</version>
+    <authors>Edoardo Lenzi</authors>
+    <owners>SpazioDati</owners>
+    <licenseUrl>https://dandelion.eu/</licenseUrl>
+    <projectUrl>https://github.com/EdoardoLenzi9/SpazioDati.Dandelion-eu</projectUrl>
+    <iconUrl>https://spaziodati.eu/static/imgs/og_image.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Library that "wraps" Dandelion API:
+      - EntityExtraction
+      - TextSimilarity
+      - TextClassification
+      - LanguageDetection
+      - SentimentAnalysis
+      - Wikisearch
+    </description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags> Dandelion SpazioDati EntityExtraction TextSimilarity TextClassification LanguageDetection SentimentAnalysis Wikisearch</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="10.0.3" />      
+	    <dependency id="SimpleInjector" version="4.0.12" />      
+	    <dependency id="System.Net.Http" version="4.3.3" />
+    </dependencies>
+  </metadata>
+  <files>	
+	  <file src="bin\Release\netstandard2.0\SpazioDati.Dandelion.Business.dll" target="lib"></file>
+	  <file src="bin\Release\netstandard2.0\SpazioDati.Dandelion.Domain.dll" target="lib"></file>
+  </files>
+</package>
