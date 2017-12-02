@@ -4,7 +4,7 @@ using SpazioDati.Dandelion.Business.Services;
 using SpazioDati.Dandelion.Domain.Models;
 using Xunit;
 
-namespace SpazioDati.Dandelion.Test.ValidationTests
+namespace SpazioDati.Dandelion.Test.ValidationTests  
 {
     public class EntityExtractionValidationTests : IClassFixture<ServiceFixture>
     {
