@@ -42,4 +42,4 @@ Launch the following code:
 ```
 
 ## Parameters 
-You can specify more paramethers and call every end-point, see Documentation folder for more details.
+You can specify more parameters and call every end-point, see [Documentation](https://github.com/EdoardoLenzi9/SpazioDati.Dandelion-eu/tree/master/SpazioDati.Dandelion.Documentation) for more details (clone and open index.html).
